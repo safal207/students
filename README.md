@@ -1,112 +1,90 @@
-# Проектные ноутбуки
+# Welcome to GitHub
 
-Это коллекция Jupyter ноутбуков для различных задач анализа данных и машинного обучения.
+Welcome to GitHub—where millions of developers work together on software. Ready to get started? Let’s learn how this all works by building and publishing your first GitHub Pages website!
 
-## AudioNet
-- [Сафонов"Аудио_Распознавание_птиц_по_пению_ipynb".ipynb](./AudioNet/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2%22%D0%90%D1%83%D0%B4%D0%B8%D0%BE_%D0%A0%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D1%82%D0%B8%D1%86_%D0%BF%D0%BE_%D0%BF%D0%B5%D0%BD%D0%B8%D1%8E_ipynb%22.ipynb)
-- [Сафонов_Обработка_сигналов"".ipynb](./AudioNet/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%9E%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%81%D0%B8%D0%B3%D0%BD%D0%B0%D0%BB%D0%BE%D0%B2%22%22.ipynb)
+## Repositories
 
-## Classification
-- [Сафонов_Домашнее_задание_№2".ipynb](./Classification/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%94%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B5%D0%B5_%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%E2%84%962%22.ipynb)
-- [Light_Обучающая_Тестовая_"Сафонов_А_А_MNIST_цифры_.ipynb](./Classification/Light_%D0%9E%D0%B1%D1%83%D1%87%D0%B0%D1%8E%D1%89%D0%B0%D1%8F_%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%B0%D1%8F_%22%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%90_%D0%90_MNIST_%D1%86%D0%B8%D1%84%D1%80%D1%8B_.ipynb)
-- [Pro_Сафонов_Цель_=_90_точности_база_МИНЫ_на_тестовой_выбоке.ipynb](./Classification/Pro_%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%A6%D0%B5%D0%BB%D1%8C_=_90_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D0%B8_%D0%B1%D0%B0%D0%B7%D0%B0_%D0%9C%D0%98%D0%9D%D0%AB_%D0%BD%D0%B0_%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B9_%D0%B2%D1%8B%D0%B1%D0%BE%D0%BA%D0%B5.ipynb)
+Right now, we’re in your first GitHub **repository**. A repository is like a folder or storage space for your project. Your project's repository contains all its files such as code, documentation, images, and more. It also tracks every change that you—or your collaborators—make to each file, so you can always go back to previous versions of your project if you make any mistakes.
 
-## CV
-- [База_Cifar10_(accuracy=85_)_и_Cifar100((accuracy=56_)).ipynb](./CV/%D0%91%D0%B0%D0%B7%D0%B0_Cifar10_(accuracy=85_)_%D0%B8_Cifar100((accuracy=56_)).ipynb)
-- [Сафонов_Домашнее_задание_№3"_Лучшая_точность_для_сегментации_Стройки_val_точность_60_95_.ipynb](./CV/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%94%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B5%D0%B5_%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%E2%84%963%22_%D0%9B%D1%83%D1%87%D1%88%D0%B0%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D0%B4%D0%BB%D1%8F_%D1%81%D0%B5%D0%B3%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8_%D0%A1%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8_val_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C_60_95_.ipynb)
-- [Задача_классификация_авто_по_фото_(3_марки_авто)_Результат_точность_77_".ipynb](./CV/%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F_%D0%B0%D0%B2%D1%82%D0%BE_%D0%BF%D0%BE_%D1%84%D0%BE%D1%82%D0%BE_(3_%D0%BC%D0%B0%D1%80%D0%BA%D0%B8_%D0%B0%D0%B2%D1%82%D0%BE)_%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C_77_%22.ipynb)
-- [Conv2D_Arguments.ipynb](./CV/Conv2D_Arguments.ipynb)
-- [Распознавание_изображений_из_набора_данных_MNIST,_с_помощью_свёрточных_нейронных_сетей.ipynb](./CV/%D0%A0%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9_%D0%B8%D0%B7_%D0%BD%D0%B0%D0%B1%D0%BE%D1%80%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_MNIST,_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_%D1%81%D0%B2%D1%91%D1%80%D1%82%D0%BE%D1%87%D0%BD%D1%8B%D1%85_%D0%BD%D0%B5%D0%B9%D1%80%D0%BE%D0%BD%D0%BD%D1%8B%D1%85_%D1%81%D0%B5%D1%82%D0%B5%D0%B9.ipynb)
-- [Сафонов"objects_detection_ssdlite_mobilenet_v2_ipynb".ipynb](./CV/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2%22objects_detection_ssdlite_mobilenet_v2_ipynb%22.ipynb)
-- [Сафонов_"rock_paper_scissors_cnn_ipynb".ipynb](./CV/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%22rock_paper_scissors_cnn_ipynb%22.ipynb)
+This repository contains three important files: The HTML code for your first website on GitHub, the CSS stylesheet that decorates your website with colors and fonts, and the **README** file. It also contains an image folder, with one image file.
 
-## Genetica
-- [САфонов_генетика".ipynb](./Genetica/%D0%A1%D0%90%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%B3%D0%B5%D0%BD%D0%B5%D1%82%D0%B8%D0%BA%D0%B0%22.ipynb)
+## Describe your project
 
-## Linux
-- [Работа_с_Linux_командами_в_Colab.ipynb](./Linux/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0_%D1%81_Linux_%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0%D0%BC%D0%B8_%D0%B2_Colab.ipynb)
-- [Работа_с_Linux_кодамндами_в_Colab.ipynb](./Linux/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0_%D1%81_Linux_%D0%BA%D0%BE%D0%B4%D0%B0%D0%BC%D0%BD%D0%B4%D0%B0%D0%BC%D0%B8_%D0%B2_Colab.ipynb)
-- [colab_linux.ipynb](./Linux/colab_linux.ipynb)
+You are currently viewing your project's **README** file. **_README_** files are like cover pages or elevator pitches for your project. They are written in plain text or [Markdown language](https://guides.github.com/features/mastering-markdown/), and usually include a paragraph describing the project, directions on how to use it, who authored it, and more.
 
-## LoadData
-- [Импорт_и_экспорт_данных_через_Google_Colab.ipynb](./LoadData/%D0%98%D0%BC%D0%BF%D0%BE%D1%80%D1%82_%D0%B8_%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D1%87%D0%B5%D1%80%D0%B5%D0%B7_Google_Colab.ipynb)
+[Learn more about READMEs](https://help.github.com/en/articles/about-readmes)
 
-## Matplotlib
-- [matplotlib.ipynb](./Matplotlib/matplotlib.ipynb)
-- [Сафонов_Апрельский_курс_2020_Light_Python_Домашнее_задание_5.ipynb](./Matplotlib/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%90%D0%BF%D1%80%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D1%83%D1%80%D1%81_2020_Light_Python_%D0%94%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B5%D0%B5_%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_5.ipynb)
+## Your first website
 
-## MatrixAndFunctions
-- [Сафонов_А_А_Матрицы_и_функции".ipynb](./MatrixAndFunctions/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%90_%D0%90_%D0%9C%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B_%D0%B8_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8%22.ipynb)
+**GitHub Pages** is a free and easy way to create a website using the code that lives in your GitHub repositories. You can use GitHub Pages to build a portfolio of your work, create a personal website, or share a fun project that you coded with the world. GitHub Pages is automatically enabled in this repository, but when you create new repositories in the future, the steps to launch a GitHub Pages website will be slightly different.
 
-## ML
-- [Сафонов_А_А_Теория_вероятности_2"".ipynb](./ML/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%90_%D0%90_%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F_%D0%B2%D0%B5%D1%80%D0%BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8_2%22%22.ipynb)
-- [Сафонов_А_А_ML_Анализ_HH_ru_резюме_и_ЦИАН_анализ_стоимости_квартир.ipynb](./ML/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%90_%D0%90_ML_%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7_HH_ru_%D1%80%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5_%D0%B8_%D0%A6%D0%98%D0%90%D0%9D_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7_%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8_%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80.ipynb)
-- [Сафонов_А_А_Теория_вероятности_и_статистика_1".ipynb](./ML/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%90_%D0%90_%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F_%D0%B2%D0%B5%D1%80%D0%BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8_%D0%B8_%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0_1%22.ipynb)
+[Learn more about GitHub Pages](https://pages.github.com/)
 
-## NLP
-- [NLP_Анализ_тональности_Решение_через_Conv1d_(accuracy_0_8533).ipynb](./NLP/NLP_%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7_%D1%82%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8_%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D1%87%D0%B5%D1%80%D0%B5%D0%B7_Conv1d_(accuracy_0_8533).ipynb)
-- [NLP_Анализ_тональности_Решение_через_Embedding_+_RNN_(accuracy_0_58)_"dl_nlp_imdb_simple_rnn_ipynb".ipynb](./NLP/NLP_%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7_%D1%82%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8_%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D1%87%D0%B5%D1%80%D0%B5%D0%B7_Embedding_+_RNN_(accuracy_0_58)_%22dl_nlp_imdb_simple_rnn_ipynb%22.ipynb)
-- [dl_nlp_yelp_polarity.ipynb](./NLP/dl_nlp_yelp_polarity.ipynb)
-- [NLP_Определение_тональности_текста_отзывов_на_фильмы_из_IMDb_(Internet_Movie_Database).ipynb](./NLP/NLP_%D0%9E%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D1%82%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8_%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0_%D0%BE%D1%82%D0%B7%D1%8B%D0%B2%D0%BE%D0%B2_%D0%BD%D0%B0_%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%D1%8B_%D0%B8%D0%B7_IMDb_(Internet_Movie_Database).ipynb)
-- [NLP_Анализ_тональности_Решение_через_Embedding_+_GRU(accuracy_0_83).ipynb](./NLP/NLP_%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7_%D1%82%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8_%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D1%87%D0%B5%D1%80%D0%B5%D0%B7_Embedding_+_GRU(accuracy_0_83).ipynb)
-- [Определение_тональности_текстов_YELP_через_LSTM_сеть_точность_95_.ipynb](./NLP/%D0%9E%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D1%82%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8_%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2_YELP_%D1%87%D0%B5%D1%80%D0%B5%D0%B7_LSTM_%D1%81%D0%B5%D1%82%D1%8C_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C_95_.ipynb)
-- [NLP_Анализ_тональности_Решение_через_Embedding_+_LSTM(accuracy_0_86).ipynb](./NLP/NLP_%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7_%D1%82%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8_%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D1%87%D0%B5%D1%80%D0%B5%D0%B7_Embedding_+_LSTM(accuracy_0_86).ipynb)
-- [NLP_Определение_автора_по_отрывкам_текста_Dense,RNN_,Conv1d,LSTM,_GRU_для_обработки_текстов".ipynb](./NLP/NLP_%D0%9E%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B0_%D0%BF%D0%BE_%D0%BE%D1%82%D1%80%D1%8B%D0%B2%D0%BA%D0%B0%D0%BC_%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0_Dense,RNN_,Conv1d,LSTM,_GRU_%D0%B4%D0%BB%D1%8F_%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8_%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%22.ipynb)
-- [NLP_SafonovAlex_DenseRNN_,Conv1d,LSTM,_GRU_для_обработки_текстов".ipynb](./NLP/NLP_SafonovAlex_DenseRNN_,Conv1d,LSTM,_GRU_%D0%B4%D0%BB%D1%8F_%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8_%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%22.ipynb)
-- [Определение_тональности_текстов_YELP_через_Conv1D_сеть_точность_94_.ipynb](./NLP/%D0%9E%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D1%82%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8_%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2_YELP_%D1%87%D0%B5%D1%80%D0%B5%D0%B7_Conv1D_%D1%81%D0%B5%D1%82%D1%8C_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C_94_.ipynb)
+## Rename this repository to publish your site
 
-## Numpy
-- [Основы_Python_numpy,_plot.ipynb](./Numpy/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B_Python_numpy,_plot.ipynb)
-- [Numpy.ipynb](./Numpy/Numpy.ipynb)
-- [Сафонов_Апрельский_курс_2020_Light_Python_Домашнее_задание_2.ipynb](./Numpy/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%90%D0%BF%D1%80%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D1%83%D1%80%D1%81_2020_Light_Python_%D0%94%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B5%D0%B5_%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_2.ipynb)
+We've already set-up a GitHub Pages website for you, based on your personal username. This repository is called `hello-world`, but you'll rename it to: `username.github.io`, to match your website's URL address. If the first part of the repository doesn’t exactly match your username, it won’t work, so make sure to get it right.
 
-## OOP
-- [Дополнительный_семинар_ООП.ipynb](./OOP/%D0%94%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%81%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80_%D0%9E%D0%9E%D0%9F.ipynb)
+Let's get started! To update this repository’s name, click the `Settings` tab on this page. This will take you to your repository’s settings page.
 
-## Pandas
-- [Сафонов_соревнование_"kaggle_mnist_ipynb".ipynb](./Pandas/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D1%81%D0%BE%D1%80%D0%B5%D0%B2%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%22kaggle_mnist_ipynb%22.ipynb)
-- [Сафонов_Pandas.ipynb](./Pandas/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_Pandas.ipynb)
-- [Pandas.ipynb](./Pandas/Pandas.ipynb)
-- [Сафонов_Апрельский_курс_2020_Light_Занятие_4_Pandas_(часть_2).ipynb](./Pandas/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%90%D0%BF%D1%80%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D1%83%D1%80%D1%81_2020_Light_%D0%97%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D0%B5_4_Pandas_(%D1%87%D0%B0%D1%81%D1%82%D1%8C_2).ipynb)
+![repo-settings-image](https://user-images.githubusercontent.com/18093541/63130482-99e6ad80-bf88-11e9-99a1-d3cf1660b47e.png)
 
-## SeletNetAI
-- [Оптимизация_гиперпараметров_нейросети_с_помощью_Keras_Tuner_"fashion_mnist_keras_tuner_ipynb".ipynb](./SeletNetAI/%D0%9E%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F_%D0%B3%D0%B8%D0%BF%D0%B5%D1%80%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2_%D0%BD%D0%B5%D0%B9%D1%80%D0%BE%D1%81%D0%B5%D1%82%D0%B8_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_Keras_Tuner_%22fashion_mnist_keras_tuner_ipynb%22.ipynb)
-- [Апрельский_курс_(2020)_Pro_Занятие_16_Часть_2_Подбор_архитектуры.ipynb](./SeletNetAI/%D0%90%D0%BF%D1%80%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D1%83%D1%80%D1%81_(2020)_Pro_%D0%97%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D0%B5_16_%D0%A7%D0%B0%D1%81%D1%82%D1%8C_2_%D0%9F%D0%BE%D0%B4%D0%B1%D0%BE%D1%80_%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D1%8B.ipynb)
+Under the **Repository Name** heading, type: `username.github.io`, where username is your username on GitHub. Then click **Rename**—and that’s it. When you’re done, click your repository name or browser’s back button to return to this page.
 
-## Stock
-- [Временные_ряды_Прогнозирование_акций_Лукойла_(Time_series_Prediction_shares_of_LUKOIL).ipynb](./Stock/%D0%92%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D1%80%D1%8F%D0%B4%D1%8B_%D0%9F%D1%80%D0%BE%D0%B3%D0%BD%D0%BE%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B0%D0%BA%D1%86%D0%B8%D0%B9_%D0%9B%D1%83%D0%BA%D0%BE%D0%B9%D0%BB%D0%B0_(Time_series_Prediction_shares_of_LUKOIL).ipynb)
-- [SP500_"Сафонов_Временные_ряды.ipynb](./Stock/SP500_%22%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%92%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D1%80%D1%8F%D0%B4%D1%8B.ipynb)
-- ["DownJoins"Сафонов_Временные_ряды_"_36.ipynb](./Stock/%22DownJoins%22%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%92%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D1%80%D1%8F%D0%B4%D1%8B_%22_36.ipynb)
+<img width="1039" alt="rename_screenshot" src="https://user-images.githubusercontent.com/18093541/63129466-956cc580-bf85-11e9-92d8-b028dd483fa5.png">
 
-## Terra-ai
-- [Сафонов_А_А_"Интенсив_8_12_10_12_Домашнее_задание_№1".ipynb](./Terra-ai/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%90_%D0%90_%22%D0%98%D0%BD%D1%82%D0%B5%D0%BD%D1%81%D0%B8%D0%B2_8_12_10_12_%D0%94%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B5%D0%B5_%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%E2%84%961%22.ipynb)
+Once you click **Rename**, your website will automatically be published at: https://your-username.github.io/. The HTML file—called `index.html`—is rendered as the home page and you'll be making changes to this file in the next step.
 
-## Trafic
-- [Сафонов_"Интенсив_8_12_11_12_Домашнее_задание_№3_".ipynb](./Trafic/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%22%D0%98%D0%BD%D1%82%D0%B5%D0%BD%D1%81%D0%B8%D0%B2_8_12_11_12_%D0%94%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B5%D0%B5_%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%E2%84%963_%22.ipynb)
-- [Трафик_компании.ipynb](./Trafic/%D0%A2%D1%80%D0%B0%D1%84%D0%B8%D0%BA_%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8.ipynb)
+Congratulations! You just launched your first GitHub Pages website. It's now live to share with the entire world
 
-## parsong
-- [Сафонов_А_А_Парсинг_данных".ipynb](./parsong/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%90_%D0%90_%D0%9f%D0%B0%D1%80%D1%81%D0%B8%D0%BD%D0%B3_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%22.ipynb)
+## Making your first edit
 
-## python
-- [Сафонов_Python_Домашнее_задание_6.ipynb](./python/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_Python_%D0%94%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B5%D0%B5_%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_6.ipynb)
-- [Сафонов_Python,_Домашнее_задание_1.ipynb](./python/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_Python,_%D0%94%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B5%D0%B5_%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_1.ipynb)
+When you make any change to any file in your project, you’re making a **commit**. If you fix a typo, update a filename, or edit your code, you can add it to GitHub as a commit. Your commits represent your project’s entire history—and they’re all saved in your project’s repository.
 
-## seaborn
-- [seaborn.ipynb](./seaborn/seaborn.ipynb)
+With each commit, you have the opportunity to write a **commit message**, a short, meaningful comment describing the change you’re making to a file. So you always know exactly what changed, no matter when you return to a commit.
 
-## medicina
-- ["Используем_модель_EfficientNet_B7_для_распознавания_tuberculosis".ipynb](./medicina/%22%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D0%BC_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C_EfficientNet_B7_%D0%B4%D0%BB%D1%8F_%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_tuberculosis%22.ipynb)
-- ["Результат_val_acc_0_869_модель_InceptionResNetV2_для_распознавания_tuberculosis"".ipynb](./medicina/%22%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82_val_acc_0_869_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C_InceptionResNetV2_%D0%B4%D0%BB%D1%8F_%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_tuberculosis%22%22.ipynb)
-- [NASNetLarge_для_распознавания_tuberculosis".ipynb](./medicina/NASNetLarge_%D0%B4%D0%BB%D1%8F_%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_tuberculosis%22.ipynb)
-- ["Используем_модель_ResNet_152_для_распознавания_tuberculosis".ipynb](./medicina/%22%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D0%BC_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C_ResNet_152_%D0%B4%D0%BB%D1%8F_%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_tuberculosis%22.ipynb)
-- [MobileNet_для_распознавания_tuberculosis".ipynb](./medicina/MobileNet_%D0%B4%D0%BB%D1%8F_%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_tuberculosis%22.ipynb)
-- ["Рез_т_val_acc_80_VGG16_для_распознавания_tuberculosis""".ipynb](./medicina/%22%D0%A0%D0%B5%D0%B7_%D1%82_val_acc_80_VGG16_%D0%B4%D0%BB%D1%8F_%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_tuberculosis%22%22%22.ipynb)
-- [MobileNetV2_для_распознавания_tuberculosis".ipynb](./medicina/MobileNetV2_%D0%B4%D0%BB%D1%8F_%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_tuberculosis%22.ipynb)
-- ["Рез_т_val_acc_0_86_VGG19_для_распознавания_tuberculosis""".ipynb](./medicina/%22%D0%A0%D0%B5%D0%B7_%D1%82_val_acc_0_86_VGG19_%D0%B4%D0%BB%D1%8F_%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_tuberculosis%22%22%22.ipynb)
-- [Рез_т_val_acc_0_88696_DenseNet201_для_распознавания_tuberculosis"".ipynb](./medicina/%D0%A0%D0%B5%D0%B7_%D1%82_val_acc_0_88696_DenseNet201_%D0%B4%D0%BB%D1%8F_%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_tuberculosis%22%22.ipynb)
-- [VGG19для_распознавания_tuberculosis".ipynb](./medicina/VGG19%D0%B4%D0%BB%D1%8F_%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_tuberculosis%22.ipynb)
+## Practice: Customize your first GitHub website by writing HTML code
 
-## Root
-- [Создание_простого_веб_сервера_и_настройка_параметров_работы.ipynb](./%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE%D0%B3%D0%BE_%D0%B2%D0%B5%D0%B1_%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0_%D0%B8_%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B.ipynb)
-- [interactive_story.ipynb](./interactive_story.ipynb)
+Want to edit the site you just published? Let’s practice commits by introducing yourself in your `index.html` file. Don’t worry about getting it right the first time—you can always build on your introduction later.
+
+Let’s start with this template:
+
+```
+<p>Hello World! I’m [username]. This is my website!</p>
+```
+
+To add your introduction, copy our template and click the edit pencil icon at the top right hand corner of the `index.html` file.
+
+<img width="997" alt="edit-this-file" src="https://user-images.githubusercontent.com/18093541/63131820-0794d880-bf8d-11e9-8b3d-c096355e9389.png">
+
+
+Delete this placeholder line:
+
+```
+<p>Welcome to your first GitHub Pages website!</p>
+```
+
+Then, paste the template to line 15 and fill in the blanks.
+
+<img width="1032" alt="edit-githuboctocat-index" src="https://user-images.githubusercontent.com/18093541/63132339-c3a2d300-bf8e-11e9-8222-59c2702f6c42.png">
+
+
+When you’re done, scroll down to the `Commit changes` section near the bottom of the edit page. Add a short message explaining your change, like "Add my introduction", then click `Commit changes`.
+
+
+<img width="1030" alt="add-my-username" src="https://user-images.githubusercontent.com/18093541/63131801-efbd5480-bf8c-11e9-9806-89273f027d16.png">
+
+Once you click `Commit changes`, your changes will automatically be published on your GitHub Pages website. Refresh the page to see your new changes live in action.
+
+:tada: You just made your first commit! :tada:
+
+## Extra Credit: Keep on building!
+
+Change the placeholder Octocat gif on your GitHub Pages website by [creating your own personal Octocat emoji](https://myoctocat.com/build-your-octocat/) or [choose a different Octocat gif from our logo library here](https://octodex.github.com/). Add that image to line 12 of your `index.html` file, in place of the `<img src=` link.
+
+Want to add even more code and fun styles to your GitHub Pages website? [Follow these instructions](https://github.com/github/personal-website) to build a fully-fledged static website.
+
+![octocat](./images/create-octocat.png)
+
+## Everything you need to know about GitHub
+
+Getting started is the hardest part. If there’s anything you’d like to know as you get started with GitHub, try searching [GitHub Help](https://help.github.com). Our documentation has tutorials on everything from changing your repository settings to configuring GitHub from your command line.
