@@ -1,0 +1,38 @@
+name: Jupyter Notebook Integrity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.ipynb"
+      - "README.md"
+      - "docs/NEURAL_NETWORK_NOTEBOOKS.md"
+      - "tools/check_notebooks.py"
+      - ".github/workflows/notebook-audit.yml"
+  pull_request:
+    paths:
+      - "**/*.ipynb"
+      - "README.md"
+      - "docs/NEURAL_NETWORK_NOTEBOOKS.md"
+      - "tools/check_notebooks.py"
+      - ".github/workflows/notebook-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate notebook JSON without executing historical files
+        run: python tools/check_notebooks.py
+      - name: Install dependency only for the synthetic example
+        run: python -m pip install "numpy>=1.24,<3"
+      - name: Reproduce the CPU-only MLP with untouched holdout data
+        run: python tools/check_notebooks.py --run-example
