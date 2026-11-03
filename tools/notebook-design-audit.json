@@ -1,0 +1,2607 @@
+{
+  "schema": 1,
+  "notebooks": [
+    {
+      "id": "001",
+      "path": "AudioNet/Сафонов\"Аудио_Распознавание_птиц_по_пению_ipynb\".ipynb",
+      "status": "archive",
+      "originalCells": 43,
+      "styledCells": 57,
+      "codeCells": 37,
+      "codeSha256": "679b56bcea22f6a2ad22b156186c47e7d2768e5892a860433071fd9539e1a1df",
+      "originalCodeSha256": "679b56bcea22f6a2ad22b156186c47e7d2768e5892a860433071fd9539e1a1df",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 1,
+      "preservedMedia": 9,
+      "preservedCellsSha256": "923a593fdcd3f2ab1e8879303204b738fdb69edb99ebb8db1257b68529cd5054",
+      "originalMetadataSha256": "38fc76c91f2ff367dc587f5681ad2d0258671314db7a2547e5bec92f27bfe002",
+      "generatedMarkdownSha256": "be69fd546b7b9099ab665457beb638a6389ac62bf74e79ce42a4a9c0ad01d848",
+      "attachments": [
+        {
+          "name": "ai-path-ml-audio.jpg",
+          "mime": "image/jpeg",
+          "bytes": 194413,
+          "sha256": "b48a227bd64883d8d6817cf60577a54f5e2f3a8b9410f786f503745e17ad6c35",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-001.png",
+          "mime": "image/png",
+          "bytes": 68303,
+          "sha256": "5b6cd73a4a83ef44d5ca57e8229c515d5bcf551d681558db38bdfab9f2f99b28",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "7fdf141068e38771aca7d88d84aa8e9f2405eb27a6db396ed00bafa7f588ef0d",
+      "bytes": 7684540
+    },
+    {
+      "id": "002",
+      "path": "AudioNet/Сафонов_Обработка_сигналов\"\".ipynb",
+      "status": "archive",
+      "originalCells": 35,
+      "styledCells": 49,
+      "codeCells": 23,
+      "codeSha256": "291a55344f7f0ef36758b07f6b06940a45bb3e5d0d76345cb16cb0e8c40a764a",
+      "originalCodeSha256": "291a55344f7f0ef36758b07f6b06940a45bb3e5d0d76345cb16cb0e8c40a764a",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 17,
+      "preservedCellsSha256": "473fa85afd8e1ac54a78300c78d20c97450fa83e6441741f6b1748240376601e",
+      "originalMetadataSha256": "83fd03c4feb60b25eeafb93974194e6c8974d287f22f5c3f4a6ea055ea027bfa",
+      "generatedMarkdownSha256": "50e488a955436cde50163f97509ea97c84600a5d723736e5c20efd4574132d7c",
+      "attachments": [
+        {
+          "name": "ai-path-ml-audio.jpg",
+          "mime": "image/jpeg",
+          "bytes": 194413,
+          "sha256": "b48a227bd64883d8d6817cf60577a54f5e2f3a8b9410f786f503745e17ad6c35",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-002.png",
+          "mime": "image/png",
+          "bytes": 63402,
+          "sha256": "4f69bf7ddbc1a83c9decf2e8d1ff2977a93a5d6cfffd413b2590449b2aff0fe1",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "bab280b2df19d2d65f0473c47bbe895cd77478400336d4045541513c13168940",
+      "bytes": 970183
+    },
+    {
+      "id": "003",
+      "path": "CV/Conv2D_Arguments.ipynb",
+      "status": "archive",
+      "originalCells": 79,
+      "styledCells": 93,
+      "codeCells": 65,
+      "codeSha256": "489ad4fbd8770315a5ff3ccbd68d99c8cb9a8bc5f7c3b02d3651f526ed81aafc",
+      "originalCodeSha256": "489ad4fbd8770315a5ff3ccbd68d99c8cb9a8bc5f7c3b02d3651f526ed81aafc",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 0,
+      "preservedCellsSha256": "f2dccee0ebc582db616d018499e799bd5ae60e780f31feb08d1bdf02e97b66a3",
+      "originalMetadataSha256": "ed0af46ee28d3afcc4ec7583d99d17720803fdb1adbfc83dc142562f9ca4e033",
+      "generatedMarkdownSha256": "2d9f4d6f27a11324d0ce60c611810b620523b176ac08e5c5e9d959b49d45c250",
+      "attachments": [
+        {
+          "name": "ai-path-ml-vision.jpg",
+          "mime": "image/jpeg",
+          "bytes": 206269,
+          "sha256": "977f74e8c5804c122282449ca8ddcdb00ce69dad9e07b37bbe91ad7ed4be367f",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-003.png",
+          "mime": "image/png",
+          "bytes": 64868,
+          "sha256": "4c297371334f7d3fc1066a5ab1573b445967d25dab2036a218425f46d2b07f97",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "eb697eda42e9adc36de65d77c142deaa82cb8e6de9291241e24ec9472c0f2645",
+      "bytes": 473309
+    },
+    {
+      "id": "004",
+      "path": "CV/База_Cifar10_(accuracy=85_)_и_Cifar100((accuracy=56_)).ipynb",
+      "status": "archive",
+      "originalCells": 34,
+      "styledCells": 47,
+      "codeCells": 25,
+      "codeSha256": "630307d77f174e116c721ede168a600dd6bd0deb0d46b053c839cff4cfcddc5f",
+      "originalCodeSha256": "630307d77f174e116c721ede168a600dd6bd0deb0d46b053c839cff4cfcddc5f",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 1,
+      "preservedMedia": 7,
+      "preservedCellsSha256": "dc54d4dee324ed9de5d52edf628090a6f3b31f332b9bfe04363f791ff945b7db",
+      "originalMetadataSha256": "80ea285e67a86fccaf468818f2e10d9abf9bede1f5a892740ce9d79c5f761b8b",
+      "generatedMarkdownSha256": "49e679a58f14dd9ad62ac120af6f0d51cd56e5d951e7db2010446b4d33b31594",
+      "attachments": [
+        {
+          "name": "ai-path-ml-vision.jpg",
+          "mime": "image/jpeg",
+          "bytes": 206269,
+          "sha256": "977f74e8c5804c122282449ca8ddcdb00ce69dad9e07b37bbe91ad7ed4be367f",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-004.png",
+          "mime": "image/png",
+          "bytes": 69966,
+          "sha256": "45b27e060ce522dc791f2dcc40932b21bed8c73d275f10dc9af9b030f4465ae1",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "c89d9dd645a41f8874eb1fe4bcd34a752a65d3fe48a023fd7b1304145ecb9e81",
+      "bytes": 744127
+    },
+    {
+      "id": "005",
+      "path": "CV/Задача_классификация_авто_по_фото_(3_марки_авто)_Результат_точность_77_\".ipynb",
+      "status": "archive",
+      "originalCells": 8,
+      "styledCells": 18,
+      "codeCells": 6,
+      "codeSha256": "7e351d3744fbceb19ded6506753c6a803263f14956e6bc13c6956f043d78d81d",
+      "originalCodeSha256": "7e351d3744fbceb19ded6506753c6a803263f14956e6bc13c6956f043d78d81d",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 2,
+      "preservedCellsSha256": "f7be5e4bfa1a7dee7d649d3dacab038454730e084545142d85f2681e62b4e367",
+      "originalMetadataSha256": "38ea74d72b7a46ef3d686276570a5338b5d6fd12efa31bf9678f5e732126948f",
+      "generatedMarkdownSha256": "76e50fa9a5f093f8b686ce141d652d10b61a79fbb7eead20afaa3eff575ae9d0",
+      "attachments": [
+        {
+          "name": "ai-path-ml-vision.jpg",
+          "mime": "image/jpeg",
+          "bytes": 206269,
+          "sha256": "977f74e8c5804c122282449ca8ddcdb00ce69dad9e07b37bbe91ad7ed4be367f",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-005.png",
+          "mime": "image/png",
+          "bytes": 63395,
+          "sha256": "6aa772a39c43f8ace28265a8152bc62842cde07c1d28235325e79519ade1e263",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "682ae62fde554e434fb0b3c4cd25784bdfc721eecb7f8a3aa8a06b8f31eba300",
+      "bytes": 503713
+    },
+    {
+      "id": "006",
+      "path": "CV/Распознавание_изображений_из_набора_данных_MNIST,_с_помощью_свёрточных_нейронных_сетей.ipynb",
+      "status": "archive",
+      "originalCells": 19,
+      "styledCells": 31,
+      "codeCells": 13,
+      "codeSha256": "2690e85bb0f18f166d4120721813d7041c4c25454f4c88169a644c4567c04054",
+      "originalCodeSha256": "2690e85bb0f18f166d4120721813d7041c4c25454f4c88169a644c4567c04054",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 3,
+      "preservedCellsSha256": "bfa01c9834199e2782e574d3762d6166170e188c8884c9d8b04a08a6af95c64c",
+      "originalMetadataSha256": "f193b7698a7ace8f7e20a771b42cf396bad090f054cb32a3cf289af1b8776586",
+      "generatedMarkdownSha256": "6864671f6c04579b1a7ac6fd621a9bae480cf3529ac100732c85441050598164",
+      "attachments": [
+        {
+          "name": "ai-path-ml-vision.jpg",
+          "mime": "image/jpeg",
+          "bytes": 206269,
+          "sha256": "977f74e8c5804c122282449ca8ddcdb00ce69dad9e07b37bbe91ad7ed4be367f",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-006.png",
+          "mime": "image/png",
+          "bytes": 63572,
+          "sha256": "94897d8e097fc3a27de7feddbdccf8212e7c8da155ca6039a5339ec852e8908f",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "14f689d3e9f0d45c22e8e64ad2b5ba133c22a1902933cda0b5daf446fb0b58a1",
+      "bytes": 460817
+    },
+    {
+      "id": "007",
+      "path": "CV/Сафонов\"objects_detection_ssdlite_mobilenet_v2_ipynb\".ipynb",
+      "status": "archive",
+      "originalCells": 36,
+      "styledCells": 49,
+      "codeCells": 21,
+      "codeSha256": "80ffd6a4a83088a5298d92134ebb29df478951d366c4122ca4e9c337e6ddf347",
+      "originalCodeSha256": "80ffd6a4a83088a5298d92134ebb29df478951d366c4122ca4e9c337e6ddf347",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 14,
+      "preservedCellsSha256": "95e45d93ba2a036bf7d40383ed6c07fb954f15491fc385bfd499d4eca1d8d26f",
+      "originalMetadataSha256": "4cab3c473426fecb0ddb1a89f6f4f892fe13a4ff65d8af1d52d271f1fc372fb9",
+      "generatedMarkdownSha256": "ec55151820d10712e68053fa079025bd969b145bc1302ca3efa3a88baa1f7eab",
+      "attachments": [
+        {
+          "name": "ai-path-ml-vision.jpg",
+          "mime": "image/jpeg",
+          "bytes": 206269,
+          "sha256": "977f74e8c5804c122282449ca8ddcdb00ce69dad9e07b37bbe91ad7ed4be367f",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-007.png",
+          "mime": "image/png",
+          "bytes": 67032,
+          "sha256": "f6533b389f45d2326d50e1b71cd6efc5f9c2ae8527cfd0800bd0bf91c2dd8260",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "a3e91e0344ece275b900ba4b65ff156ca276baef150610938537604f209880d0",
+      "bytes": 4080897
+    },
+    {
+      "id": "008",
+      "path": "CV/Сафонов_\"rock_paper_scissors_cnn_ipynb\".ipynb",
+      "status": "archive",
+      "originalCells": 65,
+      "styledCells": 79,
+      "codeCells": 45,
+      "codeSha256": "9a3a7d5161779bf95560da0fbfdacf773c7695611bd1a3fd5dd95acbd818328e",
+      "originalCodeSha256": "9a3a7d5161779bf95560da0fbfdacf773c7695611bd1a3fd5dd95acbd818328e",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 13,
+      "preservedCellsSha256": "1f0583b26840ccce7b700a095af59b4b2d56d0f8f7fe33f410d97a794830c30e",
+      "originalMetadataSha256": "b29eb91b57dff1e2b1b2df5b9c685e26fc3c1bd1b6f456f7bd735a467cb8986b",
+      "generatedMarkdownSha256": "937cf6f74147e33c0e57bd33380d77aec6f6798ae100a48578661642cffb13d4",
+      "attachments": [
+        {
+          "name": "ai-path-ml-vision.jpg",
+          "mime": "image/jpeg",
+          "bytes": 206269,
+          "sha256": "977f74e8c5804c122282449ca8ddcdb00ce69dad9e07b37bbe91ad7ed4be367f",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-008.png",
+          "mime": "image/png",
+          "bytes": 65636,
+          "sha256": "031b7471d9f1f7dcdde35bb5defac22efaa0e9e84dbaccf2817a72682e6565de",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "d9db2fc96e956501f0db5f7241a2feeb2c017c09f4fe642d4d81fdbb67d44059",
+      "bytes": 2139201
+    },
+    {
+      "id": "009",
+      "path": "CV/Сафонов_Домашнее_задание_№3\"_Лучшая_точность_для_сегментации_Стройки_val_точность_60_95_.ipynb",
+      "status": "archive",
+      "originalCells": 16,
+      "styledCells": 27,
+      "codeCells": 10,
+      "codeSha256": "219361514f957c824597cb3c58bdfacbb027022ae0567dcd13481c5f3344b5d7",
+      "originalCodeSha256": "219361514f957c824597cb3c58bdfacbb027022ae0567dcd13481c5f3344b5d7",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 1,
+      "preservedMedia": 6,
+      "preservedCellsSha256": "ed3ff0fa81911e7f0d7f0a3988a6ba44a60a0a329f86529fb1086a20639d3b9e",
+      "originalMetadataSha256": "4d1c5d9969d0ebfda40402e2e0ee9c271790259cf15cb4d0cb3ae7f428933ec5",
+      "generatedMarkdownSha256": "c6db55e741ce8827c91078f7762c63a028ffbf8e2a4483eedd988e9305129710",
+      "attachments": [
+        {
+          "name": "ai-path-ml-vision.jpg",
+          "mime": "image/jpeg",
+          "bytes": 206269,
+          "sha256": "977f74e8c5804c122282449ca8ddcdb00ce69dad9e07b37bbe91ad7ed4be367f",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-009.png",
+          "mime": "image/png",
+          "bytes": 64968,
+          "sha256": "78bceb27a5f896b6e4a25c90ae26a53c1a3b32c44ebde4735db6ecc5890bda47",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "09e96f6b51cc4a298960724f811d6e17e857d105b37ef1c16930a9522f30e710",
+      "bytes": 2290906
+    },
+    {
+      "id": "010",
+      "path": "Classification/Light_Обучающая_Тестовая_\"Сафонов_А_А_MNIST_цифры_.ipynb",
+      "status": "archive",
+      "originalCells": 35,
+      "styledCells": 49,
+      "codeCells": 14,
+      "codeSha256": "02117b8d55e2a95c65c53cba7eff2af51fe3eee697ad542746b7715220f2da8c",
+      "originalCodeSha256": "02117b8d55e2a95c65c53cba7eff2af51fe3eee697ad542746b7715220f2da8c",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 8,
+      "preservedMedia": 16,
+      "preservedCellsSha256": "fcbdbf067824fff32b7190826b9e0ae29d51f94131b07bfbd6d7a24c4b7bdba9",
+      "originalMetadataSha256": "37c3f8a5791cd6cc7828053498f59ea8a7042100242d2ffa494ba2caabbcc3aa",
+      "generatedMarkdownSha256": "560fb0c9dcd6d18b1d43ea6636c496a71768a555042c86998234db667a60c09b",
+      "attachments": [
+        {
+          "name": "ai-path-ml.jpg",
+          "mime": "image/jpeg",
+          "bytes": 189864,
+          "sha256": "caf617c88c964f6e47e8701e124b17046f8d55580f72dba1926b31c812001190",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-010.png",
+          "mime": "image/png",
+          "bytes": 75276,
+          "sha256": "878e9a0adea9c62e4c550faf0fe0270bddb8a1116fcee9f9933b228215c0145b",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "f0c53caf8e359b9ded81e3e7a4cde474c431ff28ce7bfc82be31639821072e5d",
+      "bytes": 901107
+    },
+    {
+      "id": "011",
+      "path": "Classification/Pro_Сафонов_Цель_=_90_точности_база_МИНЫ_на_тестовой_выбоке.ipynb",
+      "status": "archive",
+      "originalCells": 16,
+      "styledCells": 28,
+      "codeCells": 8,
+      "codeSha256": "04f794ea3f7a7fa750ae75ad14b0758330b551bbc3abbb4af1c9d91adf69c304",
+      "originalCodeSha256": "04f794ea3f7a7fa750ae75ad14b0758330b551bbc3abbb4af1c9d91adf69c304",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 1,
+      "preservedMedia": 4,
+      "preservedCellsSha256": "11b80a7fe52bd95a1f1466984ca18b7021f5507786f91a001ade637955fc904c",
+      "originalMetadataSha256": "241da4ae4342e98e7c198c8cb05078f44283e1efc60073b1e557e1a4e4142400",
+      "generatedMarkdownSha256": "380dc6a8d411fb982685c49d74ba1e168fb3bd5c5777a99dfeb5e6fdd740830f",
+      "attachments": [
+        {
+          "name": "ai-path-ml.jpg",
+          "mime": "image/jpeg",
+          "bytes": 189864,
+          "sha256": "caf617c88c964f6e47e8701e124b17046f8d55580f72dba1926b31c812001190",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-011.png",
+          "mime": "image/png",
+          "bytes": 62134,
+          "sha256": "801563bd46eaeda3e17323ebed99d47c536e042120c16d1c79d58be96b4ae377",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "7d59fc325d2061500eb7e663a0c0fb0a9a95fcbaa204664ab501783e79108ace",
+      "bytes": 477318
+    },
+    {
+      "id": "012",
+      "path": "Classification/Сафонов_Домашнее_задание_№2\".ipynb",
+      "status": "archive",
+      "originalCells": 42,
+      "styledCells": 56,
+      "codeCells": 34,
+      "codeSha256": "1dcc27ef3355dd9cf4e957c75d58ab8719dcc5d736c798cd281a4d6056364af4",
+      "originalCodeSha256": "1dcc27ef3355dd9cf4e957c75d58ab8719dcc5d736c798cd281a4d6056364af4",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 14,
+      "preservedCellsSha256": "ae3f597aa03f609578a16d7fa3aef659fa719bf292aa7294d2fa10dd95882241",
+      "originalMetadataSha256": "f2af061810203742b31bae6ed9a0d892a9d1b2ba981d0c5e748665375f0704f7",
+      "generatedMarkdownSha256": "0ceba5ac326f23552c1884dc72f8beff76ad9dd00ae2db28b3ac843c875ce715",
+      "attachments": [
+        {
+          "name": "ai-path-ml.jpg",
+          "mime": "image/jpeg",
+          "bytes": 189864,
+          "sha256": "caf617c88c964f6e47e8701e124b17046f8d55580f72dba1926b31c812001190",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-012.png",
+          "mime": "image/png",
+          "bytes": 69225,
+          "sha256": "56e397a269051248d990faa499b8d8cac6d6c8a928561adbd240eb82c4843d84",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "a8afc6050672831280eda0e39e6da9f675e8d46e90ad1a81526d17a65966b92d",
+      "bytes": 983207
+    },
+    {
+      "id": "013",
+      "path": "Genetica/САфонов_генетика\".ipynb",
+      "status": "archive",
+      "originalCells": 11,
+      "styledCells": 22,
+      "codeCells": 10,
+      "codeSha256": "bd725bb838de22043ba7b150ee4ec802855d2b555b254b08075211dad8db733d",
+      "originalCodeSha256": "bd725bb838de22043ba7b150ee4ec802855d2b555b254b08075211dad8db733d",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 5,
+      "preservedCellsSha256": "a2d89f91ca1aca2d9c627cff4b1f25ceebbc4ffe2181d2bf6c25dfa8ae6a2dd1",
+      "originalMetadataSha256": "44b433092b7749d9f56212ccf7a3a9fd8b441c76c28881f0601101e4ac867b63",
+      "generatedMarkdownSha256": "b29ce239aff5b2f52354fed94a8032b5b863c9e97936853548f26e73e39a091d",
+      "attachments": [
+        {
+          "name": "ai-path-ml-tuning.jpg",
+          "mime": "image/jpeg",
+          "bytes": 185183,
+          "sha256": "537fd4a58c5db30072931d9efad91bfdba4046d7f24a8bce3c64ed3812548d90",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-013.png",
+          "mime": "image/png",
+          "bytes": 63452,
+          "sha256": "8e5b26ad032786eb33b36f1664e0da690b9dc2ac64097d8695884bb2d925a0f0",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "047dc65c836d331ce302223c9d01d011a83896bf3d5bde81dea155f68fbc1ce0",
+      "bytes": 615715
+    },
+    {
+      "id": "014",
+      "path": "Linux/colab_linux.ipynb",
+      "status": "archive",
+      "originalCells": 77,
+      "styledCells": 91,
+      "codeCells": 36,
+      "codeSha256": "02325c7c6b657148c52b80c761b93e801c714e6a4290b7d87b5749fc4622ec9b",
+      "originalCodeSha256": "02325c7c6b657148c52b80c761b93e801c714e6a4290b7d87b5749fc4622ec9b",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 1,
+      "preservedMedia": 2,
+      "preservedCellsSha256": "829012bc4049e26db8dc8e57734dba701875bea52ef4d3380330d7d76199629e",
+      "originalMetadataSha256": "b59287e52d7f652249b1b95fe2c123ca11443f2c52a77d0dd1c6e3a83e7d52fd",
+      "generatedMarkdownSha256": "70a92b0adb7275c32061649101dae2025cf27e2e3c9f50212a9c7e78ad392bc7",
+      "attachments": [
+        {
+          "name": "ai-path-ml-python.jpg",
+          "mime": "image/jpeg",
+          "bytes": 162946,
+          "sha256": "fcd9a514a8fe2eb53e8420b95430c263038c6be2f2a3f972d0380bde9d78240e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-014.png",
+          "mime": "image/png",
+          "bytes": 63177,
+          "sha256": "e8ee812dab8451aaaefd2fcc204f3e7e4302ee88859d6d52750749f5b40ccb58",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "287670556deeb8b4cca8e0c4f28adaf19f31840fc2a0ed08231f54d7906e3f22",
+      "bytes": 440448
+    },
+    {
+      "id": "015",
+      "path": "Linux/Работа_с_Linux_кодамндами_в_Colab.ipynb",
+      "status": "archive",
+      "originalCells": 77,
+      "styledCells": 91,
+      "codeCells": 36,
+      "codeSha256": "3fec96d624c66eb575d0a3ec4016d849e0f7e579ea69a07d9a06325a18f03158",
+      "originalCodeSha256": "3fec96d624c66eb575d0a3ec4016d849e0f7e579ea69a07d9a06325a18f03158",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 1,
+      "preservedMedia": 1,
+      "preservedCellsSha256": "f3986a679f49d287e3ae08094be89b3ca2cf2b29dffb325dd4c078623c95d3cb",
+      "originalMetadataSha256": "23a54ef66a902361736316983a7e013f84fc71e87d99e9ed029e5646e37496d6",
+      "generatedMarkdownSha256": "fd7cb5801844461e917fc94462b64ce374db9f1c7f936540dd4171461ec3eef2",
+      "attachments": [
+        {
+          "name": "ai-path-ml-python.jpg",
+          "mime": "image/jpeg",
+          "bytes": 162946,
+          "sha256": "fcd9a514a8fe2eb53e8420b95430c263038c6be2f2a3f972d0380bde9d78240e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-015.png",
+          "mime": "image/png",
+          "bytes": 63657,
+          "sha256": "2045500945e14fa994107656920ee509b7fec2e03d14eec0e5f6c19592a579e6",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "7a3facda7137b262e908dac6d12bb917a12b94a2f8956b04876b5369e8e62238",
+      "bytes": 447213
+    },
+    {
+      "id": "016",
+      "path": "Linux/Работа_с_Linux_командами_в_Colab.ipynb",
+      "status": "archive",
+      "originalCells": 90,
+      "styledCells": 104,
+      "codeCells": 41,
+      "codeSha256": "e77b2e6c89ab42a5348935eeed89ce491b5e659fdc4201e6c0816afe536bd755",
+      "originalCodeSha256": "e77b2e6c89ab42a5348935eeed89ce491b5e659fdc4201e6c0816afe536bd755",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 1,
+      "preservedMedia": 1,
+      "preservedCellsSha256": "2bafd83280732f0765ec9cb463f33631f40c7acfc0eebc533a8787ccac9f4afb",
+      "originalMetadataSha256": "d996f41d2a73406d7f340a502bed4e3272624b0967c5ce92bcab6328a7d78e67",
+      "generatedMarkdownSha256": "954d16e92ed72b1da5f8b07c440bed5683e194e4cd6513b4449627603e472c6d",
+      "attachments": [
+        {
+          "name": "ai-path-ml-python.jpg",
+          "mime": "image/jpeg",
+          "bytes": 162946,
+          "sha256": "fcd9a514a8fe2eb53e8420b95430c263038c6be2f2a3f972d0380bde9d78240e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-016.png",
+          "mime": "image/png",
+          "bytes": 62749,
+          "sha256": "432ed858cf5dad2f5b88c5b42b47203ada11fcc3d8cffa00f99eb56de953f47e",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "dc5be550f3fbfbdea2bc1acb33b90f8a38eede3bddeec8d43a99b6405b58c943",
+      "bytes": 459860
+    },
+    {
+      "id": "017",
+      "path": "LoadData/Импорт_и_экспорт_данных_через_Google_Colab.ipynb",
+      "status": "archive",
+      "originalCells": 28,
+      "styledCells": 40,
+      "codeCells": 14,
+      "codeSha256": "474b16714e513bccd6452e3afc2d1e045cc375f7bcd7c2e3b34d9f5333bd9019",
+      "originalCodeSha256": "474b16714e513bccd6452e3afc2d1e045cc375f7bcd7c2e3b34d9f5333bd9019",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 3,
+      "preservedCellsSha256": "62006bef95eed64c02e9fc8e0d2aa1cbea0b09d619e3d4c210213f24e24b83c1",
+      "originalMetadataSha256": "b6120f4096a6b1729f776bdd5a6adaf789456becf106be21d9e987a8629c9972",
+      "generatedMarkdownSha256": "1edae47bddf4d176fcc1e98ea13ba58ec90965d4a11143b0649a2ceb6df9b3e2",
+      "attachments": [
+        {
+          "name": "ai-path-ml-python.jpg",
+          "mime": "image/jpeg",
+          "bytes": 162946,
+          "sha256": "fcd9a514a8fe2eb53e8420b95430c263038c6be2f2a3f972d0380bde9d78240e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-017.png",
+          "mime": "image/png",
+          "bytes": 70985,
+          "sha256": "4716c669cdc04cf70f5bfc451cf08d558be46db231f2e847def0db03ffa1b9d1",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "f4bb00f5739a06905dd666c847eaca5bafcedd1e80e01f3fb62b2bcfc562dd75",
+      "bytes": 437654
+    },
+    {
+      "id": "018",
+      "path": "ML/reproducible_mlp_xor_numpy.ipynb",
+      "status": "starter",
+      "originalCells": 9,
+      "styledCells": 20,
+      "codeCells": 4,
+      "codeSha256": "2258ac966c7e8e43e263ab41b5d355f3840c67316e15803cbe741d6125deba4e",
+      "originalCodeSha256": "2258ac966c7e8e43e263ab41b5d355f3840c67316e15803cbe741d6125deba4e",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 0,
+      "preservedCellsSha256": "b32101927f6b4465bceac6387aeb160da92d146ab591eb5e0053655888fba388",
+      "originalMetadataSha256": "803e60e80449892eed4130eaa03862cfd69d5161c9395e482a0226d6aa6dd17c",
+      "generatedMarkdownSha256": "9aa79ec0cb3d484804c8b62931942da6e1746da92d433f21260b8584631c9f03",
+      "attachments": [
+        {
+          "name": "ai-path-ml.jpg",
+          "mime": "image/jpeg",
+          "bytes": 189864,
+          "sha256": "caf617c88c964f6e47e8701e124b17046f8d55580f72dba1926b31c812001190",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-018.png",
+          "mime": "image/png",
+          "bytes": 68216,
+          "sha256": "92da627e392b76e20d6dbe0fb67c92d8b56d439afe47f6aecdda2d7e898cedb6",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "168c3ea0a6c199167137cd90d903950a63c979fbd8e870e4092fb99a15a8a93f",
+      "bytes": 367384
+    },
+    {
+      "id": "019",
+      "path": "ML/Сафонов_А_А_ML_Анализ_HH_ru_резюме_и_ЦИАН_анализ_стоимости_квартир.ipynb",
+      "status": "archive",
+      "originalCells": 113,
+      "styledCells": 127,
+      "codeCells": 81,
+      "codeSha256": "18d4106d172bc03a789b0d08dcbd7426b2a2011fbfc96c76ae88c40fba0b60e7",
+      "originalCodeSha256": "18d4106d172bc03a789b0d08dcbd7426b2a2011fbfc96c76ae88c40fba0b60e7",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 1,
+      "preservedMedia": 43,
+      "preservedCellsSha256": "04b45ae48d13deaae2fddc9c74b4f62b309e52a38b88661047ed620669067517",
+      "originalMetadataSha256": "9d8d0c77b92c7c1353f68aa80286c69cbc0404c05acd8a0d05cd3ce5422c188e",
+      "generatedMarkdownSha256": "88536bc7664d8f71a491f95cb0bd397b74b1f122fb167422d2ee5a380b2ce75a",
+      "attachments": [
+        {
+          "name": "ai-path-ml-data.jpg",
+          "mime": "image/jpeg",
+          "bytes": 165145,
+          "sha256": "d91648b3d242e458e728143efeff9b4e487717c1c19704e252b7d3db44643c9b",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-019.png",
+          "mime": "image/png",
+          "bytes": 69045,
+          "sha256": "29abe9edc0ecca7edc2ca863791a54b546fff8a6efa349f7b00dcaa5f4013349",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "63e95deea1e049624e9c1989e85921852942f9b5afa1cfeab28bddacf4df2c16",
+      "bytes": 1539519
+    },
+    {
+      "id": "020",
+      "path": "ML/Сафонов_А_А_Теория_вероятности_2\"\".ipynb",
+      "status": "archive",
+      "originalCells": 28,
+      "styledCells": 42,
+      "codeCells": 16,
+      "codeSha256": "1b7a630ab64d9737a73f619f64c37b66870a3517c4609749b6aca6017925a781",
+      "originalCodeSha256": "1b7a630ab64d9737a73f619f64c37b66870a3517c4609749b6aca6017925a781",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 4,
+      "preservedCellsSha256": "2e418229655a20a67cb6150680e2a0e0cd0a1a7bd49eda343a966154e695595f",
+      "originalMetadataSha256": "d31959da5585632e0238063fee865f64bf1e10c9c40cdbb4ccb38f10ff1460ab",
+      "generatedMarkdownSha256": "6ceb7e604b1d07690f29b6fa8a370fa0c2065dcc87c758d7bdb83b5422b5a5bf",
+      "attachments": [
+        {
+          "name": "ai-path-ml-data.jpg",
+          "mime": "image/jpeg",
+          "bytes": 165145,
+          "sha256": "d91648b3d242e458e728143efeff9b4e487717c1c19704e252b7d3db44643c9b",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-020.png",
+          "mime": "image/png",
+          "bytes": 63554,
+          "sha256": "812fca22a5888865db5ad86e0a3ecf7d279a0b90882ab9e732851d9f707f6cf6",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "ea1d95d0e494dc80eb5de1156805d3fe3ef27c5f6611ba6d2999d56b0f940be7",
+      "bytes": 494625
+    },
+    {
+      "id": "021",
+      "path": "ML/Сафонов_А_А_Теория_вероятности_и_статистика_1\".ipynb",
+      "status": "archive",
+      "originalCells": 36,
+      "styledCells": 50,
+      "codeCells": 20,
+      "codeSha256": "c5ce94040376f06cf205aca2ccb1d68d8d4c032a153f0bf90f37a92631b16391",
+      "originalCodeSha256": "c5ce94040376f06cf205aca2ccb1d68d8d4c032a153f0bf90f37a92631b16391",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 0,
+      "preservedCellsSha256": "1e3944ebe6d0a16ce9a6ab9265186287a557be43491f8dda6ba29177915d8f41",
+      "originalMetadataSha256": "edb37ba9c814ec4be08cf87a161f8e513a1343ea0970be8d7a6d01c35a6c3d3e",
+      "generatedMarkdownSha256": "0b4134f8c868e8752bbced8c17a155eff14860ae27b98fcb59a7a09e89ec8b95",
+      "attachments": [
+        {
+          "name": "ai-path-ml-data.jpg",
+          "mime": "image/jpeg",
+          "bytes": 165145,
+          "sha256": "d91648b3d242e458e728143efeff9b4e487717c1c19704e252b7d3db44643c9b",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-021.png",
+          "mime": "image/png",
+          "bytes": 65614,
+          "sha256": "5cca9aafd7ccaa1d9822b624c531efcf41f4df12c6549220502ef4f300478aa4",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "f3c26a046319c08bdd4489586db27b65d0656c5b2cfd84a479f0dbe7b8677a73",
+      "bytes": 365089
+    },
+    {
+      "id": "022",
+      "path": "Matplotlib/matplotlib.ipynb",
+      "status": "archive",
+      "originalCells": 9,
+      "styledCells": 20,
+      "codeCells": 8,
+      "codeSha256": "75de689f1d9a6eca6fb140b071319a068b898ff31090f9a8ce359cf6a091cb42",
+      "originalCodeSha256": "75de689f1d9a6eca6fb140b071319a068b898ff31090f9a8ce359cf6a091cb42",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 5,
+      "preservedCellsSha256": "9a11426cab35036a7461a759e2b89eab6dd04666f06414047f41586e32d7a626",
+      "originalMetadataSha256": "69aafdf6573fea73b6e96d54885d614e37e86c0926926c20d07a4db59a4c48e1",
+      "generatedMarkdownSha256": "64d85d58c951b51dc3bb4f945ceb1589010522b6faa8012b85be1e8a64d42af1",
+      "attachments": [
+        {
+          "name": "ai-path-ml-python.jpg",
+          "mime": "image/jpeg",
+          "bytes": 162946,
+          "sha256": "fcd9a514a8fe2eb53e8420b95430c263038c6be2f2a3f972d0380bde9d78240e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-022.png",
+          "mime": "image/png",
+          "bytes": 63179,
+          "sha256": "411268565f75ab316df097b67ed53ca06f795e30c6970869aa15794d6980ceb0",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "7d45cc1ca58e32101ec4ad6d8ddaafbab3b97c164b713584281a51ec82aa0db4",
+      "bytes": 412640
+    },
+    {
+      "id": "023",
+      "path": "Matplotlib/Сафонов_Апрельский_курс_2020_Light_Python_Домашнее_задание_5.ipynb",
+      "status": "archive",
+      "originalCells": 43,
+      "styledCells": 55,
+      "codeCells": 24,
+      "codeSha256": "c1d330ed733e5dcbf42f22af86845de23dca5bd95f0978fb3d6518a24213e192",
+      "originalCodeSha256": "c1d330ed733e5dcbf42f22af86845de23dca5bd95f0978fb3d6518a24213e192",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 20,
+      "preservedCellsSha256": "553b271d495efea25842265fc3116a50b4f07f2b6e42166b4dc8ac3f5c10d1bb",
+      "originalMetadataSha256": "9d8a9525213810fd5722bcac777b644d8de18412d271ea06be2f28c68e5635ef",
+      "generatedMarkdownSha256": "f58b462e4b4103bd0fb4dcfa5bdff470bf0190db48b0d8c43fccccfdc140f075",
+      "attachments": [
+        {
+          "name": "ai-path-ml-python.jpg",
+          "mime": "image/jpeg",
+          "bytes": 162946,
+          "sha256": "fcd9a514a8fe2eb53e8420b95430c263038c6be2f2a3f972d0380bde9d78240e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-023.png",
+          "mime": "image/png",
+          "bytes": 71988,
+          "sha256": "348a88c3235efe06cb492e8d7f81afd15f55187bddc5c5ed14dc6e9da325f029",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "e0fa64e9d8a4ac24b60303fa7d8f1e01282af6fa5910d47f1e6e25d5d52c2167",
+      "bytes": 1293724
+    },
+    {
+      "id": "024",
+      "path": "MatrixAndFunctions/Сафонов_А_А_Матрицы_и_функции\".ipynb",
+      "status": "archive",
+      "originalCells": 32,
+      "styledCells": 44,
+      "codeCells": 19,
+      "codeSha256": "ddb56a6e3232d2cc1595c7f2dab6f457a8340ee7d2b29a9406f694455656e543",
+      "originalCodeSha256": "ddb56a6e3232d2cc1595c7f2dab6f457a8340ee7d2b29a9406f694455656e543",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 5,
+      "preservedCellsSha256": "a2bb353614188b10ca384399e2e43a88bd1f6a5f7f744ed5d0c343a37dbf64f5",
+      "originalMetadataSha256": "1d165e78d6915c42fb458efe414410cd6a9e07022c11f25fcdc4ef020a9b1714",
+      "generatedMarkdownSha256": "4fb146af4d6e0c58f4016ae99dbe16ffa7472e16a4a85cede88ffc241776e12d",
+      "attachments": [
+        {
+          "name": "ai-path-ml-python.jpg",
+          "mime": "image/jpeg",
+          "bytes": 162946,
+          "sha256": "fcd9a514a8fe2eb53e8420b95430c263038c6be2f2a3f972d0380bde9d78240e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-024.png",
+          "mime": "image/png",
+          "bytes": 65448,
+          "sha256": "351a0a387ec28cd115683f6c8d320dd5e923b54fe409ffb5619584d338ab4d8c",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "d7bbb122525da1e1c2428001abaf7a2bf691287ddd3810945e60cff9093275ec",
+      "bytes": 552869
+    },
+    {
+      "id": "025",
+      "path": "NLP/NLP_SafonovAlex_DenseRNN_,Conv1d,LSTM,_GRU_для_обработки_текстов\".ipynb",
+      "status": "archive",
+      "originalCells": 63,
+      "styledCells": 77,
+      "codeCells": 32,
+      "codeSha256": "cf58d3847bcb3cc3ba842acee79c67e3edf5981ed2769464210b230fae35ed21",
+      "originalCodeSha256": "cf58d3847bcb3cc3ba842acee79c67e3edf5981ed2769464210b230fae35ed21",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 1,
+      "preservedMedia": 9,
+      "preservedCellsSha256": "5ec269ec7ebd3483ffaec51fd0f4999e4bad52e8e0a443c22adc947e3ee8f955",
+      "originalMetadataSha256": "ed89916027ee92e0ea8fd5761fc3756057c613872fa3b56cea44b31ac3542336",
+      "generatedMarkdownSha256": "d5c44b746728ad68fcc358674aa2bd8e99b3f731fb94dd12255cad8fb3e94c85",
+      "attachments": [
+        {
+          "name": "ai-path-ml-text.jpg",
+          "mime": "image/jpeg",
+          "bytes": 187508,
+          "sha256": "b2d8135d15dcbaf517a00908d0be1fceafcf513db0cd9581e44bcb8f106835f2",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-025.png",
+          "mime": "image/png",
+          "bytes": 67008,
+          "sha256": "10e7d914d2e300a2c55b32299cfbfec940547e0fda5df3a800791130e692f1cc",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "827f5ca715e6f5108a0b84939e2d1ef7129d0ff4737deef82963d84f748b1248",
+      "bytes": 660873
+    },
+    {
+      "id": "026",
+      "path": "NLP/NLP_Анализ_тональности_Решение_через_Conv1d_(accuracy_0_8533).ipynb",
+      "status": "archive",
+      "originalCells": 19,
+      "styledCells": 31,
+      "codeCells": 12,
+      "codeSha256": "62d8af6060c6180479ea8bc4fd421c8a9dcf2ee70e85a22f6c391be7e7a973f7",
+      "originalCodeSha256": "62d8af6060c6180479ea8bc4fd421c8a9dcf2ee70e85a22f6c391be7e7a973f7",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 1,
+      "preservedCellsSha256": "62a7d0b7eae6d120b7cb6cf83569d2d64bcc58f3a492ffe348b9ae2983286445",
+      "originalMetadataSha256": "fbfe65fc4a10d97d14c874e79ef520fe61ed07a52f663ea3220ab6f7c435eaf1",
+      "generatedMarkdownSha256": "66b2d3a51ad2e850fb7e5c8e9c1ded0eaa12b3d58a9afbfc1f402f068e92759d",
+      "attachments": [
+        {
+          "name": "ai-path-ml-text.jpg",
+          "mime": "image/jpeg",
+          "bytes": 187508,
+          "sha256": "b2d8135d15dcbaf517a00908d0be1fceafcf513db0cd9581e44bcb8f106835f2",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-026.png",
+          "mime": "image/png",
+          "bytes": 65276,
+          "sha256": "8ea275647e0fe3c62bd56ffc36de2c1a78a9bfb272a6fa96249b13ed3079ca27",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "0bb530faf6f1e62dc4c1134f2f37eadb994a495fc3a912ee829208f19c498153",
+      "bytes": 390869
+    },
+    {
+      "id": "027",
+      "path": "NLP/NLP_Анализ_тональности_Решение_через_Embedding_+_GRU(accuracy_0_83).ipynb",
+      "status": "archive",
+      "originalCells": 18,
+      "styledCells": 30,
+      "codeCells": 11,
+      "codeSha256": "e386dc66baeded76bc3857df8e4f47afd76c20e5e36597161cd93be34872e019",
+      "originalCodeSha256": "e386dc66baeded76bc3857df8e4f47afd76c20e5e36597161cd93be34872e019",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 1,
+      "preservedCellsSha256": "228133bcc709a8a025ae7fad967fd64514ceb8031239755fd46931c88ce0e3d3",
+      "originalMetadataSha256": "c9390a0084b33f72c3f4b2f58ae54ab6262e01b6ff2ed6737cbd35ae59dffe4e",
+      "generatedMarkdownSha256": "093b9ce8f30c2ce541958e8bd37f864334f52c9f38165e96f6232abab4837d65",
+      "attachments": [
+        {
+          "name": "ai-path-ml-text.jpg",
+          "mime": "image/jpeg",
+          "bytes": 187508,
+          "sha256": "b2d8135d15dcbaf517a00908d0be1fceafcf513db0cd9581e44bcb8f106835f2",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-027.png",
+          "mime": "image/png",
+          "bytes": 68506,
+          "sha256": "f215097f82e6e52f7448c965b65f5592ba7850bd915d97596b5087f15d147b77",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "c4c747478023c787f33669a1a5d065a10e7296a21288f9eb06803d5a87c4063a",
+      "bytes": 397650
+    },
+    {
+      "id": "028",
+      "path": "NLP/NLP_Анализ_тональности_Решение_через_Embedding_+_LSTM(accuracy_0_86).ipynb",
+      "status": "archive",
+      "originalCells": 18,
+      "styledCells": 30,
+      "codeCells": 11,
+      "codeSha256": "5ae63a4c44f0d3e7c52e1cbdd85b8ba0950af9dc14fb7ebcedfbabdc6d586271",
+      "originalCodeSha256": "5ae63a4c44f0d3e7c52e1cbdd85b8ba0950af9dc14fb7ebcedfbabdc6d586271",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 1,
+      "preservedCellsSha256": "8379f1daf87bfa3b9bfb3e60725faa4bc6c22ec7c5bb5e88e5ed354ca11b5e5f",
+      "originalMetadataSha256": "77aa72ad2496f3bd1d8c40c737376117de8aa28d7006013e03854e433e425548",
+      "generatedMarkdownSha256": "9962d7aebc86beccfb0e8fe7b3186126a1777d213d56406d3c050185b4e8baa0",
+      "attachments": [
+        {
+          "name": "ai-path-ml-text.jpg",
+          "mime": "image/jpeg",
+          "bytes": 187508,
+          "sha256": "b2d8135d15dcbaf517a00908d0be1fceafcf513db0cd9581e44bcb8f106835f2",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-028.png",
+          "mime": "image/png",
+          "bytes": 63400,
+          "sha256": "65bbde1c46a6c0dd0ebfd2fea0e0f4759c76713a259c88d480016488e90275d5",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "e4ed14d7622e919c2954e28465ab1552e647624cd79ae5cd0d8f74d7a25ad048",
+      "bytes": 389230
+    },
+    {
+      "id": "029",
+      "path": "NLP/NLP_Анализ_тональности_Решение_через_Embedding_+_RNN_(accuracy_0_58)_\"dl_nlp_imdb_simple_rnn_ipynb\".ipynb",
+      "status": "archive",
+      "originalCells": 20,
+      "styledCells": 32,
+      "codeCells": 12,
+      "codeSha256": "fee848bc5102a2fc419a428b1f82e03f02e7abc37f043970822e4ff922d5ff09",
+      "originalCodeSha256": "fee848bc5102a2fc419a428b1f82e03f02e7abc37f043970822e4ff922d5ff09",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 1,
+      "preservedCellsSha256": "157a6e91747e90ef107ef4576386f3aaa2f624c27fb9ec6c7948828a17c22465",
+      "originalMetadataSha256": "9118be908ceb6948f3e2ac47238b97f2c719c46da8156921a38227d0acd57d07",
+      "generatedMarkdownSha256": "521656549d3860ceb77aa006427080802108fe07976c568cf08f3889165e92a1",
+      "attachments": [
+        {
+          "name": "ai-path-ml-text.jpg",
+          "mime": "image/jpeg",
+          "bytes": 187508,
+          "sha256": "b2d8135d15dcbaf517a00908d0be1fceafcf513db0cd9581e44bcb8f106835f2",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-029.png",
+          "mime": "image/png",
+          "bytes": 68500,
+          "sha256": "128cbbfdac0e6392bf5d522fef7c8b22538251fb1688adaf8d2ac366390195b4",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "8cbe99845455ad7381d6ceb8ca08a0e3f42a6529ae7c219ed369e026ec9c8723",
+      "bytes": 398170
+    },
+    {
+      "id": "030",
+      "path": "NLP/NLP_Определение_автора_по_отрывкам_текста_Dense,RNN_,Conv1d,LSTM,_GRU_для_обработки_текстов\".ipynb",
+      "status": "archive",
+      "originalCells": 63,
+      "styledCells": 76,
+      "codeCells": 32,
+      "codeSha256": "cf58d3847bcb3cc3ba842acee79c67e3edf5981ed2769464210b230fae35ed21",
+      "originalCodeSha256": "cf58d3847bcb3cc3ba842acee79c67e3edf5981ed2769464210b230fae35ed21",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 1,
+      "preservedMedia": 9,
+      "preservedCellsSha256": "9319d15fdfa041e998bfb95d716e3839837fb0edb4b17310fc2c62d984bdb5ad",
+      "originalMetadataSha256": "944984cae9e4bb2b47def6601177dc629aa233fb4daa953017b69259bb46e512",
+      "generatedMarkdownSha256": "e10a265b76e6065131f450ba80a2a730e9836514eeab9c0d83b5b119506531b9",
+      "attachments": [
+        {
+          "name": "ai-path-ml-text.jpg",
+          "mime": "image/jpeg",
+          "bytes": 187508,
+          "sha256": "b2d8135d15dcbaf517a00908d0be1fceafcf513db0cd9581e44bcb8f106835f2",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-030.png",
+          "mime": "image/png",
+          "bytes": 68949,
+          "sha256": "73166baec4632faaffe5c47299204f95a6a00a509d1cf02ccafcaa0fa332d65d",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "70a037da5dcd02c97020a58f93eaf6a259a7a3731c4ad0f45ae5a2b50a3d000b",
+      "bytes": 663338
+    },
+    {
+      "id": "031",
+      "path": "NLP/NLP_Определение_тональности_текста_отзывов_на_фильмы_из_IMDb_(Internet_Movie_Database).ipynb",
+      "status": "archive",
+      "originalCells": 94,
+      "styledCells": 107,
+      "codeCells": 61,
+      "codeSha256": "3de38600cf75cade25b9ff7f57e61fcb42f463d27981406471824f33711a4b40",
+      "originalCodeSha256": "3de38600cf75cade25b9ff7f57e61fcb42f463d27981406471824f33711a4b40",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 1,
+      "preservedMedia": 8,
+      "preservedCellsSha256": "22d34ede8ba0f779cc0e72b396662857351963e688b17660239e8d3443a33cb2",
+      "originalMetadataSha256": "71ddeda9963a99b44d39b22c7d9fe0129b9e335121ab4cbf5af257ab09ba420c",
+      "generatedMarkdownSha256": "f4e31dd10217bee40c38e95e33bcc9177f9f9cc2efccc8f7e12aeb4922305f95",
+      "attachments": [
+        {
+          "name": "ai-path-ml-text.jpg",
+          "mime": "image/jpeg",
+          "bytes": 187508,
+          "sha256": "b2d8135d15dcbaf517a00908d0be1fceafcf513db0cd9581e44bcb8f106835f2",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-031.png",
+          "mime": "image/png",
+          "bytes": 67987,
+          "sha256": "16a0d66884a3b70a3989d4c8bca792fe36635477267059a9237528f6f28dfd5b",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "dc99247409830115e9e75b991b60237c4eb0d38a0739eed1ae96957783bc658d",
+      "bytes": 592451
+    },
+    {
+      "id": "032",
+      "path": "NLP/dl_nlp_yelp_polarity.ipynb",
+      "status": "archive",
+      "originalCells": 71,
+      "styledCells": 84,
+      "codeCells": 45,
+      "codeSha256": "841661a18d2f85dbf6676e1699138e4dae3649ace92728023617aef723fe4d6a",
+      "originalCodeSha256": "841661a18d2f85dbf6676e1699138e4dae3649ace92728023617aef723fe4d6a",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 1,
+      "preservedMedia": 3,
+      "preservedCellsSha256": "f8bd9197c1c6143c3d8a8c69bb0f970ea28b3c578636b3f2f3ff1df7ecf74d95",
+      "originalMetadataSha256": "aac55267067d6174ccf070ddd9c2cf89d9be3e64cc830f016fbf9e27484084ed",
+      "generatedMarkdownSha256": "de5e2f9297bc3f9e9a6d4558632f9ad1679d4ab78fe408bb4e4d2d49a19da986",
+      "attachments": [
+        {
+          "name": "ai-path-ml-text.jpg",
+          "mime": "image/jpeg",
+          "bytes": 187508,
+          "sha256": "b2d8135d15dcbaf517a00908d0be1fceafcf513db0cd9581e44bcb8f106835f2",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-032.png",
+          "mime": "image/png",
+          "bytes": 63689,
+          "sha256": "3080e0dae74992b9df41498042eb3fcac0d87108a26e25a2a0ba2d07df92773e",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "09413d36fa6e5a9b371dc346355e6c29c691e63ff309f1fa8efae158712e94e7",
+      "bytes": 482487
+    },
+    {
+      "id": "033",
+      "path": "NLP/Определение_тональности_текстов_YELP_через_Conv1D_сеть_точность_94_.ipynb",
+      "status": "archive",
+      "originalCells": 66,
+      "styledCells": 79,
+      "codeCells": 44,
+      "codeSha256": "59b1ae9def414131059a9011adbf2edda5504636a17accea8b7762a21fe2f900",
+      "originalCodeSha256": "59b1ae9def414131059a9011adbf2edda5504636a17accea8b7762a21fe2f900",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 1,
+      "preservedMedia": 3,
+      "preservedCellsSha256": "e2f7c0ba1bfa83bcd7f0bd316301ff6408bf3ed31b03fccce6fc17e6956d2a2a",
+      "originalMetadataSha256": "52f8c5242fdda8de39a3bb0962b65c65656af72d0d5aadaa9d10d4eb0bf5920a",
+      "generatedMarkdownSha256": "b044dcec8eed74b7572c2a949b01af2bcdecb760a534f046954f258e43303e2a",
+      "attachments": [
+        {
+          "name": "ai-path-ml-text.jpg",
+          "mime": "image/jpeg",
+          "bytes": 187508,
+          "sha256": "b2d8135d15dcbaf517a00908d0be1fceafcf513db0cd9581e44bcb8f106835f2",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-033.png",
+          "mime": "image/png",
+          "bytes": 65478,
+          "sha256": "66450b3e4241a7e2ab6269e415cfe971b1539152c02ae82da8a70ec382c6bb08",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "961fcd1cabc43b2211a10be0615936416d74db3958779116257f8d9260af0183",
+      "bytes": 478280
+    },
+    {
+      "id": "034",
+      "path": "NLP/Определение_тональности_текстов_YELP_через_LSTM_сеть_точность_95_.ipynb",
+      "status": "archive",
+      "originalCells": 69,
+      "styledCells": 82,
+      "codeCells": 45,
+      "codeSha256": "841661a18d2f85dbf6676e1699138e4dae3649ace92728023617aef723fe4d6a",
+      "originalCodeSha256": "841661a18d2f85dbf6676e1699138e4dae3649ace92728023617aef723fe4d6a",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 1,
+      "preservedMedia": 3,
+      "preservedCellsSha256": "df715f3a7be4f6dc84cef7b5705f28c5091765e24b895b745d58995fb572f28f",
+      "originalMetadataSha256": "28613f791c7812d493ab5ac6897f0495ef5ec51c7d6f37e239a4d9a2fb8f5263",
+      "generatedMarkdownSha256": "89feea0b84b9b0c34a162995d79da4bd7684f3ddf147676975cfc6284a1a13cf",
+      "attachments": [
+        {
+          "name": "ai-path-ml-text.jpg",
+          "mime": "image/jpeg",
+          "bytes": 187508,
+          "sha256": "b2d8135d15dcbaf517a00908d0be1fceafcf513db0cd9581e44bcb8f106835f2",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-034.png",
+          "mime": "image/png",
+          "bytes": 65155,
+          "sha256": "2391700b8c655007443aed53f2895f21e7ed4a01c6a77f44adb58504487dc11c",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "8a05634382372417157b5b0c25511d310a609bc040d222c6c7fd8e075046f76c",
+      "bytes": 482319
+    },
+    {
+      "id": "035",
+      "path": "Numpy/Numpy.ipynb",
+      "status": "archive",
+      "originalCells": 17,
+      "styledCells": 26,
+      "codeCells": 16,
+      "codeSha256": "d08f2813b743b526321c371f2757479f923104976c038919f6e9e03b0d258913",
+      "originalCodeSha256": "d08f2813b743b526321c371f2757479f923104976c038919f6e9e03b0d258913",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 0,
+      "preservedCellsSha256": "b5a35ac276fa757383bfc8013065352bc4828c2136bdfc37d06677e364c26657",
+      "originalMetadataSha256": "f1ea5c498807828596af65a617b2b58717b522439c4452ef0695e7a5e31ddb54",
+      "generatedMarkdownSha256": "51026f62bcbe7eed374b2af72bac28e458be5bbc921bb2d7ca513403fea0d10d",
+      "attachments": [
+        {
+          "name": "ai-path-ml-python.jpg",
+          "mime": "image/jpeg",
+          "bytes": 162946,
+          "sha256": "fcd9a514a8fe2eb53e8420b95430c263038c6be2f2a3f972d0380bde9d78240e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-035.png",
+          "mime": "image/png",
+          "bytes": 62223,
+          "sha256": "d30db68a4b901f33cebc0109efc850b06800756a095d5028dc8f6071d90ac549",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "3b44da9661c8fbd59f8fdfa59f5fdbb571cdda8095e38029640302ff6d7907ab",
+      "bytes": 326906
+    },
+    {
+      "id": "036",
+      "path": "Numpy/Основы_Python_numpy,_plot.ipynb",
+      "status": "archive",
+      "originalCells": 30,
+      "styledCells": 41,
+      "codeCells": 19,
+      "codeSha256": "4a694f1d196528a92322328e7079eebd5941eabd4924da18da070caa6837e887",
+      "originalCodeSha256": "4a694f1d196528a92322328e7079eebd5941eabd4924da18da070caa6837e887",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 3,
+      "preservedCellsSha256": "01cb500f2be67d9356b84267a91992a2608b12a6a06c68ae73c16b76c82f868b",
+      "originalMetadataSha256": "a0c49d195e7827592a23c8de1d018b2a1d0a5da56b2eba941e5485475aaee71c",
+      "generatedMarkdownSha256": "3a4ae61a9ccc286e487d4eae660a7707fac44b59d514be19725b1ff522eab9ce",
+      "attachments": [
+        {
+          "name": "ai-path-ml-python.jpg",
+          "mime": "image/jpeg",
+          "bytes": 162946,
+          "sha256": "fcd9a514a8fe2eb53e8420b95430c263038c6be2f2a3f972d0380bde9d78240e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-036.png",
+          "mime": "image/png",
+          "bytes": 63864,
+          "sha256": "8262ca260492bec2ae01357e0ada15b583012c0db0b1449030c219fa73323d9a",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "dd9a05fd676fc1017acb275917f5734998113ae6b5bd630c3f5edc681900c38e",
+      "bytes": 383870
+    },
+    {
+      "id": "037",
+      "path": "Numpy/Сафонов_Апрельский_курс_2020_Light_Python_Домашнее_задание_2.ipynb",
+      "status": "archive",
+      "originalCells": 40,
+      "styledCells": 54,
+      "codeCells": 26,
+      "codeSha256": "140749171205847da5adef404faa51e409f14291a5e29f5cafabbca1b397537b",
+      "originalCodeSha256": "140749171205847da5adef404faa51e409f14291a5e29f5cafabbca1b397537b",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 0,
+      "preservedCellsSha256": "6ac57fa957cf9e9c31d643a43dd17ddb5b979ee9936803d455d4261fb5334c7c",
+      "originalMetadataSha256": "05cba6a779e92e3a601ac5a85b3bf8d679f4d0640fe4661b67df4c4695d1098b",
+      "generatedMarkdownSha256": "b5fd457fabe988e6025203edcd5055a54e280927e04b2c4bd64f38f350def114",
+      "attachments": [
+        {
+          "name": "ai-path-ml-python.jpg",
+          "mime": "image/jpeg",
+          "bytes": 162946,
+          "sha256": "fcd9a514a8fe2eb53e8420b95430c263038c6be2f2a3f972d0380bde9d78240e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-037.png",
+          "mime": "image/png",
+          "bytes": 67539,
+          "sha256": "44e595cb91640fa0a3de59a0652054545db59106e85fd83a080c470f50e8096a",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "2af0b995f3f157fcdf1ceb6917ccba6f2b9570c5a014198ecfeb397de320f088",
+      "bytes": 366297
+    },
+    {
+      "id": "038",
+      "path": "OOP/Дополнительный_семинар_ООП.ipynb",
+      "status": "archive",
+      "originalCells": 56,
+      "styledCells": 70,
+      "codeCells": 48,
+      "codeSha256": "f702553c4b4f23389ff75b9d5cd7a338a0ad8e0d1b0b9669e657d05cf52509bf",
+      "originalCodeSha256": "f702553c4b4f23389ff75b9d5cd7a338a0ad8e0d1b0b9669e657d05cf52509bf",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 1,
+      "preservedMedia": 2,
+      "preservedCellsSha256": "a46f73011f4874e8a7711acca0de09cd02b7601748076c8b521cbe4f3a73eb62",
+      "originalMetadataSha256": "4177272ba49d71a34624960c4ea16dc893c7f2b6750e4ef2ea8609ec6bc36472",
+      "generatedMarkdownSha256": "c66defbb568160f243aadc2e954a6e35880fc0b2577c6d67d2acfd2915399084",
+      "attachments": [
+        {
+          "name": "ai-path-ml-python.jpg",
+          "mime": "image/jpeg",
+          "bytes": 162946,
+          "sha256": "fcd9a514a8fe2eb53e8420b95430c263038c6be2f2a3f972d0380bde9d78240e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-038.png",
+          "mime": "image/png",
+          "bytes": 67035,
+          "sha256": "cdeae6ff8c9908d3ae037365a14e8f2d900ebf4020e772d43015e4177e149d2b",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "728e1c132bef70d9897ea57e036026caed88403e6f39bd5a7c5ef5fc02bb41fd",
+      "bytes": 1279823
+    },
+    {
+      "id": "039",
+      "path": "Pandas/Pandas.ipynb",
+      "status": "archive",
+      "originalCells": 50,
+      "styledCells": 63,
+      "codeCells": 49,
+      "codeSha256": "af9bd8f45a5c0044de003ad9b3e6e5013b3afba9be9d8b1b3647bbf546c60bb1",
+      "originalCodeSha256": "af9bd8f45a5c0044de003ad9b3e6e5013b3afba9be9d8b1b3647bbf546c60bb1",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 15,
+      "preservedCellsSha256": "576d17316896d22a91d597c1c6299fa77974c27ecc52529eec6552b8729e4ca7",
+      "originalMetadataSha256": "bb2b5dc2f8251ebf1a5aec11a1dcffd403d5724701409e014b366ea0ff82021b",
+      "generatedMarkdownSha256": "42c84869c892ad8f326012bda945ccd5274af2b2ffb6d3698ac945dfb963bb33",
+      "attachments": [
+        {
+          "name": "ai-path-ml-python.jpg",
+          "mime": "image/jpeg",
+          "bytes": 162946,
+          "sha256": "fcd9a514a8fe2eb53e8420b95430c263038c6be2f2a3f972d0380bde9d78240e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-039.png",
+          "mime": "image/png",
+          "bytes": 62798,
+          "sha256": "9052bfeb2660c12e13b2daa75ef45dd99a444c1cfe0469346e029c61e30a825a",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "34bcfc60a6be45b500dd2b4c5e12c538b3bcd0abdc32af0e5f5931412c09ade6",
+      "bytes": 402639
+    },
+    {
+      "id": "040",
+      "path": "Pandas/Сафонов_Pandas.ipynb",
+      "status": "archive",
+      "originalCells": 60,
+      "styledCells": 74,
+      "codeCells": 42,
+      "codeSha256": "23a5afe1d16695ab159fb19b63f958cef41185bb70a4eb99c4487f03187237eb",
+      "originalCodeSha256": "23a5afe1d16695ab159fb19b63f958cef41185bb70a4eb99c4487f03187237eb",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 21,
+      "preservedCellsSha256": "6c6555c5057e4af4c5eb039962a856cce39add7f551179901f137447863d0357",
+      "originalMetadataSha256": "5d7b1bb07d880716e05ea1ecd386b76a1b7e6f6154f93eec718fb4bb5b8cab05",
+      "generatedMarkdownSha256": "c8a3759c02ed5b7af70dfe53b6898dc79444e0e12188605d78d1219dbe19082e",
+      "attachments": [
+        {
+          "name": "ai-path-ml-python.jpg",
+          "mime": "image/jpeg",
+          "bytes": 162946,
+          "sha256": "fcd9a514a8fe2eb53e8420b95430c263038c6be2f2a3f972d0380bde9d78240e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-040.png",
+          "mime": "image/png",
+          "bytes": 61870,
+          "sha256": "e5cd3eee89cadc4e883d1ac2706f4183358146532733f1c88eb810681cd39ad5",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "ae5434a2eb51c6b24a0ca6fdfae42e4aadbd3745543cd4700ca9818abbbdbd9e",
+      "bytes": 685960
+    },
+    {
+      "id": "041",
+      "path": "Pandas/Сафонов_Апрельский_курс_2020_Light_Занятие_4_Pandas_(часть_2).ipynb",
+      "status": "archive",
+      "originalCells": 99,
+      "styledCells": 113,
+      "codeCells": 65,
+      "codeSha256": "1d5a586a7917e1ce01c0ed5b3eab973bd6ca766474a8941f037fcc7d412b8fde",
+      "originalCodeSha256": "1d5a586a7917e1ce01c0ed5b3eab973bd6ca766474a8941f037fcc7d412b8fde",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 0,
+      "preservedCellsSha256": "267d05468d0b15ce57a66112c7d699f7a24a5999c054cbaf7af310a27a04e37b",
+      "originalMetadataSha256": "b64c4f90060800d12519bb5c708c460ed8bbdca803bcce219f6b4aa807f44530",
+      "generatedMarkdownSha256": "79e42479e372b063cf427102eb13bc663fa2cef04aa91f769bd06d1673f15609",
+      "attachments": [
+        {
+          "name": "ai-path-ml-python.jpg",
+          "mime": "image/jpeg",
+          "bytes": 162946,
+          "sha256": "fcd9a514a8fe2eb53e8420b95430c263038c6be2f2a3f972d0380bde9d78240e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-041.png",
+          "mime": "image/png",
+          "bytes": 63914,
+          "sha256": "42ef89c9d8c65748a389718ce356309e5339e77be35848afcdac129fab2d1a45",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "fe4beefe5007675e199afffb0b2a835be351d4a9dafd19507d1bb7ef808223e3",
+      "bytes": 399812
+    },
+    {
+      "id": "042",
+      "path": "Pandas/Сафонов_соревнование_\"kaggle_mnist_ipynb\".ipynb",
+      "status": "archive",
+      "originalCells": 79,
+      "styledCells": 93,
+      "codeCells": 48,
+      "codeSha256": "8d9d1a126273e89757a1ff1940cf1fe08c7b0ef27ef9dda946714b8edc8ef2a2",
+      "originalCodeSha256": "8d9d1a126273e89757a1ff1940cf1fe08c7b0ef27ef9dda946714b8edc8ef2a2",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 3,
+      "preservedMedia": 8,
+      "preservedCellsSha256": "eba7ce8ec195411b907d88efa1c9ca888c0a74f55e463fe8b54d851e7d515d8c",
+      "originalMetadataSha256": "19af9725611f4757acf08ff1f85c4e2dbba465cd78ea3b228afe3919428aa9f0",
+      "generatedMarkdownSha256": "23ae506364a8a810f30a59da03f6826248a04b6f245122be1ace1275c9c69f7f",
+      "attachments": [
+        {
+          "name": "ai-path-ml-python.jpg",
+          "mime": "image/jpeg",
+          "bytes": 162946,
+          "sha256": "fcd9a514a8fe2eb53e8420b95430c263038c6be2f2a3f972d0380bde9d78240e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-042.png",
+          "mime": "image/png",
+          "bytes": 66577,
+          "sha256": "26c91e19eaea7e15fe322032235651501553f61c6a8e06a6b6c4b3fdcce82d0e",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "ed38906891b45a58c200392a0607c50ea93e547026225a0e88eece18bd671976",
+      "bytes": 479017
+    },
+    {
+      "id": "043",
+      "path": "SeletNetAI/Апрельский_курс_(2020)_Pro_Занятие_16_Часть_2_Подбор_архитектуры.ipynb",
+      "status": "archive",
+      "originalCells": 49,
+      "styledCells": 63,
+      "codeCells": 35,
+      "codeSha256": "2d973dad179c68c5e49bc725722900d165c07adfb982f89f3c70b49ee6690a45",
+      "originalCodeSha256": "2d973dad179c68c5e49bc725722900d165c07adfb982f89f3c70b49ee6690a45",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 11,
+      "preservedCellsSha256": "21dbfbaebdd55e2f386720c6fedcdbeb22fd700ac764cd7a16fd5f0055d62322",
+      "originalMetadataSha256": "d9169aef677994416da31e0ce87f06e9c3741ff6e26d0cda7b7e700ae381bec5",
+      "generatedMarkdownSha256": "7e44afd567a32f4d6262efbc9ad70e12efc6fd012c8ff63708998ac284a1f90b",
+      "attachments": [
+        {
+          "name": "ai-path-ml-tuning.jpg",
+          "mime": "image/jpeg",
+          "bytes": 185183,
+          "sha256": "537fd4a58c5db30072931d9efad91bfdba4046d7f24a8bce3c64ed3812548d90",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-043.png",
+          "mime": "image/png",
+          "bytes": 60710,
+          "sha256": "3a11adc76b3221213bff715bf6754e4844aa0176deb91e37fae4b21d959bd075",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "76c9c3fd345d116603ac48c784e8892d3697fec54e7add1f29dae79d5e669c4b",
+      "bytes": 895002
+    },
+    {
+      "id": "044",
+      "path": "SeletNetAI/Оптимизация_гиперпараметров_нейросети_с_помощью_Keras_Tuner_\"fashion_mnist_keras_tuner_ipynb\".ipynb",
+      "status": "archive",
+      "originalCells": 25,
+      "styledCells": 37,
+      "codeCells": 11,
+      "codeSha256": "62a4a325f610360be7a260ecba58e61d7511ca2140a77bee0b816d3d75a569ec",
+      "originalCodeSha256": "62a4a325f610360be7a260ecba58e61d7511ca2140a77bee0b816d3d75a569ec",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 1316,
+      "preservedCellsSha256": "b778191d7677947097d57b231ac142ddf0e5469ad9535c3129335897a6ecdee0",
+      "originalMetadataSha256": "0ff649ab64aba1eee2ab234505028e656c33f2fef7bf36b7f58fdff36a1b1e3d",
+      "generatedMarkdownSha256": "413c86921aa5bb77bd4216ff13037788b9c58bcd81f050b83c7a2d31084615c0",
+      "attachments": [
+        {
+          "name": "ai-path-ml-tuning.jpg",
+          "mime": "image/jpeg",
+          "bytes": 185183,
+          "sha256": "537fd4a58c5db30072931d9efad91bfdba4046d7f24a8bce3c64ed3812548d90",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-044.png",
+          "mime": "image/png",
+          "bytes": 65096,
+          "sha256": "94ae8377ccddc2f75137597d00d3b114f7da170887c7b5be5d28ecf81b628231",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "8dc8429b033e3cbfa493992092bd48706f5370170d2d954d083d177836030451",
+      "bytes": 1410630
+    },
+    {
+      "id": "045",
+      "path": "Stock/\"DownJoins\"Сафонов_Временные_ряды_\"_36.ipynb",
+      "status": "archive",
+      "originalCells": 21,
+      "styledCells": 33,
+      "codeCells": 18,
+      "codeSha256": "201d9eec802921b31dd66bbffcfa38f8a44dce184e327f1fd4a9ba91ea3d8c04",
+      "originalCodeSha256": "201d9eec802921b31dd66bbffcfa38f8a44dce184e327f1fd4a9ba91ea3d8c04",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 2,
+      "preservedMedia": 9,
+      "preservedCellsSha256": "b390067e466a94f9a3031852997eae14e382878b7db26ad6d32b1ce224254788",
+      "originalMetadataSha256": "1e158eb0474000aed41f4a9762d14162ed3277716bd2bd744563e9296edbd560",
+      "generatedMarkdownSha256": "0d638d71e3a2f8d3c178f50256f4438680fb2fdc0bceefc7ad5b94467fe52319",
+      "attachments": [
+        {
+          "name": "ai-path-ml-series.jpg",
+          "mime": "image/jpeg",
+          "bytes": 172940,
+          "sha256": "9673de7c6ddf5547887460f253db5de295809f17d31d1d0b9d72e46c445f681e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-045.png",
+          "mime": "image/png",
+          "bytes": 71947,
+          "sha256": "47fec949b613ab5b6aecc234b3d85279afb0cda7eba7615a350c6a3879f31636",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "b58002e96c26fc2ada7e7d71027df358daa4d0720647b023da73f132a122c266",
+      "bytes": 670706
+    },
+    {
+      "id": "046",
+      "path": "Stock/SP500_\"Сафонов_Временные_ряды.ipynb",
+      "status": "archive",
+      "originalCells": 20,
+      "styledCells": 32,
+      "codeCells": 17,
+      "codeSha256": "aebcc8dc159d7919ab8164535dd5d57d397d67778018c71dc0708983b2235285",
+      "originalCodeSha256": "aebcc8dc159d7919ab8164535dd5d57d397d67778018c71dc0708983b2235285",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 7,
+      "preservedCellsSha256": "3a3aed429b2644c7de7acd88082629529f7e2887f0a86ca107c0cc4efebb23dc",
+      "originalMetadataSha256": "511cc0b392014084665076424a555c5f551ae3819e4e5a4d9babbe337e017a13",
+      "generatedMarkdownSha256": "3e55848b53d46434d5056e75f1ce370a36d539e2ff0dceed6f568390111910f8",
+      "attachments": [
+        {
+          "name": "ai-path-ml-series.jpg",
+          "mime": "image/jpeg",
+          "bytes": 172940,
+          "sha256": "9673de7c6ddf5547887460f253db5de295809f17d31d1d0b9d72e46c445f681e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-046.png",
+          "mime": "image/png",
+          "bytes": 70425,
+          "sha256": "e7a0e4f1a87ea12ae538975d0da3a0cb8af44ca0251870fef88f30e2d2975114",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "dbd3642aa18daf0cb388aa4e7f5efb6c69d24c9f3b1a99b48b2fc8eb4364e430",
+      "bytes": 554351
+    },
+    {
+      "id": "047",
+      "path": "Stock/Временные_ряды_Прогнозирование_акций_Лукойла_(Time_series_Prediction_shares_of_LUKOIL).ipynb",
+      "status": "archive",
+      "originalCells": 39,
+      "styledCells": 53,
+      "codeCells": 32,
+      "codeSha256": "6f8ef201b43bdc73a368958febaa06c71a2702ee6447c744970eebe6bbee4922",
+      "originalCodeSha256": "6f8ef201b43bdc73a368958febaa06c71a2702ee6447c744970eebe6bbee4922",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 10,
+      "preservedCellsSha256": "c7be8f6db5be5bfa3da8cda8e62b7935224807dec5ae8138aeecc70fcbc2295b",
+      "originalMetadataSha256": "11283aa6f8f56fbba30e49098fc30b07ca4603c5b5347c1de8c17e286abc07b2",
+      "generatedMarkdownSha256": "2dacab16c31a4a1b28bbcd7bfee7088dd01db56b1f009e06b220397728ec31f5",
+      "attachments": [
+        {
+          "name": "ai-path-ml-series.jpg",
+          "mime": "image/jpeg",
+          "bytes": 172940,
+          "sha256": "9673de7c6ddf5547887460f253db5de295809f17d31d1d0b9d72e46c445f681e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-047.png",
+          "mime": "image/png",
+          "bytes": 71618,
+          "sha256": "2afe961de5acf4ad149f7fd85afb193888f59475d7cd26a74085be0946d3a922",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "b7e1d81a52c2368a8ddaa39550fe8087668bff663adddc872d65147cb872c140",
+      "bytes": 650294
+    },
+    {
+      "id": "048",
+      "path": "Terra-ai/Сафонов_А_А_\"Интенсив_8_12_10_12_Домашнее_задание_№1\".ipynb",
+      "status": "archive",
+      "originalCells": 31,
+      "styledCells": 43,
+      "codeCells": 22,
+      "codeSha256": "0ddb2981617e8fbb4942d0783c432edb80b8a1044a120ba7f3683bca9f0df4b2",
+      "originalCodeSha256": "0ddb2981617e8fbb4942d0783c432edb80b8a1044a120ba7f3683bca9f0df4b2",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 18,
+      "preservedCellsSha256": "91db482c84e870b772274c12d0f1cb7271a5ea239398d4559dd27cb322b8516f",
+      "originalMetadataSha256": "4e5709e41a32a8fcb7dfa4d89b138e0465eec0f2f2bb90b15ae064c3561df5d1",
+      "generatedMarkdownSha256": "5a0d7b296331a2e3999bf6816ad74bb7fb79781c642c94dd6e21f149fb0d8603",
+      "attachments": [
+        {
+          "name": "ai-path-ml-vision.jpg",
+          "mime": "image/jpeg",
+          "bytes": 206269,
+          "sha256": "977f74e8c5804c122282449ca8ddcdb00ce69dad9e07b37bbe91ad7ed4be367f",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-048.png",
+          "mime": "image/png",
+          "bytes": 79814,
+          "sha256": "f63e0211af67b9838f2ef3f57620ab0a56fa54a18016a8c38c9c87ca5d498f0e",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "05c3d4a2aded0eab388c0d27f2db897558f1f115a82ce1f2069d79306f7ca436",
+      "bytes": 3282580
+    },
+    {
+      "id": "049",
+      "path": "Trafic/Сафонов_\"Интенсив_8_12_11_12_Домашнее_задание_№3_\".ipynb",
+      "status": "archive",
+      "originalCells": 45,
+      "styledCells": 58,
+      "codeCells": 26,
+      "codeSha256": "5721babfd24629857d7afbd9403a24ea868546a1821d2653afa2ff6db697102c",
+      "originalCodeSha256": "5721babfd24629857d7afbd9403a24ea868546a1821d2653afa2ff6db697102c",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 2,
+      "preservedMedia": 38,
+      "preservedCellsSha256": "c40820b2f078fd1e1fcdb64218708e78a4278ecf6b6936ffc6ed7e70da4be5e2",
+      "originalMetadataSha256": "302f20e3dde9e93f271ca6ea44d171c52c6bb47ab744fe016b503f8ac8ee084a",
+      "generatedMarkdownSha256": "0999498619cb0ca992cb7ebd8d48117a227961686e419ed05bf8bd1509a60c9d",
+      "attachments": [
+        {
+          "name": "ai-path-ml-series.jpg",
+          "mime": "image/jpeg",
+          "bytes": 172940,
+          "sha256": "9673de7c6ddf5547887460f253db5de295809f17d31d1d0b9d72e46c445f681e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-049.png",
+          "mime": "image/png",
+          "bytes": 68618,
+          "sha256": "514f052acb120c0b7f467e3e048da095c07206434d78e26858cf8c5c445d2b63",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "ccc26e0f6273cea72970499d54a7de70d036140d2269f9f4e770c1a32c3fa2fc",
+      "bytes": 6917855
+    },
+    {
+      "id": "050",
+      "path": "Trafic/Трафик_компании.ipynb",
+      "status": "archive",
+      "originalCells": 6,
+      "styledCells": 16,
+      "codeCells": 5,
+      "codeSha256": "d93d26926dc95b0c1cd77c2e7f26ac0bf020bc0389f09ec0626e5ef7fc138bcc",
+      "originalCodeSha256": "d93d26926dc95b0c1cd77c2e7f26ac0bf020bc0389f09ec0626e5ef7fc138bcc",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 2,
+      "preservedCellsSha256": "61da806e8dcd4f7c327fae5b6956d6e77b03ba21b41860268c4eff24142fe552",
+      "originalMetadataSha256": "7893457c0d97f714b091b16f4235cc17f1d315b40f4a2374538e80a7868160d4",
+      "generatedMarkdownSha256": "89d917e9a032d9f673ea70ac6819db857759329bbf7183b9b3c76b2980a4dc33",
+      "attachments": [
+        {
+          "name": "ai-path-ml-series.jpg",
+          "mime": "image/jpeg",
+          "bytes": 172940,
+          "sha256": "9673de7c6ddf5547887460f253db5de295809f17d31d1d0b9d72e46c445f681e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-050.png",
+          "mime": "image/png",
+          "bytes": 72038,
+          "sha256": "8a98b592deefccd29ad0f62219bf6d2b1ad20b6db8440c5cbbb0f450b2ab474d",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "1c561c82fa02a94e1c94b1d60b4ea6bfeeffcd9055a3a28a33c3a4e9102f5423",
+      "bytes": 514908
+    },
+    {
+      "id": "051",
+      "path": "interactive_story.ipynb",
+      "status": "archive",
+      "originalCells": 3,
+      "styledCells": 11,
+      "codeCells": 2,
+      "codeSha256": "4acdf91a58f8c4f4f857fa0c71d7668b37b47abdfed688ba8fdcb73e4ec61a3e",
+      "originalCodeSha256": "4acdf91a58f8c4f4f857fa0c71d7668b37b47abdfed688ba8fdcb73e4ec61a3e",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 0,
+      "preservedCellsSha256": "7ca914f77c0b810a03000aa772f004a3f2c12ef06117e6fab1491848cffe7433",
+      "originalMetadataSha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "generatedMarkdownSha256": "d92d1becbb436e35442b95545ed2fce08c7ca3c68f67f2a04bc155d620a053c6",
+      "attachments": [
+        {
+          "name": "ai-path-ml-python.jpg",
+          "mime": "image/jpeg",
+          "bytes": 162946,
+          "sha256": "fcd9a514a8fe2eb53e8420b95430c263038c6be2f2a3f972d0380bde9d78240e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-051.png",
+          "mime": "image/png",
+          "bytes": 71185,
+          "sha256": "519d5660721adb36ff7b2bffab6de6990b886bbd53987ae0f9b466e34e269455",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "29f6a4ce605d4e8729df63e7639ce4ccdf80bd4f85a295f76d671260fcd4934f",
+      "bytes": 327759
+    },
+    {
+      "id": "052",
+      "path": "medicina/\"Используем_модель_EfficientNet_B7_для_распознавания_tuberculosis\".ipynb",
+      "status": "archive",
+      "originalCells": 61,
+      "styledCells": 75,
+      "codeCells": 35,
+      "codeSha256": "52d3847bf3e5e8228923c20cb879bca96d8c71aa27109f75f4a907b24463690c",
+      "originalCodeSha256": "52d3847bf3e5e8228923c20cb879bca96d8c71aa27109f75f4a907b24463690c",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 2,
+      "preservedMedia": 9,
+      "preservedCellsSha256": "3de17b542d4d5a55e36fcff3329357e2f95d480c70d02e17e4c465abb72c534c",
+      "originalMetadataSha256": "23d98dbeae63c8e14823ecac2999df60903dc9d15489655eaa9f5a600be40595",
+      "generatedMarkdownSha256": "488be5ce4a943f63717a161f54543c765ede71a8a737c01497c7db2f9e07d229",
+      "attachments": [
+        {
+          "name": "ai-path-ml-vision.jpg",
+          "mime": "image/jpeg",
+          "bytes": 206269,
+          "sha256": "977f74e8c5804c122282449ca8ddcdb00ce69dad9e07b37bbe91ad7ed4be367f",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-052.png",
+          "mime": "image/png",
+          "bytes": 84820,
+          "sha256": "62ce85877bc68e83380cb3ff9ce3bb2f3b407f18f4bf07a2f7fc47af040aaa2e",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "d77d3e5861b2dd0fd9f220345908c0ea51572652e2aa824af7bac345ee41c618",
+      "bytes": 997495
+    },
+    {
+      "id": "053",
+      "path": "medicina/\"Используем_модель_ResNet_152_для_распознавания_tuberculosis\".ipynb",
+      "status": "archive",
+      "originalCells": 62,
+      "styledCells": 76,
+      "codeCells": 36,
+      "codeSha256": "9d0827b4bbe91b3d6be39a7a50b349e8872256103cf90fcd1de14a56cbf555a7",
+      "originalCodeSha256": "9d0827b4bbe91b3d6be39a7a50b349e8872256103cf90fcd1de14a56cbf555a7",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 2,
+      "preservedMedia": 9,
+      "preservedCellsSha256": "ec81d9ce8faf8201b79e192b57269b1d65e6119d96d71253e83aa1e29f2e41db",
+      "originalMetadataSha256": "563511b1bf22d63e70193076932a7d4a8a822128af0849f7ae01e70a90eb69a7",
+      "generatedMarkdownSha256": "db0073341723c1d77e2f0887aac16145cb5a75c7858c653d0a997a5610604e75",
+      "attachments": [
+        {
+          "name": "ai-path-ml-vision.jpg",
+          "mime": "image/jpeg",
+          "bytes": 206269,
+          "sha256": "977f74e8c5804c122282449ca8ddcdb00ce69dad9e07b37bbe91ad7ed4be367f",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-053.png",
+          "mime": "image/png",
+          "bytes": 84049,
+          "sha256": "6441796a85e81906439a638e93e665df1e45fe201a41bc9bdf8cc2fd9f52c22b",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "db1b51163b053d9b44fccef7e8eb54ad92a620931222e8ed90994c7c0d329d1e",
+      "bytes": 989526
+    },
+    {
+      "id": "054",
+      "path": "medicina/\"Рез_т_val_acc_0_86_VGG19_для_распознавания_tuberculosis\"\"\".ipynb",
+      "status": "archive",
+      "originalCells": 63,
+      "styledCells": 77,
+      "codeCells": 36,
+      "codeSha256": "701c3f8813c132a1933b31aab8838a625c2d36206a2e3916a63ee09e8ea6950c",
+      "originalCodeSha256": "701c3f8813c132a1933b31aab8838a625c2d36206a2e3916a63ee09e8ea6950c",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 9,
+      "preservedCellsSha256": "d71fd6a86f3d9568899eb2abf5c3c60fad72aa764f164aca59dd01748164e09d",
+      "originalMetadataSha256": "71318addb47e7f9768afbeed506efd05f216fa2985df9acad1582016ba33cb92",
+      "generatedMarkdownSha256": "be145a3dd7b72a51a8a544dbdc3a901203faaeae53cdbcdb646e5a0f2237d9f3",
+      "attachments": [
+        {
+          "name": "ai-path-ml-vision.jpg",
+          "mime": "image/jpeg",
+          "bytes": 206269,
+          "sha256": "977f74e8c5804c122282449ca8ddcdb00ce69dad9e07b37bbe91ad7ed4be367f",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-054.png",
+          "mime": "image/png",
+          "bytes": 83422,
+          "sha256": "cebb665540af515d5d8b076a41f67b8921151fd71302bae747c98f13ad4a707c",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "bf0aeab09ea7f098d4d724bfa8305a65db9febe21c4f2746ad3c49e914b24d1e",
+      "bytes": 1130009
+    },
+    {
+      "id": "055",
+      "path": "medicina/\"Рез_т_val_acc_80_VGG16_для_распознавания_tuberculosis\"\"\".ipynb",
+      "status": "archive",
+      "originalCells": 63,
+      "styledCells": 77,
+      "codeCells": 36,
+      "codeSha256": "a8163b1b32227e7af63044fe7ad4a21fa990439665a8f7276ad83f4409d64ce1",
+      "originalCodeSha256": "a8163b1b32227e7af63044fe7ad4a21fa990439665a8f7276ad83f4409d64ce1",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 1,
+      "preservedMedia": 9,
+      "preservedCellsSha256": "3fccea415790ec7a1b822bbfd6babc25df31772e8abe38bac72903d62be26e6f",
+      "originalMetadataSha256": "47ca6350270c0b7b62bf767331071bb512d13711ae9b2d55f421f90a188b11e2",
+      "generatedMarkdownSha256": "bd2e73efeaba13fd32bcf260ed90bd5428839fe8cb701ac161c1997380a41606",
+      "attachments": [
+        {
+          "name": "ai-path-ml-vision.jpg",
+          "mime": "image/jpeg",
+          "bytes": 206269,
+          "sha256": "977f74e8c5804c122282449ca8ddcdb00ce69dad9e07b37bbe91ad7ed4be367f",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-055.png",
+          "mime": "image/png",
+          "bytes": 83749,
+          "sha256": "8553f167b2839f4dc4ad1e7d12580f798baa148bb6a01b98a4429e8df8e5c06d",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "588d59ce2e67cff2c515c528db35196d160ceee2d150b9f41fb21a5ba8e172d3",
+      "bytes": 1040770
+    },
+    {
+      "id": "056",
+      "path": "medicina/\"Результат_val_acc_0_869_модель_InceptionResNetV2_для_распознавания_tuberculosis\"\".ipynb",
+      "status": "archive",
+      "originalCells": 64,
+      "styledCells": 78,
+      "codeCells": 36,
+      "codeSha256": "e84782cfec0bb36ef5b7e1b78786399e87df70c89bca29b05be13f9d125ca402",
+      "originalCodeSha256": "e84782cfec0bb36ef5b7e1b78786399e87df70c89bca29b05be13f9d125ca402",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 2,
+      "preservedMedia": 9,
+      "preservedCellsSha256": "3b36496635fa4ae280ab39e4496e42897ffbf52e7e9556a58ed8473920b53a2e",
+      "originalMetadataSha256": "711b6e301a285eb6c3fd31e6405d12d3831e8dd059a73f95c565b0d52dece2d2",
+      "generatedMarkdownSha256": "a6de274709ea4129a48d50eae7fe0801eaef3b20c22bf7ae76ef90d78687e202",
+      "attachments": [
+        {
+          "name": "ai-path-ml-vision.jpg",
+          "mime": "image/jpeg",
+          "bytes": 206269,
+          "sha256": "977f74e8c5804c122282449ca8ddcdb00ce69dad9e07b37bbe91ad7ed4be367f",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-056.png",
+          "mime": "image/png",
+          "bytes": 85817,
+          "sha256": "84c017965a843fe6be2b40b1262313dba014dfdf6ed0765a3075dbe70a503eff",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "d41e775b195521f17be5228baa34caf861ba029210f252c2fc6c9be8f2237a14",
+      "bytes": 1624669
+    },
+    {
+      "id": "057",
+      "path": "medicina/MobileNetV2_для_распознавания_tuberculosis\".ipynb",
+      "status": "archive",
+      "originalCells": 66,
+      "styledCells": 80,
+      "codeCells": 38,
+      "codeSha256": "1bc9bc52e4153a5d6e0479b459d7978018ef825637f5fa5ef540e2c424a848e9",
+      "originalCodeSha256": "1bc9bc52e4153a5d6e0479b459d7978018ef825637f5fa5ef540e2c424a848e9",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 2,
+      "preservedMedia": 9,
+      "preservedCellsSha256": "65d4092c43a3efe5ebc2dddef4f82004c625c7ee6420c741f0635be112461d9b",
+      "originalMetadataSha256": "f834abc5b7ce29680ebb27020d3c1ca6f48287594a0ed3cc870b8a0bf6c80501",
+      "generatedMarkdownSha256": "6606b66c4bfab59e8573fbdbb6c208e55ecd608db7451a25aca26dd6367cb9bf",
+      "attachments": [
+        {
+          "name": "ai-path-ml-vision.jpg",
+          "mime": "image/jpeg",
+          "bytes": 206269,
+          "sha256": "977f74e8c5804c122282449ca8ddcdb00ce69dad9e07b37bbe91ad7ed4be367f",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-057.png",
+          "mime": "image/png",
+          "bytes": 85996,
+          "sha256": "29008ae2c17efc7a1f97f1747c6251af364c2a443c43b5b72200045241ede0d7",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "aed7fc988917e0106d064d26eca2fb4bf04ffe6acfe6eb14c0c775dadd4f50f9",
+      "bytes": 1162504
+    },
+    {
+      "id": "058",
+      "path": "medicina/MobileNet_для_распознавания_tuberculosis\".ipynb",
+      "status": "archive",
+      "originalCells": 66,
+      "styledCells": 80,
+      "codeCells": 38,
+      "codeSha256": "02c8e5adb8d99700db7981a26d34eef5e96c13e70914d2eb22e6aa87f092962b",
+      "originalCodeSha256": "02c8e5adb8d99700db7981a26d34eef5e96c13e70914d2eb22e6aa87f092962b",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 2,
+      "preservedMedia": 9,
+      "preservedCellsSha256": "4bf1929b22ea3f0e2933ccd208a136ddadb18052063c175ed9fef7160fc24bd0",
+      "originalMetadataSha256": "f7723b6a1c064fe4850ac7884a978ec29316bf2abc74cbddfef13f3a50c6b4e7",
+      "generatedMarkdownSha256": "d507bd07b4d17b4d1c72781cc1be5af36746718635cdf11d0d4083d4a9f7d6a8",
+      "attachments": [
+        {
+          "name": "ai-path-ml-vision.jpg",
+          "mime": "image/jpeg",
+          "bytes": 206269,
+          "sha256": "977f74e8c5804c122282449ca8ddcdb00ce69dad9e07b37bbe91ad7ed4be367f",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-058.png",
+          "mime": "image/png",
+          "bytes": 82997,
+          "sha256": "b082efb19eb030036a4192e387e052f6f49ac29fdf8ff8a034052c6951bdcb62",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "879c6704a8ac93f600f0235f78ba0e5661f60f7a9aea591ce336687c14d02dfd",
+      "bytes": 1244325
+    },
+    {
+      "id": "059",
+      "path": "medicina/NASNetLarge_для_распознавания_tuberculosis\".ipynb",
+      "status": "archive",
+      "originalCells": 61,
+      "styledCells": 75,
+      "codeCells": 35,
+      "codeSha256": "0a361eac4214769b71ac360d2903f15c4a7d3f8f4081bd5e169999f01e78eb56",
+      "originalCodeSha256": "0a361eac4214769b71ac360d2903f15c4a7d3f8f4081bd5e169999f01e78eb56",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 2,
+      "preservedMedia": 9,
+      "preservedCellsSha256": "a1dcc993091580270ec1d01530e04249018a494aa5963ab4278010e618bcd057",
+      "originalMetadataSha256": "f6a8a98f0a5fa5a76f8bae8665beb1a72b5026eed2f6fc0683d75d5bb3efdb46",
+      "generatedMarkdownSha256": "69bd9bc6259e7f187bbf5148cef4facf1aa8515c1cb64b8ec6a37ae526da3710",
+      "attachments": [
+        {
+          "name": "ai-path-ml-vision.jpg",
+          "mime": "image/jpeg",
+          "bytes": 206269,
+          "sha256": "977f74e8c5804c122282449ca8ddcdb00ce69dad9e07b37bbe91ad7ed4be367f",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-059.png",
+          "mime": "image/png",
+          "bytes": 86178,
+          "sha256": "f6979ffe959e139baf05925543186a81161f89ee9905d4e3c44f270c6860d2a5",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "325d3f8c40c39ff18f3eb18475022b2859e3a4a423e9d19e1aa9fe91912ceacf",
+      "bytes": 1010277
+    },
+    {
+      "id": "060",
+      "path": "medicina/VGG19для_распознавания_tuberculosis\".ipynb",
+      "status": "archive",
+      "originalCells": 65,
+      "styledCells": 79,
+      "codeCells": 37,
+      "codeSha256": "ad31a1408419f5be387eddb1e9e053331a13fb23b52330a05fc3ce8de1210fdc",
+      "originalCodeSha256": "ad31a1408419f5be387eddb1e9e053331a13fb23b52330a05fc3ce8de1210fdc",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 1,
+      "preservedMedia": 9,
+      "preservedCellsSha256": "d6cd2f1410ed513499b85ed320e8c59c7679da828cd4c06619c9f28092188bf8",
+      "originalMetadataSha256": "e13f9eb1e710a92bf1bd624f8ccb80e3778352a9147bdd41c7fd6f3f150f9a0d",
+      "generatedMarkdownSha256": "e8bba1bdbf6dd5874ea79a7442032a6794c7f5bbc4ec23e2716781f5cd3bd37a",
+      "attachments": [
+        {
+          "name": "ai-path-ml-vision.jpg",
+          "mime": "image/jpeg",
+          "bytes": 206269,
+          "sha256": "977f74e8c5804c122282449ca8ddcdb00ce69dad9e07b37bbe91ad7ed4be367f",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-060.png",
+          "mime": "image/png",
+          "bytes": 80972,
+          "sha256": "714d5cf91833b2870e26ca2fd10aafa796ecc23966f252a89f8485a874f92f61",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "d17c30376809efdb048c57371d7803cccc2543a7306feee0fbca563bc7216c04",
+      "bytes": 1420655
+    },
+    {
+      "id": "061",
+      "path": "medicina/Рез_т_val_acc_0_88696_DenseNet201_для_распознавания_tuberculosis\"\".ipynb",
+      "status": "archive",
+      "originalCells": 63,
+      "styledCells": 77,
+      "codeCells": 36,
+      "codeSha256": "948b05aaf74dc0476fd9bd158e63f829ec2d171494916fb331d62f16e2be59ed",
+      "originalCodeSha256": "948b05aaf74dc0476fd9bd158e63f829ec2d171494916fb331d62f16e2be59ed",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 2,
+      "preservedMedia": 9,
+      "preservedCellsSha256": "3ce6aee6b6b599a89d17962f5fcdf8572af96213948ad9ce40ce5cc45bc1d49b",
+      "originalMetadataSha256": "5d756ac0b4993d3ca0b41d63a8f69bd9f10616af7b53419c33b7a1e21dc9d941",
+      "generatedMarkdownSha256": "d58cd3f3c68d59a645e979c151284d540867c97cb2662c9704e194c93514cdd1",
+      "attachments": [
+        {
+          "name": "ai-path-ml-vision.jpg",
+          "mime": "image/jpeg",
+          "bytes": 206269,
+          "sha256": "977f74e8c5804c122282449ca8ddcdb00ce69dad9e07b37bbe91ad7ed4be367f",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-061.png",
+          "mime": "image/png",
+          "bytes": 87314,
+          "sha256": "06bacf3211c3b567581e58bf14cd25ce9f70b31aff0651f19f0cd1fb35ebec91",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "35f5a0373cc009ef39d658188d1a6e8882956142a95c4a4a0e8538fd80927563",
+      "bytes": 1093303
+    },
+    {
+      "id": "062",
+      "path": "parsong/Сафонов_А_А_Парсинг_данных\".ipynb",
+      "status": "archive",
+      "originalCells": 65,
+      "styledCells": 79,
+      "codeCells": 47,
+      "codeSha256": "bab39cd47acd7e9d1924d29d5e25f790225ae81ee55cf1f8beae0a1667d58e18",
+      "originalCodeSha256": "bab39cd47acd7e9d1924d29d5e25f790225ae81ee55cf1f8beae0a1667d58e18",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 2,
+      "preservedMedia": 24,
+      "preservedCellsSha256": "eb0fbf423023fefd34ae355f7345e56b329b9f28b83aeb44b14f1d1e3c9f17ec",
+      "originalMetadataSha256": "cdf81e90939737d9e1af825259747ddba767f5e8f77691f9d43aded2a8011cf0",
+      "generatedMarkdownSha256": "b969cce6d088b050b3d390e5a465fdf31d1c409a3f2aaf24d19b3547d509f572",
+      "attachments": [
+        {
+          "name": "ai-path-ml-python.jpg",
+          "mime": "image/jpeg",
+          "bytes": 162946,
+          "sha256": "fcd9a514a8fe2eb53e8420b95430c263038c6be2f2a3f972d0380bde9d78240e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-062.png",
+          "mime": "image/png",
+          "bytes": 72608,
+          "sha256": "74b63aa9be26c1ce0a7297e861c9a9126852599c93f7303f8cef44140cd0c301",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "c72dd51c12890710d9ab2eab80a0816d8e560ec82529808dd9038f541fe3bab6",
+      "bytes": 584598
+    },
+    {
+      "id": "063",
+      "path": "python/Сафонов_Python,_Домашнее_задание_1.ipynb",
+      "status": "archive",
+      "originalCells": 51,
+      "styledCells": 65,
+      "codeCells": 30,
+      "codeSha256": "0df85bf5a9758fc38b11d236e52a2b73167c6211cdfde98c7bb2530a83ae3c7b",
+      "originalCodeSha256": "0df85bf5a9758fc38b11d236e52a2b73167c6211cdfde98c7bb2530a83ae3c7b",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 0,
+      "preservedCellsSha256": "b6f318783bf064b8ca4570b87f626ce36918518d4f4f7f66413348f46314e80e",
+      "originalMetadataSha256": "4623abb15c378ad27cd1cc54e9d55366074d90b188cc48ac3ff745661322f1b9",
+      "generatedMarkdownSha256": "1c736e8413189e81baa8e90145bb11b6d5db93674bd67c5f695de6a253110379",
+      "attachments": [
+        {
+          "name": "ai-path-ml-python.jpg",
+          "mime": "image/jpeg",
+          "bytes": 162946,
+          "sha256": "fcd9a514a8fe2eb53e8420b95430c263038c6be2f2a3f972d0380bde9d78240e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-063.png",
+          "mime": "image/png",
+          "bytes": 67752,
+          "sha256": "277af4c6bc3f12e9356dba1c1a6ac9b1e929d9ed6cf1c7bf626f8ca2b26bade5",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "518a8b36b8ad3f797a12194054de044170458aff4a42ddff3dfa3ff70c185afc",
+      "bytes": 378641
+    },
+    {
+      "id": "064",
+      "path": "python/Сафонов_Python_Домашнее_задание_6.ipynb",
+      "status": "archive",
+      "originalCells": 51,
+      "styledCells": 65,
+      "codeCells": 36,
+      "codeSha256": "8fe9c5999c0ecf3c7bfcc13229f106dc927957d47ba03e63024397772bd564c9",
+      "originalCodeSha256": "5ff746d6453e565624a773790d0412857c34df98b29c5e6ec5b5812ccccb38a5",
+      "sourceChangeExceptions": [
+        18
+      ],
+      "sanitization": [
+        {
+          "cell": 18,
+          "reason": "replaced potentially private Wi-Fi sample with synthetic training text"
+        }
+      ],
+      "compactedOutputs": 0,
+      "preservedMedia": 0,
+      "preservedCellsSha256": "55e2d9005b2d1e381a675cd3ebce43b797bd25180f8f684751bf0e17bb7f85f3",
+      "originalMetadataSha256": "30ed9542ec74124a107b47298a8021f58e97c2ccd6c168479c5d9c62f7498741",
+      "generatedMarkdownSha256": "86a2d11be18234057e68ec0d48b8c5c40c32ed196ec1d7bc9862018277c0ea4c",
+      "attachments": [
+        {
+          "name": "ai-path-ml-python.jpg",
+          "mime": "image/jpeg",
+          "bytes": 162946,
+          "sha256": "fcd9a514a8fe2eb53e8420b95430c263038c6be2f2a3f972d0380bde9d78240e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-064.png",
+          "mime": "image/png",
+          "bytes": 70226,
+          "sha256": "703476e5b45e3a567a05bd958fca258292ca8be01c21d652b57cd074749b2246",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "bef281913f8b44d5398f0d195c522d41909275573317e172c9f4c0be9accf6f5",
+      "bytes": 376561
+    },
+    {
+      "id": "065",
+      "path": "seaborn/seaborn.ipynb",
+      "status": "archive",
+      "originalCells": 4,
+      "styledCells": 13,
+      "codeCells": 3,
+      "codeSha256": "8af3aee1a047aa8edfe0fb7db3260b83800004c417c23588ac079ed89a12bbef",
+      "originalCodeSha256": "8af3aee1a047aa8edfe0fb7db3260b83800004c417c23588ac079ed89a12bbef",
+      "sourceChangeExceptions": [],
+      "sanitization": [],
+      "compactedOutputs": 0,
+      "preservedMedia": 3,
+      "preservedCellsSha256": "7bfea2a3bcf3160594db9fbfef1ce4412ab0abc872f2215f09d00c45d4cdd982",
+      "originalMetadataSha256": "1b3d27c0b25bfaafea96b47d9c2d3f0dbc975c2813618759e1ad0a52a4430802",
+      "generatedMarkdownSha256": "a9afe55d0aa86c54a0305a4edf5515b2b0da241e24479af1c2c1225afe6a6d13",
+      "attachments": [
+        {
+          "name": "ai-path-ml-python.jpg",
+          "mime": "image/jpeg",
+          "bytes": 162946,
+          "sha256": "fcd9a514a8fe2eb53e8420b95430c263038c6be2f2a3f972d0380bde9d78240e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-065.png",
+          "mime": "image/png",
+          "bytes": 69036,
+          "sha256": "b2ea6759267f156adad31df233ef0283137d82e9082f526c3a1dcb8ba87e8d9d",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "96ba72e439c9069e7d9780a843d4be8fe2cde82eb5ecd85ee3420046bcf62b5b",
+      "bytes": 487508
+    },
+    {
+      "id": "066",
+      "path": "Создание_простого_веб_сервера_и_настройка_параметров_работы.ipynb",
+      "status": "archive",
+      "originalCells": 37,
+      "styledCells": 51,
+      "codeCells": 32,
+      "codeSha256": "0edd69922a14ed1924f5b1c879d4870e96e441b9bfd5227a2f29b5e354305dbc",
+      "originalCodeSha256": "5d4aaf2f7082a4212637dc911aa6b2ab64ad9f795d82bed6c4d0b67a5205b23c",
+      "sourceChangeExceptions": [
+        27,
+        31
+      ],
+      "sanitization": [
+        {
+          "cell": 18,
+          "reason": "moved legacy stream metadata to cell metadata for nbformat validity; output text preserved"
+        },
+        {
+          "cell": 27,
+          "reason": "replaced another author's global Git identity with commented local examples"
+        },
+        {
+          "cell": 31,
+          "reason": "removed hardcoded deployment credentials and netrc write; environment lookup only",
+          "revocation": "owner action required; history is unchanged"
+        }
+      ],
+      "compactedOutputs": 0,
+      "preservedMedia": 2,
+      "preservedCellsSha256": "443ca74424809e34e2d0aaa48398cb09b89af323464ea209151ee7d57e3e0cbc",
+      "originalMetadataSha256": "f08197b421b9d42f28d1ac7712a3ed641ff366cbc7726d075ddebd7c77873d37",
+      "generatedMarkdownSha256": "5a0c277fbc023a5f7bf7158e9acc8451528d40140464ae975f6d411ca432fb00",
+      "attachments": [
+        {
+          "name": "ai-path-ml-python.jpg",
+          "mime": "image/jpeg",
+          "bytes": 162946,
+          "sha256": "fcd9a514a8fe2eb53e8420b95430c263038c6be2f2a3f972d0380bde9d78240e",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "name": "concept-066.png",
+          "mime": "image/png",
+          "bytes": 74553,
+          "sha256": "09d448ffef6a1931b4986f0267692daa73a2ab1b5e06bd6521dece4ef468540c",
+          "width": 1960,
+          "height": 1008
+        }
+      ],
+      "validation": "PASS",
+      "execution": "NOT_RUN",
+      "fileSha256": "7d3159521a12eb611c01c9bfa829d59126ac28601668af6b9e321ba2f5cab4d0",
+      "bytes": 406708
+    }
+  ],
+  "total": 66,
+  "archives": 65,
+  "starters": 1,
+  "legacyExecution": "NOT_RUN"
+}
