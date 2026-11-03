@@ -6,15 +6,17 @@ on:
     paths:
       - "**/*.ipynb"
       - "README.md"
-      - "docs/NEURAL_NETWORK_NOTEBOOKS.md"
-      - "tools/check_notebooks.py"
+      - "docs/**"
+      - "tools/**"
+      - "requirements*.txt"
       - ".github/workflows/notebook-audit.yml"
   pull_request:
     paths:
       - "**/*.ipynb"
       - "README.md"
-      - "docs/NEURAL_NETWORK_NOTEBOOKS.md"
-      - "tools/check_notebooks.py"
+      - "docs/**"
+      - "tools/**"
+      - "requirements*.txt"
       - ".github/workflows/notebook-audit.yml"
   workflow_dispatch:
 
@@ -24,15 +26,27 @@ permissions:
 jobs:
   audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 7
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-design.txt
       - name: Validate notebook JSON without executing historical files
         run: python tools/check_notebooks.py
-      - name: Install dependency only for the synthetic example
-        run: python -m pip install "numpy>=1.24,<3"
-      - name: Reproduce the CPU-only MLP with untouched holdout data
+      - name: Install presentation checks and CPU starter dependencies
+        run: python -m pip install -r requirements-design.txt
+      - name: Verify all 66 notebook designs, embedded images and source preservation
+        run: python tools/verify_notebook_design.py --repo-root .
+      - name: Reproduce only the synthetic CPU MLP with untouched holdout data
         run: python tools/check_notebooks.py --run-example
+      - name: Save presentation verification report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: notebook-presentation-verification
+          path: reports/notebook-design/verification.json
+          if-no-files-found: warn
+          retention-days: 14
