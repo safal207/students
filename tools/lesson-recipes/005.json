@@ -1,0 +1,99 @@
+{
+  "id": "005",
+  "title": "Автокадр: готовим фото без сюрпризов",
+  "subtitle": "Меняем обучающие кадры и сохраняем проверочные.",
+  "goal": "Подготовить RGB-пакет с правильной высотой и шириной.",
+  "scope": "Подготовка изображений для классификации трёх марок; тяжёлая CNN и частный фотоархив остаются в оригинале.",
+  "prerequisites": [
+    "Python 3 и указанные библиотеки",
+    "Запускай три шага сверху вниз"
+  ],
+  "dataDescription": "Три силуэта машин, нарисованные массивами; не реальные фотографии или марки.",
+  "setupCode": "import numpy as np\nimport matplotlib.pyplot as plt\nrng = np.random.default_rng(5)",
+  "steps": [
+    {
+      "title": "Нарисуй учебные машины",
+      "explanation": "Порядок массива — высота, ширина, каналы. У горизонтальной машины ширина больше высоты.",
+      "code": "height, width = 54, 96\nimages = np.ones((3, height, width, 3), dtype=np.uint8) * 245\ncolors = [(120, 80, 200), (40, 140, 150), (210, 100, 70)]\nfor index, color in enumerate(colors):\n    images[index, 24:40, 12:84] = color\n    images[index, 14:26, 30:68] = color\n    images[index, 38:47, 22:34] = 30\n    images[index, 38:47, 64:76] = 30\nassert images.shape == (3, 54, 96, 3)\nplt.imshow(images[0])\nplt.title('Высота 54 × ширина 96')\nplt.axis('off')\nplt.show()",
+      "expected": "Горизонтальная машина 96×54 пикселя.",
+      "reaction": {
+        "art": "start",
+        "learner": "Почему в форме сначала 54?",
+        "mentor": "Это число строк: высота. Следом идут колонки: ширина.",
+        "bot": "Сверь shape с рисунком."
+      }
+    },
+    {
+      "title": "Добавь тренировочные варианты",
+      "explanation": "Аугментация — изменение примера с сохранением класса. Проверочную копию не меняем случайно.",
+      "code": "train = images.astype(np.float32) / 255\nvalidation = train.copy()\nbefore = validation.copy()\nflipped = train[:, :, ::-1, :].copy()\nbrightness = rng.uniform(0.8, 1.0, (3, 1, 1, 1))\naugmented = np.clip(flipped * brightness, 0, 1)\nassert np.array_equal(validation, before)\nassert augmented.shape == train.shape\nassert 0 <= augmented.min() <= augmented.max() <= 1\nprint('Дополнительный пакет:', augmented.shape)\nprint('Проверочные пиксели сохранены:', np.array_equal(validation, before))",
+      "expected": "Новый тренировочный пакет; проверочные пиксели прежние.",
+      "reaction": {
+        "art": "fix",
+        "learner": "Можно затемнить и проверочный кадр?",
+        "mentor": "Тогда сравнение зависит от случайности. Проверке оставляем одинаковую нормировку.",
+        "bot": "У validation нет случайного преобразования."
+      }
+    },
+    {
+      "title": "Сравни три версии",
+      "explanation": "Покажем кадры в одинаковом масштабе. Это проверка подготовки, не измерение точности марки.",
+      "code": "fig, axes = plt.subplots(1, 3, figsize=(9, 3))\nframes = [train[0], augmented[0], validation[0]]\nnames = ['Обучение', 'Новый вариант', 'Проверка']\nfor ax, frame, name in zip(axes, frames, names):\n    ax.imshow(frame, vmin=0, vmax=1)\n    ax.set_title(name)\n    ax.axis('off')\nplt.tight_layout()\nplt.show()\nassert np.allclose(train[0], validation[0])\nassert not np.allclose(augmented[0], validation[0])\nprint('Средняя разница:', round(float(np.abs(augmented[0]-train[0]).mean()), 3))",
+      "expected": "Визуально отличается только дополнительный кадр.",
+      "reaction": {
+        "art": "finish",
+        "learner": "Три картинки ещё не обучают марки?",
+        "mentor": "Верно. Мы проверили вход модели, а не её качество.",
+        "bot": "Не выводи точность распознавания по этим силуэтам."
+      }
+    }
+  ],
+  "experiment": {
+    "task": "Сделай яркость 0.6–0.8.",
+    "hint": "rng.uniform во втором шаге.",
+    "success": "Меняется дополнительный кадр; validation прежний."
+  },
+  "takeaways": [
+    "Высота и ширина согласованы на всём пути.",
+    "Случайные изменения нужны обучению, не проверке."
+  ],
+  "limitations": [
+    "Копии одного рисунка показывают обработку; это не независимый набор для оценки.",
+    "Классификатор марок не обучается."
+  ],
+  "findings": [
+    {
+      "originalCell": 4,
+      "kind": "bug",
+      "problem": "Загрузка и показ используют разный порядок ширины и высоты.",
+      "evidence": "target_size=(img_width,img_height) против (img_height,img_width)",
+      "resolution": "Единый порядок height,width,channels.",
+      "check": "shape==(3,54,96,3)."
+    },
+    {
+      "originalCell": 4,
+      "kind": "bug",
+      "problem": "Validation использует тот же случайный аугментирующий генератор.",
+      "evidence": "validation_generator=datagen.flow_from_directory(...)",
+      "resolution": "Validation нормируется без аугментации.",
+      "check": "array_equal(validation,before)."
+    }
+  ],
+  "dependencies": [
+    "numpy",
+    "matplotlib"
+  ],
+  "reviewedOriginalCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "sourceAttributions": [
+    "https://colab.research.google.com/github/safal207/hello-world/blob/master/%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F_%D0%B0%D0%B2%D1%82%D0%BE_%D0%BF%D0%BE_%D1%84%D0%BE%D1%82%D0%BE_(3_%D0%BC%D0%B0%D1%80%D0%BA%D0%B8_%D0%B0%D0%B2%D1%82%D0%BE)_%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C_77_%22.ipynb"
+  ]
+}

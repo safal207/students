@@ -1,0 +1,104 @@
+{
+  "id": "029",
+  "title": "RNN: почему порядок меняет ответ",
+  "subtitle": "Передаём один и тот же набор сигналов в разном порядке.",
+  "goal": "Проследить цепочку состояний простой RNN и сравнить два порядка входа.",
+  "scope": "Скалярная рекуррентная ячейка с заданными весами; обучение SimpleRNN для IMDb остаётся в архиве.",
+  "prerequisites": [
+    "Уметь запускать ячейки по порядку",
+    "Знать переменные и списки Python"
+  ],
+  "dataDescription": "Три вручную выбранных сигнала, не реальные оценки отзывов.",
+  "setupCode": "import numpy as np\nimport matplotlib.pyplot as plt\n",
+  "steps": [
+    {
+      "title": "Вычисли первый шаг памяти",
+      "explanation": "RNN соединяет новый сигнал с предыдущим состоянием. Tanh ограничивает результат диапазоном от -1 до 1.",
+      "code": "input_weight = 0.8\nmemory_weight = 0.6\ndef rnn_step(signal, previous):\n    return np.tanh(input_weight * signal + memory_weight * previous)\n\nfirst = rnn_step(1., 0.)\nsecond = rnn_step(0., first)\nassert -1 <= first <= 1\nassert 0 < second < first\nprint('После события:', round(first, 3))\nprint('После паузы:', round(second, 3))\n",
+      "expected": "После нулевого входа память не исчезает сразу, но уменьшается.",
+      "reaction": {
+        "art": "think",
+        "learner": "Ноль на входе означает, что сеть всё забыла?",
+        "mentor": "Нет. В формуле остаётся слагаемое с предыдущим состоянием.",
+        "bot": "Найди memory_weight * previous и проверь его вклад."
+      }
+    },
+    {
+      "title": "Пройди цепочку вперёд и назад",
+      "explanation": "Повторим одну и ту же операцию для всей последовательности. Затем поменяем порядок, сохранив все входные числа.",
+      "code": "def run(values):\n    state = 0.\n    history = []\n    for value in values:\n        state = rnn_step(value, state)\n        history.append(state)\n    return np.array(history)\n\nsignals = np.array([1., 0., -1.])\nforward = run(signals)\nbackward = run(signals[::-1])\nassert np.isclose(signals.sum(), signals[::-1].sum())\nassert not np.isclose(forward[-1], backward[-1])\nprint('Последний ответ вперёд:', round(forward[-1], 3))\nprint('Последний ответ назад:', round(backward[-1], 3))\n",
+      "expected": "Сумма входов одинаковая, а последние состояния разные.",
+      "reaction": {
+        "art": "compare",
+        "learner": "Мешок чисел одинаковый — почему ответ разный?",
+        "mentor": "Поздние события приходят уже к изменённой памяти. Поэтому перестановка меняет вычисление.",
+        "bot": "Сравни не только финал, но и промежуточные состояния."
+      }
+    },
+    {
+      "title": "Покажи, как гаснет старое событие",
+      "explanation": "После одного события дадим девять нулей. Это наглядная проверка того, насколько долго эта конкретная RNN хранит сигнал.",
+      "code": "pulse = np.r_[1., np.zeros(9)]\nmemory = run(pulse)\nassert len(memory) == len(pulse)\nassert np.all(np.diff(memory) < 0)\nassert memory[-1] < memory[0]\nfig, ax = plt.subplots(figsize=(6, 3))\nax.plot(range(1, len(memory) + 1), memory, '-o', color='#7257cf')\nax.set(xlabel='Шаг', ylabel='Состояние', title='Память после одного события')\nplt.show()\nprint('Остаток памяти:', round(memory[-1], 5))\n",
+      "expected": "Линия постепенно приближается к нулю.",
+      "reaction": {
+        "art": "finish",
+        "learner": "Такая сеть всегда забывает с этой скоростью?",
+        "mentor": "Нет. Скорость зависит от весов и входов. Здесь мы изучаем один контролируемый пример.",
+        "bot": "Меняй один вес за раз и сравнивай линии."
+      }
+    }
+  ],
+  "experiment": {
+    "task": "Увеличь memory_weight с 0.6 до 0.9.",
+    "hint": "Измени вес в первом шаге и выполни урок заново.",
+    "success": "После импульса память затухает медленнее; все состояния остаются ограничены tanh."
+  },
+  "takeaways": [
+    "RNN использует прошлое состояние.",
+    "Перестановка входов может изменить ответ.",
+    "Веса влияют на длительность памяти."
+  ],
+  "limitations": [
+    "Веса заданы вручную; градиентное обучение не выполняется.",
+    "Демонстрация не подтверждает качество классификации IMDb."
+  ],
+  "findings": [
+    {
+      "originalCell": 18,
+      "kind": "teaching",
+      "problem": "Старый вывод опирается на единственный сохранённый процент и предлагает больше эпох без разбора памяти.",
+      "evidence": "Сохранённый текст о 58% и увеличении числа эпох",
+      "resolution": "Вместо обещания точности проверяем непосредственно порядок и затухание состояния.",
+      "check": "Разные последние состояния при одинаковой сумме входов."
+    }
+  ],
+  "dependencies": [
+    "numpy",
+    "matplotlib"
+  ],
+  "reviewedOriginalCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "sourceAttributions": [
+    "https://colab.research.google.com/github/safal207/hello-world/blob/master/NLP_%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7_%D1%82%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8_%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D1%87%D0%B5%D1%80%D0%B5%D0%B7_Embedding_%2B_RNN_(accuracy_0_58)_%22dl_nlp_imdb_simple_rnn_ipynb%22.ipynb"
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "id": "045",
+  "title": "Окно в будущее: прогноз на один шаг",
+  "subtitle": "Превратим ряд чисел в небольшие задачи для модели.",
+  "goal": "Получить прогноз следующего значения и измерить его ошибку.",
+  "scope": "Введение в окна временного ряда. Архив содержит большие Conv/LSTM-эксперименты с биржевыми данными; здесь линейная модель на выдуманном сигнале.",
+  "prerequisites": [
+    "Запускать ячейки сверху вниз",
+    "Читать списки и простые выражения Python"
+  ],
+  "dataDescription": "Синтетические 100 значений: плавный тренд и синусоида.",
+  "setupCode": "import numpy as np\nimport matplotlib.pyplot as plt\n",
+  "steps": [
+    {
+      "title": "Соберём окна из прошлого",
+      "explanation": "Модель увидит пять прошлых значений. Ответом будет строго следующее значение: будущее не должно попасть во вход.",
+      "code": "time = np.arange(100)\nseries = 20 + 0.1 * time + 2 * np.sin(time / 5)\nwindow = 5\ntargets = np.arange(window, len(series))\nX = np.array([series[t-window:t] for t in targets])\ny = series[targets]\ntrain = targets < 70\ntest = ~train\nassert X.shape == (len(y), window)\nassert np.array_equal(X[0], series[:window])\nassert y[0] == series[window]\nprint('Первое окно:', X[0].round(2), '→', round(y[0], 2))\n",
+      "expected": "Пять входных чисел и отдельное шестое число-ответ.",
+      "reaction": {
+        "art": "start",
+        "learner": "Почему шестое число не положить во вход?",
+        "mentor": "Тогда модель подсмотрит ответ. Окно заканчивается раньше точки, которую прогнозируем.",
+        "bot": "Сравни X[0] с series[:window], а y[0] — с series[window]."
+      }
+    },
+    {
+      "title": "Обучим маленькую модель",
+      "explanation": "Добавим столбец единиц для свободного слагаемого. Коэффициенты найдём только по ранней части ряда.",
+      "code": "design = np.column_stack([np.ones(len(X)), X])\nweights = np.linalg.lstsq(design[train], y[train], rcond=None)[0]\nprediction = design[test] @ weights\nbaseline = X[test, -1]\nassert prediction.shape == y[test].shape\nassert targets[train].max() < targets[test].min()\nprint('Обучающих окон:', train.sum(), 'проверочных:', test.sum())\n",
+      "expected": "Проверочная часть начинается после обучающей; у прогноза столько же значений, сколько ответов.",
+      "reaction": {
+        "art": "think",
+        "learner": "А простой прогноз — это повторить последнее число?",
+        "mentor": "Да. Такая базовая версия помогает понять, принесла ли модель пользу.",
+        "bot": "Проверь порядок времени перед сравнением ошибок."
+      }
+    },
+    {
+      "title": "Посмотрим на ошибку",
+      "explanation": "MAE — среднее расстояние между прогнозом и ответом в единицах ряда. На графике покажем только проверочную часть.",
+      "code": "mae = np.mean(np.abs(prediction - y[test]))\nbaseline_mae = np.mean(np.abs(baseline - y[test]))\nassert np.isfinite(mae) and mae >= 0\nprint(f'MAE модели: {mae:.3f}; MAE повтора: {baseline_mae:.3f}')\nplt.figure(figsize=(8, 3))\nplt.plot(targets[test], y[test], label='Ответ')\nplt.plot(targets[test], prediction, '--', label='Прогноз')\nplt.xlabel('Шаг времени')\nplt.ylabel('Условные единицы')\nplt.legend()\nplt.tight_layout()\nplt.show()\n",
+      "expected": "Рассчитанные MAE и две линии; близость линий относится только к этому сигналу.",
+      "reaction": {
+        "art": "compare",
+        "learner": "Если линии почти совпали, модель готова к любым данным?",
+        "mentor": "Нет. Мы проверили один простой искусственный ряд. На другом сигнале ошибка изменится.",
+        "bot": "Измени частоту синусоиды и снова запусти все шаги."
+      }
+    }
+  ],
+  "experiment": {
+    "task": "Поменяй длину окна на 8.",
+    "hint": "window в шаге 1.",
+    "success": "После запуска всех шагов формы совпадают, MAE рассчитана заново."
+  },
+  "takeaways": [
+    "Окно содержит только прошлое.",
+    "Ошибка модели сравнивается с простой базовой версией."
+  ],
+  "limitations": [
+    "Не прогноз рынка и не торговая рекомендация.",
+    "Полные нейросети из архива здесь не обучаются."
+  ],
+  "findings": [
+    {
+      "originalCell": 16,
+      "kind": "bug",
+      "problem": "Новая подготовка обращается к неопределённой data.",
+      "evidence": "data.shape при ранее созданной base_data",
+      "resolution": "Используется одна переменная series и единая схема окон.",
+      "check": "Все шаги компилируются; y[0] совпадает со следующим значением."
+    },
+    {
+      "originalCell": 19,
+      "kind": "bug",
+      "problem": "Оценка смешивает модель и формы из разных экспериментов.",
+      "evidence": "currModel=modelX3; modelD.predict(...reshape(1,10,36))",
+      "resolution": "Одна обученная модель, одинаковый window для обучения и проверки.",
+      "check": "prediction.shape == y[test].shape"
+    }
+  ],
+  "dependencies": [
+    "numpy",
+    "matplotlib"
+  ],
+  "reviewedOriginalCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "sourceAttributions": [
+    "https://colab.research.google.com/github/safal207/hello-world/blob/master/%22DownJoins%22%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%92%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D1%80%D1%8F%D0%B4%D1%8B_%22_36.ipynb"
+  ]
+}

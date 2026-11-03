@@ -1,0 +1,108 @@
+{
+  "id": "011",
+  "title": "Эхо-сигнал: два класса без путаницы",
+  "subtitle": "Создадим измерения датчиков и отдельную проверку.",
+  "goal": "Обучить бинарную модель с нормировкой только по train.",
+  "scope": "Учебный аналог классификации Sonar; не реальная система обнаружения мин и не архивная нейросеть.",
+  "prerequisites": [
+    "Python 3 и указанные библиотеки",
+    "Запускай шаги сверху вниз"
+  ],
+  "dataDescription": "Синтетические 60-мерные эхо-сигналы двух условных классов.",
+  "setupCode": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.pipeline import make_pipeline\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.linear_model import LogisticRegression\nrng = np.random.default_rng(11)",
+  "steps": [
+    {
+      "title": "Подготовь измерения и три набора",
+      "explanation": "Каждому сигналу соответствует один класс 0 или 1. Это классификация, а не прогноз непрерывного числа.",
+      "code": "y = np.repeat([0, 1], 80)\nX = rng.normal(0, 0.4, (160, 60))\nX[:, 15:25] += y[:, None] * 0.8\nids = np.arange(len(y))\ntrain_val, test = train_test_split(ids, test_size=0.2, stratify=y, random_state=11)\ntrain, val = train_test_split(train_val, test_size=0.25, stratify=y[train_val], random_state=11)\nx_train, y_train = X[train], y[train]\nx_val, y_val = X[val], y[val]\nx_test, y_test = X[test], y[test]\nassert set(train).isdisjoint(val) and set(train_val).isdisjoint(test)\nassert x_val.shape == (len(y_val), 60)\nplt.plot(X[0], label='Условный класс 0')\nplt.plot(X[-1], label='Условный класс 1')\nplt.xlabel('Номер измерения')\nplt.ylabel('Синтетическая амплитуда')\nplt.legend()\nplt.show()",
+      "expected": "Два сигнала и явно созданная validation-группа.",
+      "reaction": {
+        "art": "fix",
+        "learner": "Откуда раньше появлялась x_val?",
+        "mentor": "В старом коде она использовалась без создания. Теперь все три набора определены явно.",
+        "bot": "Перед обучением проверь пары x_val и y_val."
+      }
+    },
+    {
+      "title": "Обучи компактную модель",
+      "explanation": "Pipeline сначала учит нормировку на train, затем классификатор. К val применяются уже готовые параметры.",
+      "code": "model = make_pipeline(StandardScaler(), LogisticRegression(C=1.0, max_iter=200, random_state=11))\nmodel.fit(x_train, y_train)\nscaler = model.named_steps['standardscaler']\nassert np.allclose(scaler.mean_, x_train.mean(axis=0))\nassert scaler.n_samples_seen_ == len(x_train)\nvalidation_accuracy = model.score(x_val, y_val)\nprint(f'Проверка на синтетических сигналах: {validation_accuracy:.3f}')\nprint('Строк использовано для нормировки:', scaler.n_samples_seen_)",
+      "expected": "Измеренная оценка val; масштаб получен только из train.",
+      "reaction": {
+        "art": "think",
+        "learner": "Зачем не нормировать всю таблицу сразу?",
+        "mentor": "Тогда сведения о проверочных сигналах попадут в обучение.",
+        "bot": "Средние scaler совпадают со средними x_train."
+      }
+    },
+    {
+      "title": "Разбери итоговую таблицу ответов",
+      "explanation": "Порог 0.5 задан заранее. Матрица показывает правильные и ошибочные ответы отдельно для каждого класса.",
+      "code": "probability = model.predict_proba(x_test)[:, 1]\npredicted = (probability >= 0.5).astype(int)\nconfusion = np.zeros((2, 2), dtype=int)\nnp.add.at(confusion, (y_test, predicted), 1)\nassert confusion.sum() == len(y_test)\nassert np.all((probability >= 0) & (probability <= 1))\nprint('Строки: истинный класс; колонки: ответ')\nprint(confusion)\nprint(f'Итоговая доля совпадений: {np.mean(predicted == y_test):.3f}')",
+      "expected": "Матрица содержит ровно столько ответов, сколько примеров в test.",
+      "reaction": {
+        "art": "finish",
+        "learner": "Число 0.9 — это гарантия правильности?",
+        "mentor": "Нет. Это выход модели на искусственных данных; реальное применение требует отдельной проверки.",
+        "bot": "Сумма матрицы должна совпадать с размером test."
+      }
+    }
+  ],
+  "experiment": {
+    "task": "Ослабь различие классов с 0.8 до 0.3.",
+    "hint": "Добавка к X[:,15:25] в первом шаге.",
+    "success": "Сравни матрицу ошибок; независимость наборов сохраняется."
+  },
+  "takeaways": [
+    "Два класса — задача классификации.",
+    "Обработка данных тоже обучается только на train."
+  ],
+  "limitations": [
+    "Нет реальных Sonar-данных и оценок пригодности оборудования.",
+    "Исторические 91% здесь не заявляются."
+  ],
+  "findings": [
+    {
+      "originalCell": 13,
+      "kind": "bug",
+      "problem": "Обучение использует несуществующие x_val и y_val.",
+      "evidence": "validation_data=(x_val,y_val)",
+      "resolution": "Пары train/val/test создаются явно.",
+      "check": "x_val.shape==(len(y_val),60)."
+    },
+    {
+      "originalCell": 1,
+      "kind": "teaching",
+      "problem": "Бинарная задача ошибочно названа регрессией.",
+      "evidence": "Заголовок: Задача регрессии; выход sigmoid и binary_crossentropy.",
+      "resolution": "Урок называет задачу классификацией.",
+      "check": "Метки и ответы принадлежат {0,1}."
+    }
+  ],
+  "dependencies": [
+    "numpy",
+    "matplotlib",
+    "scikit-learn"
+  ],
+  "reviewedOriginalCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "sourceAttributions": [
+    "https://colab.research.google.com/github/safal207/hello-world/blob/master/Pro_%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%A6%D0%B5%D0%BB%D1%8C_%3D_90_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D0%B8_%D0%B1%D0%B0%D0%B7%D0%B0_%D0%9C%D0%98%D0%9D%D0%AB_%D0%BD%D0%B0_%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B9_%D0%B2%D1%8B%D0%B1%D0%BE%D0%BA%D0%B5.ipynb"
+  ]
+}

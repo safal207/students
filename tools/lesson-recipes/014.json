@@ -1,0 +1,169 @@
+{
+  "id": "014",
+  "title": "Первый шаг в терминал",
+  "subtitle": "Найдём файл, прочитаем начало и посчитаем строки.",
+  "goal": "Выполнить ls, head и wc в отдельной учебной папке.",
+  "scope": "Три безопасные команды чтения; скачивание, установка пакетов и системные каталоги из архива не нужны.",
+  "prerequisites": [
+    "Python 3; библиотеки перечислены ниже",
+    "Для настоящих команд: Bash в Linux/macOS или Git Bash в Windows; иначе явно включится учебный Python-вариант"
+  ],
+  "dataDescription": "Небольшой CSV создаётся в TemporaryDirectory; пользовательские файлы не читаются.",
+  "setupCode": "from pathlib import Path\nfrom tempfile import TemporaryDirectory\nimport os\nimport shutil\nimport subprocess\nimport shlex\nworkspace = TemporaryDirectory(prefix='aipath-linux-')\nfolder = Path(workspace.name)\nif os.name == 'nt':\n    candidates = [Path('C:/Program Files/Git/bin/bash.exe'), Path('C:/Program Files (x86)/Git/bin/bash.exe')]\n    bash = next((str(path) for path in candidates if path.is_file()), None)\nelse:\n    bash = shutil.which('bash')\ndef read_command(command, portable):\n    if bash:\n        result = subprocess.run([bash, '--noprofile', '--norc', '-c', command], cwd=folder, capture_output=True, text=True, encoding='utf-8', check=True)\n        return result.stdout.strip()\n    return portable().strip()\nprint('Режим:', 'настоящий Bash' if bash else 'учебный аналог на Python; Bash не проверен')",
+  "steps": [
+    {
+      "title": "Найди учебный файл",
+      "explanation": "Создадим отдельную временную папку и маленькую таблицу. ls показывает её содержимое; команда запускается именно в этой папке.",
+      "code": "content = 'name,minutes\\nPython,20\\nLinux,15\\nCharts,25\\n'\n(folder / 'lessons.csv').write_text(content, encoding='utf-8', newline='\\n')\n(folder / 'README.txt').write_text('Training fixture only\\n', encoding='utf-8', newline='\\n')\nlisting = read_command('ls -1', lambda: '\\n'.join(sorted(path.name for path in folder.iterdir())))\nassert set(listing.splitlines()) == {'README.txt', 'lessons.csv'}\nassert folder.is_dir()\nprint(listing)",
+      "expected": "Два созданных файла: README.txt и lessons.csv.",
+      "reaction": {
+        "art": "start",
+        "learner": "Почему я не вижу свои папки?",
+        "mentor": "Команда работает только в отдельном учебном каталоге. Здесь легко понять каждый результат.",
+        "bot": "ls — настоящая команда, только если setup показал режим Bash."
+      }
+    },
+    {
+      "title": "Прочитай первые две строки",
+      "explanation": "head помогает быстро увидеть формат таблицы. Параметр -n 2 означает две строки вместе с заголовком.",
+      "code": "preview = read_command('head -n 2 lessons.csv', lambda: '\\n'.join(content.splitlines()[:2]))\nlines = preview.splitlines()\nassert lines == ['name,minutes', 'Python,20']\nassert len(lines) == 2\nprint('Первые две строки:')\nprint(preview)",
+      "expected": "Заголовок и одна строка данных.",
+      "reaction": {
+        "art": "think",
+        "learner": "Почему две строки — только один урок?",
+        "mentor": "Первая строка содержит названия колонок. Количество строк файла и записей таблицы различается.",
+        "bot": "Вторая строка должна содержать Python,20."
+      }
+    },
+    {
+      "title": "Посчитай строки, не печатая весь файл",
+      "explanation": "wc -l считает переводы строк. Наш файл заканчивается переводом строки, поэтому четыре строки означают заголовок и три записи.",
+      "code": "line_count = int(read_command('wc -l < lessons.csv', lambda: str(content.count('\\n'))))\nrecords = line_count - 1\nassert line_count == 4\nassert records == 3\nassert (folder / 'lessons.csv').read_text(encoding='utf-8') == content\nprint('Строк:', line_count, '| записей:', records)\nprint('Исходный файл после команд не изменился.')\nworkspace.cleanup()",
+      "expected": "Четыре строки, три записи; исходный текст не изменился.",
+      "reaction": {
+        "art": "finish",
+        "learner": "А если последняя строка без перевода?",
+        "mentor": "wc -l считает именно символы перевода строки. Тогда число может отличаться от привычного числа видимых строк.",
+        "bot": "После уборки временной папки для нового запуска начни с setup."
+      }
+    }
+  ],
+  "experiment": {
+    "task": "Поменяй число строк просмотра с2 на3.",
+    "hint": "Во втором шаге поставь head -n3 и [:3], а проверки измени на lines == ['name,minutes', 'Python,20', 'Linux,15'] и len(lines) == 3.",
+    "success": "Вывод содержит заголовок и две записи; CSV по-прежнему содержит три урока."
+  },
+  "takeaways": [
+    "Команда запускается в определённом каталоге.",
+    "head показывает начало, wc -l считает переводы строк."
+  ],
+  "limitations": [
+    "При отсутствии Bash выполняется явно подписанный Python-аналог; он не проверяет терминал.",
+    "Сеть, GPU и параметры компьютера здесь не тестируются."
+  ],
+  "findings": [
+    {
+      "originalCell": 8,
+      "kind": "limitation",
+      "problem": "Чтение зависит от автоматически созданной Colab-папки.",
+      "evidence": "sample_data/california_housing_train.csv",
+      "resolution": "Учебный CSV создаётся в изолированной папке.",
+      "check": "ls/head/wc сверяются с известным содержимым."
+    },
+    {
+      "originalCell": 67,
+      "kind": "teaching",
+      "problem": "Характеристики одного старого запуска записаны как постоянные.",
+      "evidence": "Количество процессоров2; 2.3ГГц.",
+      "resolution": "Никаких неподтверждённых характеристик окружения; выводится фактический режим запуска.",
+      "check": "Режим Bash/Python определяется наличием исполняемого файла."
+    }
+  ],
+  "dependencies": [],
+  "reviewedOriginalCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76
+  ],
+  "sourceAttributions": [
+    "https://colab.research.google.com/github/safal207/hello-world/blob/master/colab_linux.ipynb",
+    "http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml",
+    "http://vis-www.cs.umass.edu/lfw/#download",
+    "https://mxnet.apache.org",
+    "https://www.libarchive.org/"
+  ]
+}

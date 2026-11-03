@@ -1,0 +1,111 @@
+{
+  "id": "046",
+  "title": "Честный выбор: какой прогноз оставить",
+  "subtitle": "Выберем правило на одной части ряда и проверим на другой.",
+  "goal": "Разделить выбор модели и окончательную проверку.",
+  "scope": "Короткое сравнение правил прогноза вместо многослойных сетей SP500 из архива.",
+  "prerequisites": [
+    "Запускать ячейки сверху вниз",
+    "Читать списки и простые выражения Python"
+  ],
+  "dataDescription": "Выдуманный ряд с трендом и волной.",
+  "setupCode": "import numpy as np\nimport matplotlib.pyplot as plt\n",
+  "steps": [
+    {
+      "title": "Разделим время на три части",
+      "explanation": "Первые точки — история, следующие — выбор правила. Последние точки оставим для единственной итоговой проверки.",
+      "code": "t = np.arange(120)\nseries = 10 + 0.08*t + np.sin(t/4)\nids = np.arange(5, len(series))\nX = np.array([series[i-5:i] for i in ids])\ny = series[ids]\ntrain = ids < 70\nvalidation = (ids >= 70) & (ids < 95)\ntest = ids >= 95\nassert not np.any(train & validation | train & test | validation & test)\nprint('История / выбор / проверка:', train.sum(), validation.sum(), test.sum())\n",
+      "expected": "Три непересекающихся диапазона времени.",
+      "reaction": {
+        "art": "start",
+        "learner": "Почему нельзя выбрать по последним точкам?",
+        "mentor": "Их тогда уже нельзя считать новой проверкой. Для выбора выделим отдельный участок.",
+        "bot": "Убедись, что маски диапазонов не пересекаются."
+      }
+    },
+    {
+      "title": "Сравним два понятных правила",
+      "explanation": "Первое повторяет последнее значение. Второе продолжает последний шаг; оба используют только прошлое.",
+      "code": "rules = {\n    'Повтор': lambda windows: windows[:, -1],\n    'Продолжение шага': lambda windows: 2*windows[:, -1] - windows[:, -2],\n}\nscores = {name: np.mean(np.abs(rule(X[validation])-y[validation]))\n          for name, rule in rules.items()}\nchosen = min(scores, key=scores.get)\nassert chosen in rules\nfor name, error in scores.items():\n    print(f'{name}: MAE выбора = {error:.3f}')\nprint('Оставляем:', chosen)\n",
+      "expected": "Имя правила выбирается из существующего словаря по рассчитанной MAE.",
+      "reaction": {
+        "art": "compare",
+        "learner": "Это вообще модели, если мы ничего не обучали?",
+        "mentor": "Это базовые правила прогноза. Они полезны до обучения сложной сети.",
+        "bot": "Имя выбранного правила должно быть ключом rules."
+      }
+    },
+    {
+      "title": "Откроем отложенный участок",
+      "explanation": "Теперь применим выбранное правило к последнему участку. Его ошибку не используем для смены победителя.",
+      "code": "prediction = rules[chosen](X[test])\nerror = np.mean(np.abs(prediction-y[test]))\nassert len(prediction) == test.sum()\nprint(f'Итоговая MAE: {error:.3f}; правило: {chosen}')\nplt.figure(figsize=(8, 3))\nplt.plot(ids[test], y[test], label='Ответ')\nplt.plot(ids[test], prediction, '--', label=chosen)\nplt.xlabel('Шаг времени')\nplt.ylabel('Условные единицы')\nplt.legend()\nplt.tight_layout()\nplt.show()\n",
+      "expected": "Итоговая ошибка и непустой график последнего участка.",
+      "reaction": {
+        "art": "finish",
+        "learner": "А если здесь победило бы другое правило?",
+        "mentor": "Запишем результат. Подбирать заново по этой проверке нельзя без новой независимой проверки.",
+        "bot": "График строится по реальным значениям, без среза несуществующих эпох."
+      }
+    }
+  ],
+  "experiment": {
+    "task": "Измени волну с sin(t/4) на sin(t/2).",
+    "hint": "series в шаге 1.",
+    "success": "Снова получишь выбор и отдельную итоговую MAE, без обещания победителя."
+  },
+  "takeaways": [
+    "Правила можно сравнить до сложного обучения.",
+    "Выбор и итоговая проверка — разные данные."
+  ],
+  "limitations": [
+    "Синтетический ряд не подтверждает работу на SP500.",
+    "Окна итоговой части используют уже наблюдавшиеся прошлые точки: это прогноз по одному шагу."
+  ],
+  "findings": [
+    {
+      "originalCell": 18,
+      "kind": "bug",
+      "problem": "Оценка ссылается на неопределённую модель.",
+      "evidence": "currModel = modelX; построена modelX3",
+      "resolution": "Выбор обращается к существующему ключу rules.",
+      "check": "assert chosen in rules"
+    },
+    {
+      "originalCell": 17,
+      "kind": "bug",
+      "problem": "История четырёх эпох обрезана начиная с десятой: график пуст.",
+      "evidence": "epochs=4 и history.history[loss][10:]",
+      "resolution": "Показываются все точки итогового прогноза, неподходящий график обучения убран.",
+      "check": "len(prediction) == test.sum()"
+    }
+  ],
+  "dependencies": [
+    "numpy",
+    "matplotlib"
+  ],
+  "reviewedOriginalCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "sourceAttributions": [
+    "https://colab.research.google.com/github/safal207/hello-world/blob/master/SP500_%22%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%92%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D1%80%D1%8F%D0%B4%D1%8B.ipynb"
+  ]
+}

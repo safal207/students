@@ -1,0 +1,102 @@
+{
+  "id": "027",
+  "title": "GRU: память с регулятором",
+  "subtitle": "Смотрим, как два вентиля меняют состояние маленькой рекуррентной ячейки.",
+  "goal": "Вычислить состояния GRU и проверить крайние положения вентиля обновления.",
+  "scope": "Скалярная GRU с заданными весами показывает reset и update. Обучение GRU на IMDb остаётся в архиве.",
+  "prerequisites": [
+    "Уметь запускать ячейки по порядку",
+    "Знать переменные и списки Python"
+  ],
+  "dataDescription": "Ручная последовательность числовых сигналов; числа не являются предсказанным настроением.",
+  "setupCode": "import numpy as np\nimport matplotlib.pyplot as plt\nsignals = np.array([1., 0., -1., 0., 1.])\n",
+  "steps": [
+    {
+      "title": "Собери два регулятора",
+      "explanation": "Сигмоида превращает число в значение между 0 и 1. Такие значения определяют, сколько памяти использовать и сколько обновить.",
+      "code": "def sigmoid(value):\n    return 1 / (1 + np.exp(-value))\n\ndef gru_step(signal, previous, update_override=None):\n    reset = sigmoid(signal - previous)\n    update = sigmoid(signal + previous)\n    if update_override is not None:\n        update = float(update_override)\n    candidate = np.tanh(signal + 0.8 * reset * previous)\n    state = (1 - update) * previous + update * candidate\n    return state, reset, update, candidate\n\nstate, reset, update, candidate = gru_step(1., 0.)\nassert 0 < reset < 1 and 0 < update < 1\nprint('Новый сигнал:', round(state, 3))\n",
+      "expected": "Оба регулятора находятся между 0 и 1.",
+      "reaction": {
+        "art": "think",
+        "learner": "Update — это доля старой памяти?",
+        "mentor": "В принятой здесь записи это доля нового кандидата. Мы явно написали формулу, чтобы не путать соглашения.",
+        "bot": "Посмотри коэффициенты перед previous и candidate: их сумма равна 1."
+      }
+    },
+    {
+      "title": "Передай память через всю цепочку",
+      "explanation": "Каждый следующий шаг получает предыдущее состояние. Веса остаются одинаковыми на всей последовательности.",
+      "code": "state = 0.\nstates = []\nfor signal in signals:\n    state, reset, update, candidate = gru_step(signal, state)\n    states.append(state)\nstates = np.array(states)\nassert states.shape == signals.shape\nassert np.isfinite(states).all()\nassert (np.abs(states) <= 1).all()\nprint('Состояния:', np.round(states, 3))\n",
+      "expected": "Получается по одному состоянию на каждый входной сигнал.",
+      "reaction": {
+        "art": "compare",
+        "learner": "Нулевой сигнал должен обнулить память?",
+        "mentor": "Не обязательно. GRU смешивает новую информацию с тем, что уже хранит.",
+        "bot": "Сравни состояние до и после второго, нулевого сигнала."
+      }
+    },
+    {
+      "title": "Проверь закрытый и открытый вентиль",
+      "explanation": "Поставим обновление сначала в 0, затем в 1. Так можно проверить формулу без обучения модели.",
+      "code": "kept, _, _, _ = gru_step(-1., 0.6, update_override=0)\nreplaced, _, _, candidate = gru_step(-1., 0.6, update_override=1)\nassert np.isclose(kept, 0.6)\nassert np.isclose(replaced, candidate)\nfig, ax = plt.subplots(figsize=(6, 3))\nax.plot(range(1, len(signals) + 1), signals, '--o', label='Вход')\nax.plot(range(1, len(states) + 1), states, '-o', label='Память GRU')\nax.set(xlabel='Шаг', ylabel='Условный сигнал')\nax.legend()\nplt.show()\nprint('Update=0 сохраняет:', kept)\n",
+      "expected": "При update=0 остаётся старая память; при update=1 берётся новый кандидат.",
+      "reaction": {
+        "art": "finish",
+        "learner": "Так я могу проверить ячейку до большого обучения?",
+        "mentor": "Да. Крайние положения регуляторов хорошо выявляют перепутанные коэффициенты.",
+        "bot": "Обе проверки должны пройти после любого допустимого изменения входного сигнала."
+      }
+    }
+  ],
+  "experiment": {
+    "task": "Измени третий сигнал с -1 на 1.",
+    "hint": "Правь массив signals в начале урока.",
+    "success": "Пересчитай цепочку и объясни, какие последующие состояния изменились."
+  },
+  "takeaways": [
+    "GRU переносит состояние между шагами.",
+    "Reset влияет на использование старой памяти в кандидате.",
+    "Update задаёт смесь старого состояния и кандидата."
+  ],
+  "limitations": [
+    "Веса выбраны для демонстрации, обучение не выполняется.",
+    "Скалярный пример не заменяет векторную модель анализа отзывов."
+  ],
+  "findings": [
+    {
+      "originalCell": 11,
+      "kind": "teaching",
+      "problem": "Механика GRU спрятана за одним вызовом слоя.",
+      "evidence": "model.add(GRU(32))",
+      "resolution": "Показаны reset, update, кандидат и обновление состояния.",
+      "check": "При update=0 память сохраняется, при update=1 заменяется кандидатом."
+    }
+  ],
+  "dependencies": [
+    "numpy",
+    "matplotlib"
+  ],
+  "reviewedOriginalCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "sourceAttributions": [
+    "https://colab.research.google.com/github/safal207/hello-world/blob/master/NLP_%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7_%D1%82%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8_%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D1%87%D0%B5%D1%80%D0%B5%D0%B7_Embedding_%2B_GRU(accuracy_0_83).ipynb"
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "id": "018",
+  "title": "Нейросеть решает XOR",
+  "subtitle": "Две координаты, скрытый слой и честный итоговый тест.",
+  "goal": "Обучить маленькую NumPy-сеть отличать разные знаки от одинаковых.",
+  "scope": "Полноценный компактный MLP с ручными градиентами; длинные упражнения оставлены в архиве.",
+  "prerequisites": [
+    "Python 3 и указанные библиотеки",
+    "Запускай шаги сверху вниз"
+  ],
+  "dataDescription": "1200 случайных точек; класс 1 означает разные знаки координат, класс 0 — одинаковые.",
+  "setupCode": "import numpy as np\nimport matplotlib.pyplot as plt\nrng = np.random.default_rng(42)",
+  "steps": [
+    {
+      "title": "Задай правило и раздели точки",
+      "explanation": "XOR здесь означает, что признаки «координата положительна» различаются. Делим точки до нормировки; среднее и масштаб берём только из train.",
+      "code": "X = rng.uniform(-1, 1, (1200, 2))\ny = (X[:, 0] * X[:, 1] < 0).astype(float).reshape(-1, 1)\norder = rng.permutation(len(y))\ntrain, val, test = order[:840], order[840:1020], order[1020:]\nassert not (set(train) & set(val) or set(train) & set(test) or set(val) & set(test))\nmean = X[train].mean(axis=0)\nstd = X[train].std(axis=0)\nassert np.all(std > 0)\nA, B, C = (X[train]-mean)/std, (X[val]-mean)/std, (X[test]-mean)/std\ny_train, y_val, y_test = y[train], y[val], y[test]\ncorners = np.array([[-1,-1], [-1,1], [1,-1], [1,1]])\nassert np.array_equal((corners[:,0]*corners[:,1] < 0).astype(int), [0,1,1,0])\nplt.scatter(X[train, 0], X[train, 1], c=y_train.ravel(), cmap='coolwarm', s=8)\nplt.xlabel('Координата x1')\nplt.ylabel('Координата x2')\nplt.show()",
+      "expected": "Противоположные квадранты имеют один класс; четыре угла дают 0,1,1,0.",
+      "reaction": {
+        "art": "fix",
+        "learner": "Если оба знака одинаковые, это единица?",
+        "mentor": "Для XOR — ноль. В старом варианте единица означала одинаковые знаки, то есть обратное правило XNOR.",
+        "bot": "Таблица углов проверяет именно смысл названия."
+      }
+    },
+    {
+      "title": "Научи скрытый слой",
+      "explanation": "tanh изгибает пространство, а sigmoid переводит ответ в число от 0 до 1. Градиент показывает, как уменьшать ошибку; обновляем веса небольшими шагами.",
+      "code": "W1 = rng.normal(0, 0.35, (2, 16))\nb1 = np.zeros((1, 16))\nW2 = rng.normal(0, 0.35, (16, 1))\nb2 = np.zeros((1, 1))\ndef sigmoid(z):\n    return 1 / (1 + np.exp(-np.clip(z, -40, 40)))\ndef predict(features):\n    return sigmoid(np.tanh(features @ W1 + b1) @ W2 + b2)\nhistory = []\nfor epoch in range(1500):\n    hidden = np.tanh(A @ W1 + b1)\n    logits = hidden @ W2 + b2\n    probability = sigmoid(logits)\n    loss = np.mean(np.logaddexp(0, logits) - y_train * logits)\n    output_gradient = (probability-y_train) / len(y_train)\n    hidden_gradient = (output_gradient @ W2.T) * (1-hidden**2)\n    grad_w2 = hidden.T @ output_gradient\n    grad_w1 = A.T @ hidden_gradient\n    W2 -= 0.15 * grad_w2\n    b2 -= 0.15 * output_gradient.sum(axis=0, keepdims=True)\n    W1 -= 0.15 * grad_w1\n    b1 -= 0.15 * hidden_gradient.sum(axis=0, keepdims=True)\n    if epoch in [0, 99, 299, 699, 1499]:\n        history.append((epoch+1, float(loss), float(np.mean((predict(B) >= 0.5) == y_val))))\nassert len(history) == 5\nassert history[-1][1] < history[0][1]\nprint('Эпоха / ошибка train / точность val')\nfor row in history:\n    print(row[0], round(row[1], 4), round(row[2], 3))",
+      "expected": "Пять контрольных строк с вычисленной ошибкой и оценкой val.",
+      "reaction": {
+        "art": "think",
+        "learner": "Нужно сразу выучить все градиенты?",
+        "mentor": "Сначала проследи путь: ответ → ошибка → поправка весов. Формулы можно разбирать по одной, не меняя весь цикл.",
+        "bot": "Проверь снижение ошибки; test внутри цикла отсутствует."
+      }
+    },
+    {
+      "title": "Открой финальные ответы",
+      "explanation": "После обучения один раз смотрим test. Постоянный ответ выбираем по train, чтобы конкурент тоже не подглядывал.",
+      "code": "train_acc = float(np.mean((predict(A) >= 0.5) == y_train))\nval_acc = float(np.mean((predict(B) >= 0.5) == y_val))\ntest_acc = float(np.mean((predict(C) >= 0.5) == y_test))\nmajority_class = int(y_train.mean() >= 0.5)\nbaseline = float(np.mean(y_test == majority_class))\nassert np.isfinite([train_acc, val_acc, test_acc]).all()\nassert 0 <= test_acc <= 1\nprint(f'train={train_acc:.3f}; val={val_acc:.3f}; test={test_acc:.3f}')\nprint(f'Постоянный ответ из train: {baseline:.3f}')\nplt.plot([row[0] for row in history], [row[1] for row in history], marker='o')\nplt.xlabel('Эпоха')\nplt.ylabel('Ошибка обучения BCE')\nplt.show()",
+      "expected": "Реальные результаты трёх частей и график ошибки.",
+      "reaction": {
+        "art": "finish",
+        "learner": "Если XOR выучен, сеть готова к любым задачам?",
+        "mentor": "Нет. Здесь искусственное правило из двух чисел. Другие данные требуют отдельной проверки.",
+        "bot": "Не меняй настройки, выбирая лучший результат на test."
+      }
+    }
+  ],
+  "experiment": {
+    "task": "Уменьши число эпох до 700.",
+    "hint": "range(700); контрольные эпохи оставь [0,99,299,699], len(history) станет 4.",
+    "success": "Сравни ошибку и val, не подбирая число эпох по test."
+  },
+  "takeaways": [
+    "XOR требует нелинейного разделения.",
+    "Даже маленькая сеть нуждается в независимом тесте."
+  ],
+  "limitations": [
+    "Синтетический XOR не доказывает качество на реальных задачах.",
+    "Ручной шаг обучения показан чуть длиннее остальных уроков, чтобы не скрывать градиенты."
+  ],
+  "findings": [
+    {
+      "originalCell": 1,
+      "kind": "bug",
+      "problem": "Название XOR расходится с правилом меток.",
+      "evidence": "y=(X[:,0]*X[:,1]>0.0)",
+      "resolution": "Класс 1 назначается разным знакам через <0.",
+      "check": "Четыре угла дают [0,1,1,0]."
+    },
+    {
+      "originalCell": 7,
+      "kind": "teaching",
+      "problem": "Постоянный baseline выбирает большинство по итоговым ответам test.",
+      "evidence": "max(y_test.mean(),1-y_test.mean())",
+      "resolution": "Класс постоянного ответа определяется по train.",
+      "check": "majority_class не использует y_test."
+    }
+  ],
+  "dependencies": [
+    "numpy",
+    "matplotlib"
+  ],
+  "reviewedOriginalCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "sourceAttributions": []
+}

@@ -1,0 +1,107 @@
+{
+  "id": "009",
+  "title": "Раскрась стройку по пикселям",
+  "subtitle": "Отделим маску класса от красивой картинки.",
+  "goal": "Построить семиклассовую маску и посчитать точность и IoU.",
+  "scope": "Вход в сегментацию; обучение PSP/UNet на стройке остаётся в архиве.",
+  "prerequisites": [
+    "Python 3 и указанные библиотеки",
+    "Запускай шаги сверху вниз"
+  ],
+  "dataDescription": "Искусственная сцена с семью цветными областями и небольшим шумом, не реальные фото стройки.",
+  "setupCode": "import numpy as np\nimport matplotlib.pyplot as plt\nrng = np.random.default_rng(9)",
+  "steps": [
+    {
+      "title": "Создай картинку и правильную маску",
+      "explanation": "В маске каждый пиксель хранит номер класса. Цветная картинка — только удобное изображение этой маски.",
+      "code": "palette = np.array([[0.7,0.8,1], [0.5,0.4,0.3], [0.9,0.6,0.2], [0.5,0.3,0.8], [0.2,0.7,0.4], [0.8,0.3,0.4], [0.2,0.7,0.8]])\ntruth = np.tile(np.repeat(np.arange(7), 4), (24, 1))\nscene = np.clip(palette[truth] + rng.normal(0, 0.08, (24, 28, 3)), 0, 1)\nassert truth.shape == scene.shape[:2]\nassert set(np.unique(truth)) == set(range(7))\nplt.imshow(scene)\nplt.title('Синтетическая сцена: 7 областей')\nplt.axis('off')\nplt.show()",
+      "expected": "Семь областей и целочисленная маска 24×28.",
+      "reaction": {
+        "art": "start",
+        "learner": "Маска — это тоже фотография?",
+        "mentor": "Нет. В ней номера классов, а не оттенки или вероятности.",
+        "bot": "truth содержит только целые значения от 0 до 6."
+      }
+    },
+    {
+      "title": "Назначь класс каждому пикселю",
+      "explanation": "Выберем ближайший цвет из известной палитры. Это прозрачный цветовой алгоритм, а не обученная PSP-сеть.",
+      "code": "distance = ((scene[:, :, None, :] - palette[None, None, :, :]) ** 2).sum(axis=-1)\npredicted = distance.argmin(axis=-1)\nassert distance.shape == (24, 28, 7)\nassert predicted.shape == truth.shape\nassert set(np.unique(predicted)).issubset(range(7))\nfig, axes = plt.subplots(1, 2, figsize=(7, 3))\naxes[0].imshow(palette[truth])\naxes[0].set_title('Правильные классы')\naxes[1].imshow(palette[predicted])\naxes[1].set_title('Ближайший цвет')\nfor ax in axes:\n    ax.axis('off')\nplt.show()",
+      "expected": "Цветовая маска ответа рядом с истинной.",
+      "reaction": {
+        "art": "think",
+        "learner": "Алгоритм знает цвета заранее?",
+        "mentor": "Да, мы задали их в условии. Для реальных фото такой простой палитры недостаточно.",
+        "bot": "Не называй этот результат обучением нейросети."
+      }
+    },
+    {
+      "title": "Посчитай качество для каждого класса",
+      "explanation": "Общая точность может скрыть слабый класс. IoU отдельно сравнивает пересечение и объединение пикселей каждого класса.",
+      "code": "accuracy = np.mean(predicted == truth)\nious = []\nfor cls in range(7):\n    expected_mask = truth == cls\n    answer_mask = predicted == cls\n    intersection = np.logical_and(expected_mask, answer_mask).sum()\n    union = np.logical_or(expected_mask, answer_mask).sum()\n    ious.append(intersection / union if union else np.nan)\nassert np.all((np.array(ious) >= 0) & (np.array(ious) <= 1))\nassert np.isclose(np.mean(truth == truth), 1)\nprint(f'Точность пикселей: {accuracy:.3f}')\nprint('IoU по классам:', np.round(ious, 3))\nplt.bar(range(7), ious, color='#8164ba')\nplt.ylim(0, 1.05)\nplt.xlabel('Номер класса')\nplt.ylabel('IoU')\nplt.show()",
+      "expected": "Семь вычисленных IoU и общая точность пикселей.",
+      "reaction": {
+        "art": "finish",
+        "learner": "Можно показать только самый хороший класс?",
+        "mentor": "Тогда скрываем ошибки остальных. Показываем все классы и объясняем происхождение данных.",
+        "bot": "При отсутствии класса union равен нулю: это неизвестная оценка, а не автоматически 1."
+      }
+    }
+  ],
+  "experiment": {
+    "task": "Увеличь шум до 0.2.",
+    "hint": "rng.normal в первом шаге.",
+    "success": "Сравни маски и IoU; формат маски остаётся правильным."
+  },
+  "takeaways": [
+    "Маска хранит класс каждого пикселя.",
+    "IoU показывает качество по классам, а не только в среднем."
+  ],
+  "limitations": [
+    "Палитра известна заранее; нет обучения на фото стройки.",
+    "Архивная точность 60.95% здесь не воспроизводится."
+  ],
+  "findings": [
+    {
+      "originalCell": 12,
+      "kind": "teaching",
+      "problem": "Пример тестирования расположен перед обучением, что путает начало работы с готовой моделью.",
+      "evidence": "тест_модели_сегментации вызывается до обучение_модели в ячейке13.",
+      "resolution": "Этапы маска → алгоритм → оценка идут последовательно и названы точно.",
+      "check": "predicted создаётся до вычисления метрик."
+    },
+    {
+      "originalCell": 13,
+      "kind": "limitation",
+      "problem": "Обучение зависит от aiuniver, внешних данных и 110 эпох.",
+      "evidence": "epochs=110; загрузить_базу_СТРОЙКА()",
+      "resolution": "Самостоятельное упражнение на масках и метриках.",
+      "check": "Все 7 классов есть в созданной truth."
+    }
+  ],
+  "dependencies": [
+    "numpy",
+    "matplotlib"
+  ],
+  "reviewedOriginalCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "sourceAttributions": [
+    "https://colab.research.google.com/github/safal207/hello-world/blob/master/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%94%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B5%D0%B5_%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%E2%84%963%22_%D0%9B%D1%83%D1%87%D1%88%D0%B0%D1%8F_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D0%B4%D0%BB%D1%8F_%D1%81%D0%B5%D0%B3%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8_%D0%A1%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8_val_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C_60_95_.ipynb"
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "id": "032",
+  "title": "Из CSV в отзыв: маленький анализатор текста",
+  "subtitle": "Читаем таблицу, обучаем словарь и проверяем новый отзыв.",
+  "goal": "Пройти простой путь от двух колонок CSV до предсказания настроения.",
+  "scope": "Вводный классификатор слов вместо тяжёлой LSTM на Yelp. Формат классов и подготовка текста остаются темой урока; полный LSTM — в архиве.",
+  "prerequisites": [
+    "Уметь запускать ячейки по порядку",
+    "Знать переменные и списки Python"
+  ],
+  "dataDescription": "Восемь учебных отзывов написаны вручную в строке CSV; это не выгрузка Yelp.",
+  "setupCode": "from io import StringIO\nimport pandas as pd\nimport numpy as np\nfrom sklearn.feature_extraction.text import CountVectorizer\nfrom sklearn.naive_bayes import MultinomialNB\n",
+  "steps": [
+    {
+      "title": "Проверь таблицу до модели",
+      "explanation": "У отзыва есть текст и класс: 1 — отрицательный, 2 — положительный. Превратим классы в 0 и 1 и сразу проверим допустимые значения.",
+      "code": "csv_text = 'Class,Review\\n1,bad food\\n1,rude service\\n1,bad service\\n1,awful food\\n2,great food\\n2,friendly service\\n2,great service\\n2,lovely food\\n'\ntrain = pd.read_csv(StringIO(csv_text))\nassert set(train.columns) == {'Class', 'Review'}\nassert train['Review'].notna().all()\nassert train['Class'].isin([1, 2]).all()\nlabels = train['Class'].to_numpy() - 1\nassert set(labels) == {0, 1}\nprint(train.head().to_string(index=False))\n",
+      "expected": "Таблица содержит текст и класс; после преобразования доступны только 0 и 1.",
+      "reaction": {
+        "art": "check",
+        "learner": "Почему не отправить CSV сразу в модель?",
+        "mentor": "Ошибки колонок и меток проще поймать сейчас. Модель не знает, что именно мы хотели прочитать.",
+        "bot": "Проверки схемы сработают раньше обучения."
+      }
+    },
+    {
+      "title": "Обучи словарь только на известных отзывах",
+      "explanation": "Новые отзывы не должны менять признаки уже обученной модели. Сначала обучим словарь, затем простой классификатор.",
+      "code": "vectorizer = CountVectorizer()\nX_train = vectorizer.fit_transform(train['Review'])\nmodel = MultinomialNB(alpha=1.0)\nmodel.fit(X_train, labels)\ntest_texts = ['great friendly service', 'bad rude service']\ntest_labels = np.array([1, 0])\nX_test = vectorizer.transform(test_texts)\nprediction = model.predict(X_test)\nassert X_test.shape[1] == X_train.shape[1]\nassert prediction.shape == test_labels.shape\nprint('Предсказания:', prediction)\nprint('Совпадений на двух примерах:', int((prediction == test_labels).sum()))\n",
+      "expected": "Новые тексты имеют то же число признаков; результат сравнивается с двумя заданными ответами.",
+      "reaction": {
+        "art": "think",
+        "learner": "Модель поймёт любой язык?",
+        "mentor": "Она использует только знакомые слова этого крошечного словаря. Эти примеры объясняют процесс, а не доказывают универсальность.",
+        "bot": "Тестовые тексты проходят через transform, без повторного fit."
+      }
+    },
+    {
+      "title": "Не выдавай уверенный ответ на пустом словаре",
+      "explanation": "Если ни одного слова нет в словаре, полезнее сообщить об этом. Добавим явную проверку перед предсказанием.",
+      "code": "def classify(text):\n    row = vectorizer.transform([text])\n    if row.nnz == 0:\n        return 'Недостаточно знакомых слов'\n    label = int(model.predict(row)[0])\n    return ['Отрицательный', 'Положительный'][label]\n\nassert classify('') == 'Недостаточно знакомых слов'\nassert classify('неизвестная галактика') == 'Недостаточно знакомых слов'\nfor text in ['great food', 'bad service', 'неизвестная галактика']:\n    print(text, '→', classify(text))\n",
+      "expected": "Незнакомая фраза получает сообщение об ограничении, а не произвольную оценку.",
+      "reaction": {
+        "art": "finish",
+        "learner": "Раз модель всегда может выдать класс, зачем останавливаться?",
+        "mentor": "Технический ответ возможен и без полезных признаков. Пользователю нужно честно показать эту ситуацию.",
+        "bot": "Проверь пустую строку и текст без единого знакомого слова."
+      }
+    }
+  ],
+  "experiment": {
+    "task": "Добавь один положительный учебный отзыв с новым словом.",
+    "hint": "Добавь строку класса 2 в csv_text и повтори все шаги.",
+    "success": "Слово попадёт в словарь; объясни изменение ответа на содержащий его текст."
+  },
+  "takeaways": [
+    "Проверяй CSV и значения классов.",
+    "Обученный словарь применяют через transform.",
+    "Нет знакомых слов — нет содержательного ответа."
+  ],
+  "limitations": [
+    "Корпус маленький и искусственный; сарказм и отрицания не разобраны.",
+    "Это MultinomialNB, а не исходная LSTM и не оценка качества Yelp."
+  ],
+  "findings": [
+    {
+      "originalCell": 5,
+      "kind": "limitation",
+      "problem": "Урок требует внешнего архива Yelp и Linux-команд загрузки.",
+      "evidence": "wget ... yelp_review_polarity_csv.tgz",
+      "resolution": "CSV виден полностью внутри урока и читается без сети.",
+      "check": "Проверяются колонки, пропуски и допустимые классы."
+    },
+    {
+      "originalCell": 68,
+      "kind": "teaching",
+      "problem": "Предсказание не объясняет случай пустого текста или отсутствия знакомых слов.",
+      "evidence": "if result[[0]] < 0.5",
+      "resolution": "Перед моделью проверяем число активных слов и выдаём понятное сообщение.",
+      "check": "Пустая и полностью незнакомая строки получают отказ от оценки."
+    }
+  ],
+  "dependencies": [
+    "numpy",
+    "pandas",
+    "scikit-learn"
+  ],
+  "reviewedOriginalCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70
+  ],
+  "sourceAttributions": [
+    "https://colab.research.google.com/github/safal207/hello-world/blob/master/dl_nlp_yelp_polarity.ipynb",
+    "https://www.yelp.com/dataset/challenge",
+    "https://spacy.io/usage/spacy-101#annotations-token",
+    "https://github.com/huggingface/tokenizers",
+    "https://s3.amazonaws.com/fast-ai-nlp/yelp_review_full_csv.tgz",
+    "https://colab.research.google.com/drive/1vFGZ2nDS0ukNGXPL-0avK097afYQILyq",
+    "https://colab.research.google.com/drive/1KWS-4MKKOIG7UhiCA58ZJcxwSLG5F6Wm"
+  ]
+}
