@@ -1,0 +1,99 @@
+{
+  "id": "022",
+  "title": "График, которому можно верить",
+  "subtitle": "Подпишем формулы правильно и проверим данные под линиями.",
+  "goal": "Построить линейную, квадратную и кубическую кривые без скрытых лишних серий.",
+  "scope": "Короткий практический маршрут Matplotlib; оставшиеся примеры оригинала доступны в архиве.",
+  "prerequisites": [
+    "Python 3 и указанные библиотеки",
+    "Запускай шаги сверху вниз"
+  ],
+  "dataDescription": "Точки, рассчитанные по формулам x, x² и x³.",
+  "setupCode": "import numpy as np\nimport matplotlib.pyplot as plt",
+  "steps": [
+    {
+      "title": "Сначала проверь числа",
+      "explanation": "Создадим ровно три зависимости. Числа с дробной частью в Python пишутся через точку; запятая разделяет аргументы.",
+      "code": "x = np.linspace(0, 2, 101)\ncurves = {'y = x': x, 'y = x²': x**2, 'y = x³': x**3}\nassert all(values.shape == x.shape for values in curves.values())\nassert curves['y = x²'][-1] == 4\nassert curves['y = x³'][-1] == 8\nprint('При x=2:')\nfor name, values in curves.items():\n    print(name, '→', values[-1])",
+      "expected": "При x=2 получаются 2,4,8 — подписи можно проверить до рисунка.",
+      "reaction": {
+        "art": "fix",
+        "learner": "Почему x**0,15 не означает степень 0.15?",
+        "mentor": "Запятая завершает аргумент. Нужна десятичная точка; иначе plot получает дополнительные данные.",
+        "bot": "Проверяй крайние значения формулы, а не только красивую линию."
+      }
+    },
+    {
+      "title": "Покажи кривые на одних осях",
+      "explanation": "Одна фигура помогает сравнивать рост. Подписи строятся из того же словаря, что и данные.",
+      "code": "fig, ax = plt.subplots(figsize=(7, 4))\ncolors = ['#6650a3', '#20847c', '#bb6429']\nfor (name, values), color in zip(curves.items(), colors):\n    ax.plot(x, values, label=name, color=color, linewidth=2)\nax.set(xlabel='x', ylabel='y', title='Три проверенные формулы')\nax.grid(alpha=0.25)\nax.legend()\nassert len(ax.lines) == 3\nassert [line.get_label() for line in ax.lines] == list(curves)\nplt.tight_layout()\nplt.show()",
+      "expected": "Ровно три линии; каждая легенда соответствует формуле.",
+      "reaction": {
+        "art": "check",
+        "learner": "Кубическая линия выглядит самой высокой — этого достаточно?",
+        "mentor": "Нет: неверная формула тоже может выглядеть убедительно. Мы проверили числа и привязку подписей.",
+        "bot": "Число ax.lines должно быть 3, без случайной четвёртой серии."
+      }
+    },
+    {
+      "title": "Разнеси квадрат и куб по панелям",
+      "explanation": "Отдельные панели полезны, когда одна кривая перекрывает другую. У каждой будет собственное название и обе подписи осей.",
+      "code": "fig, axes = plt.subplots(1, 2, figsize=(9, 3.5))\nfor ax, power in zip(axes, [2, 3]):\n    values = x**power\n    ax.plot(x, values, color='#8164ba', linewidth=2)\n    ax.set(title=f'y = x^{power}', xlabel='x', ylabel='y')\n    ax.grid(alpha=0.25)\n    assert np.array_equal(ax.lines[0].get_ydata(), values)\nassert axes[0].get_title() == 'y = x^2'\nassert axes[1].get_title() == 'y = x^3'\nplt.tight_layout()\nplt.show()",
+      "expected": "Две панели с верными названиями; подпись куба больше не говорит «квадрат».",
+      "reaction": {
+        "art": "finish",
+        "learner": "Лучше держать подпись отдельно от формулы?",
+        "mentor": "Лучше получать их из одного power. Так смена степени не оставит старое название.",
+        "bot": "Данные линии проверены через get_ydata, а не только по заголовку."
+      }
+    }
+  ],
+  "experiment": {
+    "task": "Сравни степени 2 и 4.",
+    "hint": "Список [2,3] в третьем шаге и ожидаемый заголовок второй панели.",
+    "success": "При x=2 четвёртая степень равна 16; название показывает 4."
+  },
+  "takeaways": [
+    "Точный график начинается с правильных чисел.",
+    "Формула, легенда и подписи должны описывать одно и то же."
+  ],
+  "limitations": [
+    "Это учебные функции, не наблюдения и не доказательство связи реальных величин."
+  ],
+  "findings": [
+    {
+      "originalCell": 3,
+      "kind": "bug",
+      "problem": "Запятая превращает дробную степень в дополнительные аргументы plot.",
+      "evidence": "ax.plot(x,x**0,15,label=\"quadratic\")",
+      "resolution": "Явные x**2 и x**3 в именованном словаре.",
+      "check": "Ровно 3 линии и значения 4/8 приx=2."
+    },
+    {
+      "originalCell": 8,
+      "kind": "bug",
+      "problem": "Заголовок заявляет x², хотя y2 рассчитан как x³.",
+      "evidence": "y2=[i**3 for i in x]; title содержитy2=x^2",
+      "resolution": "Формула и название генерируются из power.",
+      "check": "Заголовок второй панели y=x^3; её ydata равны x**3."
+    }
+  ],
+  "dependencies": [
+    "numpy",
+    "matplotlib"
+  ],
+  "reviewedOriginalCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "sourceAttributions": [
+    "https://colab.research.google.com/github/safal207/hello-world/blob/master/matplotlib.ipynb"
+  ]
+}

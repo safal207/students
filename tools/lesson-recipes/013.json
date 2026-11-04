@@ -1,0 +1,102 @@
+{
+  "id": "013",
+  "title": "Ракета учится садиться: отбор и мутация",
+  "subtitle": "Улучшим маленькую программу тяги за несколько поколений.",
+  "goal": "Реализовать отбор, смешивание и мутацию без скрытого движка.",
+  "scope": "Простой одномерный генетический поиск управления; графический симулятор Terra AI сохранён в архиве.",
+  "prerequisites": [
+    "Python 3 и указанные библиотеки",
+    "Запускай шаги сверху вниз"
+  ],
+  "dataDescription": "Условная физическая модель с 20 шагами тяги; высота и скорость в условных единицах.",
+  "setupCode": "import numpy as np\nimport matplotlib.pyplot as plt\nrng = np.random.default_rng(13)",
+  "steps": [
+    {
+      "title": "Опиши один полёт",
+      "explanation": "Геном — двадцать значений тяги. Штраф растёт при далёкой от земли конечной высоте, большой скорости и уходе ниже земли.",
+      "code": "steps = 20\ndef flight(throttle):\n    velocity = np.cumsum(throttle - 0.3)\n    height = 30 + np.cumsum(velocity)\n    return height, velocity\ndef cost(throttle):\n    height, velocity = flight(throttle)\n    return abs(height[-1]) + 3 * abs(velocity[-1]) + 5 * np.maximum(-height, 0).sum()\npopulation = rng.uniform(0, 0.6, (40, steps))\ninitial_costs = np.array([cost(genome) for genome in population])\nassert np.isfinite(initial_costs).all()\nassert np.all(initial_costs >= 0)\nprint('Лучший начальный штраф:', round(initial_costs.min(), 3))",
+      "expected": "40 программ управления и их вычисленные штрафы.",
+      "reaction": {
+        "art": "start",
+        "learner": "Гены здесь не про биологию?",
+        "mentor": "Это удобное название параметров. Здесь каждый ген — тяга на одном шаге.",
+        "bot": "Меньше штраф — лучше; это не процент точности."
+      }
+    },
+    {
+      "title": "Сохрани лучших и создай потомков",
+      "explanation": "Четыре лучших решения переходят дальше без изменений. Остальные смешиваются и получают небольшие мутации.",
+      "code": "history = [initial_costs.min()]\nfor generation in range(35):\n    values = np.array([cost(genome) for genome in population])\n    elite = population[np.argsort(values)[:4]].copy()\n    parent_a = elite[rng.integers(0, 4, 36)]\n    parent_b = elite[rng.integers(0, 4, 36)]\n    children = np.where(rng.random((36, steps)) < 0.5, parent_a, parent_b)\n    mutation = rng.normal(0, 0.05, children.shape)\n    children += mutation * (rng.random(children.shape) < 0.2)\n    population = np.vstack([elite, np.clip(children, 0, 0.6)])\n    history.append(min(cost(genome) for genome in population))\nassert np.all(np.diff(history) <= 1e-9)\nassert population.shape == (40, steps)\nprint('Начало / конец:', round(history[0], 3), round(history[-1], 3))",
+      "expected": "Лучший штраф не растёт: элита сохраняется.",
+      "reaction": {
+        "art": "think",
+        "learner": "А мутация может испортить хорошее решение?",
+        "mentor": "Потомка — да. Но лучшие родители сохраняются отдельно, поэтому лучший результат не пропадает.",
+        "bot": "Проверка diff(history) ловит потерю элиты."
+      }
+    },
+    {
+      "title": "Посмотри лучший полёт",
+      "explanation": "Покажем снижение штрафа и траекторию. Малый штраф ещё не доказывает идеальную посадку — смотрим высоту и скорость отдельно.",
+      "code": "best = min(population, key=cost)\nheight, velocity = flight(best)\nassert len(height) == steps\nassert np.all((best >= 0) & (best <= 0.6))\nprint(f'Конечная высота: {height[-1]:.2f}; скорость: {velocity[-1]:.2f}')\nfig, axes = plt.subplots(1, 2, figsize=(9, 3))\naxes[0].plot(history)\naxes[0].set(xlabel='Поколение', ylabel='Лучший штраф')\naxes[1].plot(np.arange(1, steps+1), height)\naxes[1].axhline(0, color='black', linestyle='--')\naxes[1].set(xlabel='Шаг полёта', ylabel='Высота, усл. ед.')\nplt.tight_layout()\nplt.show()",
+      "expected": "Реальная траектория найденного решения и итоговая скорость.",
+      "reaction": {
+        "art": "finish",
+        "learner": "Если ракета рядом с землёй, но быстро летит вниз?",
+        "mentor": "Это не мягкая посадка: за скорость тоже назначен штраф. Проверяем оба числа.",
+        "bot": "Не называй поиск гарантированно оптимальным."
+      }
+    }
+  ],
+  "experiment": {
+    "task": "Измени вероятность мутации с 0.2 до 0.4.",
+    "hint": "Маска rng.random во втором шаге.",
+    "success": "Сравни штрафы; сохранение элиты по-прежнему проверяется."
+  },
+  "takeaways": [
+    "Генетический поиск сочетает отбор, смешивание и мутации.",
+    "Функция штрафа определяет, что считается хорошим результатом."
+  ],
+  "limitations": [
+    "Модель условная: нет аэродинамики, столкновений и настоящего управления ракетой.",
+    "Поиск не гарантирует глобальный оптимум."
+  ],
+  "findings": [
+    {
+      "originalCell": 6,
+      "kind": "teaching",
+      "problem": "Все действия алгоритма спрятаны во внешнем вызове.",
+      "evidence": "терра_ии.генетика.обучить_алгоритм(...)",
+      "resolution": "Отбор, элита и мутации видны в одном коротком цикле.",
+      "check": "Лучший штраф не возрастает благодаря элите."
+    },
+    {
+      "originalCell": 1,
+      "kind": "limitation",
+      "problem": "Запуск зависит от старой версии Terra AI и графического дисплея.",
+      "evidence": "terra_ai==0.0.0.36; создать_дисплей(1400,900)",
+      "resolution": "Самостоятельная NumPy-модель без установки движка.",
+      "check": "Траектория вычисляется только из массива тяги."
+    }
+  ],
+  "dependencies": [
+    "numpy",
+    "matplotlib"
+  ],
+  "reviewedOriginalCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "sourceAttributions": [
+    "https://colab.research.google.com/github/safal207/hello-world/blob/master/%D0%A1%D0%90%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D0%B3%D0%B5%D0%BD%D0%B5%D1%82%D0%B8%D0%BA%D0%B0%22.ipynb"
+  ]
+}

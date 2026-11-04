@@ -1,0 +1,122 @@
+{
+  "id": "036",
+  "title": "Погода по шагам: от месяца до графика",
+  "subtitle": "Проверяем ввод, считаем показатели и строим настоящую гистограмму.",
+  "goal": "Создать понятный отчёт по искусственной температуре за неделю.",
+  "scope": "Основы Python, NumPy и Matplotlib; длинные вводные упражнения и месячный пример доступны в архиве.",
+  "prerequisites": [
+    "Уметь запускать ячейки по порядку",
+    "Знать переменные и списки Python"
+  ],
+  "dataDescription": "Семь вручную придуманных температур; это не историческая погода конкретного города.",
+  "setupCode": "import numpy as np\nimport matplotlib.pyplot as plt\n",
+  "steps": [
+    {
+      "title": "Проверь номер месяца",
+      "explanation": "Для воспроизводимого запуска значение задано в ячейке. Функция проверяет границы перед обращением к списку.",
+      "code": "months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',\n          'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']\ndef month_name(number):\n    if not isinstance(number, int) or not 1 <= number <= 12:\n        raise ValueError('Нужен целый номер месяца от 1 до 12')\n    return months[number - 1]\nselected_month = 3\nassert month_name(selected_month) == 'Март'\ntry:\n    month_name(0)\nexcept ValueError:\n    print('Неверный месяц отклонён')\nelse:\n    raise AssertionError('Ноль не должен означать декабрь')\nprint('Месяц:', month_name(selected_month))\n",
+      "expected": "Номер 3 даёт март; 0 получает понятную ошибку вместо декабря.",
+      "reaction": {
+        "art": "fix",
+        "learner": "Почему ноль раньше мог показать декабрь?",
+        "mentor": "Индекс number - 1 превращался в -1. В Python это последний элемент списка.",
+        "bot": "Границы проверяются до индексации."
+      }
+    },
+    {
+      "title": "Посчитай показатели недели",
+      "explanation": "Преобразуем список в массив и найдём среднее, минимум и максимум. Отдельно выберем дни ниже нуля.",
+      "code": "temperature = np.array([-2., 1., 3., -1., 4., 2., 0.])\ndays = np.arange(1, len(temperature) + 1)\ncold_days = days[temperature < 0]\nmean_temperature = temperature.mean()\nassert temperature.min() <= mean_temperature <= temperature.max()\nassert cold_days.tolist() == [1, 4]\nprint('Средняя, °C:', round(float(mean_temperature), 2))\nprint('Минимум и максимум, °C:', temperature.min(), temperature.max())\nprint('Дни ниже нуля:', cold_days)\n",
+      "expected": "Холодные дни обозначены номерами 1 и 4, а среднее лежит между минимумом и максимумом.",
+      "reaction": {
+        "art": "think",
+        "learner": "Среднее — это температура какого-то дня?",
+        "mentor": "Оно может вообще не встречаться среди наблюдений. Это сумма температур, делённая на их количество.",
+        "bot": "Попробуй посчитать mean вручную и сравни с массивом."
+      }
+    },
+    {
+      "title": "Раздели изменение и распределение",
+      "explanation": "Слева линия показывает дни по порядку. Справа гистограмма считает, сколько температур попало в каждый интервал.",
+      "code": "fig, axes = plt.subplots(1, 2, figsize=(9, 3))\naxes[0].plot(days, temperature, '-o', color='#7257cf')\naxes[0].set(xlabel='День учебной недели', ylabel='Температура, °C')\ncounts, edges, _ = axes[1].hist(temperature, bins=[-3, -1, 1, 3, 5],\n                              color='#ac94e6', edgecolor='white')\naxes[1].set(xlabel='Интервал температуры, °C', ylabel='Число дней')\nassert int(counts.sum()) == len(temperature)\nfig.suptitle('Искусственная неделя: ' + month_name(selected_month))\nfig.tight_layout()\nplt.show()\n",
+      "expected": "У линии ось x — дни; у гистограммы — интервалы температуры.",
+      "reaction": {
+        "art": "finish",
+        "learner": "Почему столбцы по дням не называли бы гистограммой?",
+        "mentor": "Столбчатый график по дням сравнивает отдельные категории. Гистограмма группирует числовые значения в интервалы.",
+        "bot": "Сложи высоты столбцов справа: должно получиться семь."
+      }
+    }
+  ],
+  "experiment": {
+    "task": "Измени одну температуру на 4.5 °C.",
+    "hint": "Обнови temperature; для проверки холодных дней выбери исходно тёплый день.",
+    "success": "Пересчитаются среднее и гистограмма, сумма частот останется равной семи."
+  },
+  "takeaways": [
+    "Проверяй ввод до обращения по индексу.",
+    "NumPy помогает выбирать значения по условию.",
+    "Линия и гистограмма отвечают на разные вопросы."
+  ],
+  "limitations": [
+    "Температуры учебные и не подтверждают реальную погоду.",
+    "Интерактивный input заменён редактируемой переменной, чтобы урок запускался целиком."
+  ],
+  "findings": [
+    {
+      "originalCell": 7,
+      "kind": "bug",
+      "problem": "Номер месяца не проверяется: 0 выбирает декабрь, 13 вызывает IndexError.",
+      "evidence": "list[value-1] без диапазона",
+      "resolution": "Функция отклоняет значения вне 1…12 до индексации.",
+      "check": "month_name(0) вызывает ValueError."
+    },
+    {
+      "originalCell": 29,
+      "kind": "bug",
+      "problem": "Вместо запрошенной гистограммы распределения строятся столбцы по дням.",
+      "evidence": "plt.bar(x, tem_arr, ...)",
+      "resolution": "Линейный график и hist показаны отдельно с правильными осями.",
+      "check": "Сумма частот hist равна числу температур."
+    }
+  ],
+  "dependencies": [
+    "numpy",
+    "matplotlib"
+  ],
+  "reviewedOriginalCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "sourceAttributions": [
+    "https://colab.research.google.com/github/safal207/hello-world/blob/master/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B_Python_numpy%2C_plot.ipynb"
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "id": "035",
+  "title": "Числа с границами: знакомство с dtype",
+  "subtitle": "Проверяем размер числа до того, как оно переполнится.",
+  "goal": "Выбрать безопасный тип для вычисления и заметить потерю данных при преобразовании.",
+  "scope": "Короткий практикум по типам NumPy и числовым пределам; дополнительные примеры типов сохранены в архиве.",
+  "prerequisites": [
+    "Уметь запускать ячейки по порядку",
+    "Знать переменные и списки Python"
+  ],
+  "dataDescription": "Ручные значения пикселей и дробные числа, без внешних данных.",
+  "setupCode": "import numpy as np\n",
+  "steps": [
+    {
+      "title": "Узнай, что хранит массив",
+      "explanation": "Тип определяет не только вид числа, но и диапазон. uint8 занимает один байт и хранит целые значения от 0 до 255.",
+      "code": "pixels = np.array([0, 100, 200, 255], dtype=np.uint8)\nlimits = np.iinfo(pixels.dtype)\nassert pixels.itemsize == 1\nassert limits.min == 0 and limits.max == 255\nprint('Тип:', pixels.dtype)\nprint('Границы:', limits.min, limits.max)\nprint('Память массива, байт:', pixels.nbytes)\n",
+      "expected": "Четыре однобайтовых значения занимают четыре байта данных.",
+      "reaction": {
+        "art": "start",
+        "learner": "Значит в этот массив нельзя поместить 400?",
+        "mentor": "Точно представить 400 в uint8 нельзя. Для вычислений заранее выбирают более широкий тип.",
+        "bot": "Сравни 400 с np.iinfo(np.uint8).max."
+      }
+    },
+    {
+      "title": "Расширь тип до умножения",
+      "explanation": "Умножение в узком целочисленном типе может перейти через границу. Преобразуем массив до операции, чтобы сохранить результат.",
+      "code": "wrapped = pixels * np.uint8(2)\nsafe = pixels.astype(np.int32) * 2\nassert int(safe[2]) == 400\nassert int(wrapped[2]) != int(safe[2])\nassert np.array_equal(safe, np.array([0, 200, 400, 510]))\nprint('Без расширения:', wrapped)\nprint('С расширением:', safe)\n",
+      "expected": "Узкий массив и широкий дают разные ответы для больших элементов.",
+      "reaction": {
+        "art": "fix",
+        "learner": "Если сначала посчитать, а потом сделать int32, всё исправится?",
+        "mentor": "Нет. Переполнение уже потеряло информацию. Расширять тип нужно перед вычислением.",
+        "bot": "Проверь именно элемент 200 × 2."
+      }
+    },
+    {
+      "title": "Не превращай дробь в целое незаметно",
+      "explanation": "Преобразование float в int отбрасывает дробную часть. Для хранения пикселей добавим явную проверку допустимых значений.",
+      "code": "values = np.array([1.2, 2.9, -1.8])\ntruncated = values.astype(np.int32)\nassert truncated.tolist() == [1, 2, -1]\ndef can_store_as_uint8(numbers):\n    numbers = np.asarray(numbers)\n    return bool(np.isfinite(numbers).all()\n                and ((numbers >= 0) & (numbers <= 255)).all()\n                and (numbers == np.floor(numbers)).all())\nassert can_store_as_uint8([0, 255])\nassert not can_store_as_uint8([256])\nassert not can_store_as_uint8([2.5])\nprint('После преобразования:', truncated)\nprint('400 помещается в uint8:', can_store_as_uint8([400]))\n",
+      "expected": "2.9 превращается в 2; проверка отклоняет дроби и значения вне диапазона.",
+      "reaction": {
+        "art": "finish",
+        "learner": "Это округление к ближайшему?",
+        "mentor": "Нет. astype(int) отбрасывает дробную часть к нулю. Правило округления выбирают отдельно.",
+        "bot": "Сравни 2.9 и -1.8, чтобы увидеть правило с обеих сторон нуля."
+      }
+    }
+  ],
+  "experiment": {
+    "task": "Замени множитель 2 на 3 в безопасном вычислении.",
+    "hint": "Обнови ожидаемые числа в assert, посчитав их вручную.",
+    "success": "Результаты остаются точными в int32, а граница uint8 по-прежнему равна 255."
+  },
+  "takeaways": [
+    "Проверяй диапазон через iinfo.",
+    "Расширяй тип до потенциального переполнения.",
+    "Преобразование типа может потерять дробную часть."
+  ],
+  "limitations": [
+    "Размер Python int и NumPy integer — разные вещи.",
+    "Урок не покрывает все особенности арифметики float."
+  ],
+  "findings": [
+    {
+      "originalCell": 12,
+      "kind": "teaching",
+      "problem": "Пример степени в int32 показывает переполнение без явной сверки с точным результатом.",
+      "evidence": "np.power(100, 8, dtype=np.int32)",
+      "resolution": "Сравниваем узкую арифметику с заранее расширенным типом и проверяем точный ответ.",
+      "check": "Безопасный элемент равен 400, переполненный — нет."
+    }
+  ],
+  "dependencies": [
+    "numpy"
+  ],
+  "reviewedOriginalCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "sourceAttributions": [
+    "https://colab.research.google.com/github/safal207/hello-world/blob/master/Numpy.ipynb"
+  ]
+}

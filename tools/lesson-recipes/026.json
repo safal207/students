@@ -1,0 +1,103 @@
+{
+  "id": "026",
+  "title": "Ловим фразу: первая свёртка для текста",
+  "subtitle": "Проверяем маленький фильтр, который замечает соседние слова.",
+  "goal": "Найти сочетание «очень хорошо» с помощью числового фильтра и max pooling.",
+  "scope": "Вычисляем одну настоящую операцию Conv1D на NumPy с заданным фильтром. Архив содержит обучение CNN на IMDb; этот урок не измеряет её точность.",
+  "prerequisites": [
+    "Уметь запускать ячейки по порядку",
+    "Знать переменные и списки Python"
+  ],
+  "dataDescription": "Ручные фразы и one-hot векторы двух слов; фильтр задан человеком.",
+  "setupCode": "import numpy as np\nimport matplotlib.pyplot as plt\n",
+  "steps": [
+    {
+      "title": "Преврати слова в маленькие векторы",
+      "explanation": "Одна координата отвечает за «очень», другая — за «хорошо». Остальные слова получат нулевой вектор.",
+      "code": "words = 'фильм очень хорошо снят'.split()\nlookup = {'очень': [1., 0.], 'хорошо': [0., 1.]}\nvectors = np.array([lookup.get(word, [0., 0.]) for word in words])\nkernel = np.array([[1., 0.], [0., 1.]])\nassert vectors.shape == (len(words), 2)\nassert np.array_equal(vectors[words.index('очень')], [1, 0])\nprint('Слова:', words)\nprint('Векторы:\\n', vectors)\n",
+      "expected": "Для каждого слова есть строка из двух чисел.",
+      "reaction": {
+        "art": "start",
+        "learner": "Это уже обученный embedding?",
+        "mentor": "Нет, это понятная ручная кодировка. Она нужна, чтобы увидеть всю арифметику фильтра.",
+        "bot": "У «очень» включена первая координата, у «хорошо» — вторая."
+      }
+    },
+    {
+      "title": "Проведи фильтром по соседним словам",
+      "explanation": "Фильтр смотрит на два слова одновременно. Сумма совпадений покажет, где встретился нужный порядок.",
+      "code": "def convolve_text(encoded, weights):\n    width = len(weights)\n    if len(encoded) < width:\n        return np.array([], dtype=float)\n    return np.array([\n        np.sum(encoded[i:i + width] * weights)\n        for i in range(len(encoded) - width + 1)\n    ])\n\nscores = convolve_text(vectors, kernel)\nassert scores.shape == (len(words) - 1,)\npair_index = words.index('очень')\nassert words[pair_index:pair_index + 2] == ['очень', 'хорошо']\nassert scores[pair_index] == 2\nassert convolve_text(vectors[:1], kernel).size == 0\nprint('Отклик окон:', scores)\n",
+      "expected": "Максимальный отклик соответствует окну «очень хорошо».",
+      "reaction": {
+        "art": "think",
+        "learner": "Почему выход короче исходной фразы?",
+        "mentor": "Окно имеет ширину два. У последнего слова справа уже нет пары.",
+        "bot": "Сверь число окон: длина фразы минус ширина фильтра плюс один."
+      }
+    },
+    {
+      "title": "Оставь самый сильный сигнал",
+      "explanation": "Max pooling выбирает максимальный отклик. Проверим, что перестановка слов меняет результат фильтра.",
+      "code": "pooled = float(scores.max(initial=0))\nreversed_pair = np.array([lookup['хорошо'], lookup['очень']])\nreverse_score = convolve_text(reversed_pair, kernel).max(initial=0)\nassert pooled == 2\nassert reverse_score < pooled\nfig, ax = plt.subplots(figsize=(6, 3))\nax.bar(range(len(scores)), scores, color='#ac94e6')\nax.set(xlabel='Начало окна, индекс', ylabel='Отклик фильтра',\n       title='Где встретилась нужная пара')\nplt.show()\nprint('Максимальный отклик:', pooled)\n",
+      "expected": "Столбец окна с нужной парой выше; обратный порядок даёт меньший отклик.",
+      "reaction": {
+        "art": "finish",
+        "learner": "Теперь можно оценивать любой отзыв?",
+        "mentor": "Пока фильтр знает только одну пару. В настоящей CNN много фильтров учатся на данных.",
+        "bot": "Попробуй добавить слова слева: сигнал должен переместиться, но максимум сохраниться."
+      }
+    }
+  ],
+  "experiment": {
+    "task": "Добавь слово «этот» в начало фразы.",
+    "hint": "Измени words в первом шаге, затем запусти все шаги.",
+    "success": "Индекс пика сдвинется, а значение максимума останется 2."
+  },
+  "takeaways": [
+    "Свёртка изучает локальные сочетания.",
+    "Порядок внутри окна влияет на отклик.",
+    "Max pooling сохраняет самый сильный сигнал."
+  ],
+  "limitations": [
+    "Фильтр задан вручную и не обучался.",
+    "Это не готовый анализатор тональности IMDb."
+  ],
+  "findings": [
+    {
+      "originalCell": 5,
+      "kind": "limitation",
+      "problem": "Старт урока зависит от загрузки IMDb и TensorFlow.",
+      "evidence": "imdb.load_data(num_words=max_words)",
+      "resolution": "Для изучения механики используем открытые в ячейке данные и NumPy.",
+      "check": "Размер свёртки, нужная пара и короткий ввод проверяются assert."
+    }
+  ],
+  "dependencies": [
+    "numpy",
+    "matplotlib"
+  ],
+  "reviewedOriginalCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "sourceAttributions": [
+    "https://colab.research.google.com/github/safal207/hello-world/blob/master/NLP_%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7_%D1%82%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8_%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D1%87%D0%B5%D1%80%D0%B5%D0%B7_Conv1d_(accuracy_0_8533).ipynb"
+  ]
+}

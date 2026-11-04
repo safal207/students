@@ -1,0 +1,6 @@
+.venv/
+.lesson-runtime/
+**/__pycache__/
+*.pyc
+reports/lesson-validation.json
+reports/lesson-build.json

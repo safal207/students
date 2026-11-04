@@ -1,0 +1,95 @@
+{
+  "id": "065",
+  "title": "Похожи в цифрах, разные на графике",
+  "subtitle": "Четыре облака точек покажут, зачем смотреть на данные.",
+  "goal": "Сравнить одинаковые сводные показатели с разными формами распределения.",
+  "scope": "Идея визуальной проверки по мотивам Seaborn и квартета Анскомба из архива. Здесь собственные синтетические данные и Matplotlib, не оригинальный квартет и не полный обзор Seaborn.",
+  "prerequisites": [
+    "Запускать ячейки сверху вниз",
+    "Менять только небольшую часть примера за раз"
+  ],
+  "dataDescription": "Четыре синтетических набора с общим x, одинаковыми средним, разбросом и линейным наклоном; формы остатка заданы явно.",
+  "setupCode": "import numpy as np\nimport matplotlib.pyplot as plt\n",
+  "steps": [
+    {
+      "title": "Построим четыре разных рисунка",
+      "explanation": "У всех наборов одинаковые x. Остатки сделаем разной формы: шум, дуга, выброс и волна.",
+      "code": "rng = np.random.default_rng(65)\nx = np.linspace(-2, 2, 21)\nspike = np.zeros(len(x))\nspike[-2] = 1\npatterns = [rng.normal(size=len(x)), x**2, spike, np.sin(3*x)]\nnames = ['Шум', 'Дуга', 'Выброс', 'Волна']\nys = []\nfor pattern in patterns:\n    residual = pattern-pattern.mean()\n    residual = residual-x*np.dot(x,residual)/np.dot(x,x)\n    residual = residual/residual.std()\n    ys.append(3+1.5*x+0.8*residual)\nassert len(ys) == 4 and all(len(y) == len(x) for y in ys)\nprint('Созданы четыре искусственных набора, не реальные наблюдения.')\n",
+      "expected": "Четыре набора содержат одинаковое количество точек.",
+      "reaction": {
+        "art": "start",
+        "learner": "Мы специально делаем показатели похожими?",
+        "mentor": "Да. Это контролируемый пример, чтобы увидеть ограничение сводных чисел.",
+        "bot": "Источник данных — формулы этой ячейки."
+      }
+    },
+    {
+      "title": "Сравним сводные числа",
+      "explanation": "Посчитаем среднее, разброс и наклон прямой. Они могут совпадать у совершенно разных облаков точек.",
+      "code": "summary = []\nfor name, y in zip(names, ys):\n    slope, intercept = np.polyfit(x, y, 1)\n    summary.append([y.mean(), y.std(), slope])\n    print(f'{name}: среднее={y.mean():.3f}, разброс={y.std():.3f}, наклон={slope:.3f}')\nassert np.allclose(summary, summary[0])\nprint('Сводные числа совпадают в пределах вычислительной точности.')\n",
+      "expected": "Совпадение подтверждено вычислением, а не подписью рисунка.",
+      "reaction": {
+        "art": "think",
+        "learner": "Тогда можно считать наборы одинаковыми?",
+        "mentor": "Нет. Мы проверили только три свойства; они не описывают форму целиком.",
+        "bot": "Не делай вывод о форме распределения по среднему."
+      }
+    },
+    {
+      "title": "Посмотрим на точки",
+      "explanation": "Нарисуем четыре панели в одинаковом масштабе. Одна и та же прямая по-разному описывает эти наборы.",
+      "code": "fig, axes = plt.subplots(2, 2, figsize=(8, 6), sharex=True, sharey=True)\nfor ax, name, y in zip(axes.flat, names, ys):\n    slope, intercept = np.polyfit(x, y, 1)\n    ax.scatter(x, y, color='#7658b3')\n    ax.plot(x, slope*x+intercept, color='#b76c3f')\n    ax.set_title(name)\n    ax.set_xlabel('x, условные единицы')\n    ax.set_ylabel('y, условные единицы')\n    ax.grid(alpha=0.2)\nplt.tight_layout()\nplt.show()\nassert len(fig.axes) == 4\n",
+      "expected": "Видны дуга, волна и выброс, которые скрылись за одинаковыми числами.",
+      "reaction": {
+        "art": "compare",
+        "learner": "Значит график — тоже проверка качества данных?",
+        "mentor": "Да: он помогает заметить структуру и необычные точки до выбора модели.",
+        "bot": "Назови отличие каждой панели, не глядя на её среднее."
+      }
+    }
+  ],
+  "experiment": {
+    "task": "Измени силу остатка с 0.8 на 1.2.",
+    "hint": "Формула ys.append в шаге 1.",
+    "success": "Формы станут выраженнее, равенство сводных чисел между четырьмя наборами сохранится."
+  },
+  "takeaways": [
+    "Одинаковые показатели не означают одинаковую форму.",
+    "Оси и масштаб должны позволять честное сравнение."
+  ],
+  "limitations": [
+    "Это специально сконструированные данные, не реальные наблюдения.",
+    "Построение на Matplotlib; API Seaborn можно изучить в архивной версии."
+  ],
+  "findings": [
+    {
+      "originalCell": 1,
+      "kind": "limitation",
+      "problem": "sns.load_dataset требует сетевого источника или локального кеша.",
+      "evidence": "sns.load_dataset(\"anscombe\")",
+      "resolution": "Собственные данные создаются локально; полная визуальная идея повторяется без сети.",
+      "check": "Четыре набора и совпадение summary проверены в коде."
+    },
+    {
+      "originalCell": 2,
+      "kind": "teaching",
+      "problem": "Три больших примера сразу смешивают регрессию, множество цветовых кодов и сетки графиков.",
+      "evidence": "anscombe, diamonds, tips в трёх отдельных ячейках",
+      "resolution": "Один связный опыт: данные → числа → четыре панели.",
+      "check": "Каждая панель соответствует одному проверенному набору."
+    }
+  ],
+  "dependencies": [
+    "numpy",
+    "matplotlib"
+  ],
+  "reviewedOriginalCells": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "sourceAttributions": [
+    "https://colab.research.google.com/github/safal207/hello-world/blob/master/seaborn.ipynb"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "id": "050",
+  "title": "Ритм недели: прогнозируем посещения",
+  "subtitle": "Проверим, помогает ли повторение недельного рисунка.",
+  "goal": "Сравнить два простых прогноза на отложенных днях.",
+  "scope": "Базовые правила для трафика вместо большой Conv1D-сети TerraAI из архива.",
+  "prerequisites": [
+    "Запускать ячейки сверху вниз",
+    "Читать списки и простые выражения Python"
+  ],
+  "dataDescription": "Искусственный трафик за восемь недель; значения не относятся к компании.",
+  "setupCode": "import numpy as np\nimport matplotlib.pyplot as plt\n",
+  "steps": [
+    {
+      "title": "Создадим восемь учебных недель",
+      "explanation": "Недельный рисунок повторяется с небольшим шумом. Последние две недели пока спрячем.",
+      "code": "rng = np.random.default_rng(50)\nweek = np.array([80, 95, 100, 110, 130, 65, 55])\nvisits = np.maximum(0, np.tile(week, 8) + rng.normal(0, 5, 56))\ntrain = visits[:42]\ntest = visits[42:]\nassert len(train) == 6*7 and len(test) == 2*7\nprint('История:', len(train), 'дней; проверка:', len(test))\n",
+      "expected": "Разделение сделано по времени, до вычисления прогноза.",
+      "reaction": {
+        "art": "start",
+        "learner": "Почему последнюю неделю не смешиваем с первой?",
+        "mentor": "Порядок дней и повторение недели — часть задачи. Будущее держим отдельно.",
+        "bot": "Семь соседних значений образуют одну неделю."
+      }
+    },
+    {
+      "title": "Зафиксируем два прогноза",
+      "explanation": "Первый ожидает среднее число посещений. Второй повторяет последнюю известную неделю дважды, не заглядывая в проверочные дни.",
+      "code": "flat = np.full(len(test), train[-7:].mean())\nseasonal = np.tile(train[-7:], 2)\nassert seasonal[0] == train[-7]\nassert np.array_equal(seasonal[:7], seasonal[7:])\nprint('Средний прогноз:', round(flat[0], 1))\nprint('Недельный прогноз:', seasonal[:7].round(1).tolist())\n",
+      "expected": "Оба прогноза целиком построены из истории.",
+      "reaction": {
+        "art": "think",
+        "learner": "Можно взять первый проверочный понедельник для второй недели?",
+        "mentor": "В этом упражнении прогнозируем сразу 14 дней. Поэтому обе недели строим из известной истории.",
+        "bot": "Убедись, что seasonal не читает test."
+      }
+    },
+    {
+      "title": "Откроем ответы и сравним",
+      "explanation": "Посчитаем ошибки обоих заранее заданных правил. Это сравнение на одной маленькой фикстуре, а не подбор производственной модели.",
+      "code": "errors = {'Среднее': np.mean(np.abs(test-flat)), 'Неделя': np.mean(np.abs(test-seasonal))}\nassert all(np.isfinite(value) for value in errors.values())\nprint({name: round(value, 2) for name, value in errors.items()}, 'MAE, посещений')\nplt.figure(figsize=(8, 3))\nplt.plot(test, 'o-', label='Ответ')\nplt.plot(seasonal, '--', label='Повтор недели')\nplt.plot(flat, ':', label='Среднее')\nplt.xlabel('День прогноза')\nplt.ylabel('Посещения, шт.')\nplt.legend()\nplt.tight_layout()\nplt.show()\n",
+      "expected": "Недельный рисунок и рассчитанные ошибки видны рядом.",
+      "reaction": {
+        "art": "compare",
+        "learner": "Почему большая сеть может не понадобиться?",
+        "mentor": "Сначала полезно проверить простое правило. Если его не хватает, появляется понятная цель для улучшения.",
+        "bot": "Добавь постепенный рост трафика и посмотри, что изменится."
+      }
+    }
+  ],
+  "experiment": {
+    "task": "Добавь к visits рост 0.8*np.arange(56).",
+    "hint": "Формула данных в шаге 1.",
+    "success": "Пересчитанные ошибки покажут ограничение повторения старой недели."
+  },
+  "takeaways": [
+    "Сезонность можно проверить простым правилом.",
+    "Прогноз на 14 дней должен использовать только известную историю."
+  ],
+  "limitations": [
+    "Нет реальных данных компании и обучения нейросети."
+  ],
+  "findings": [
+    {
+      "originalCell": 1,
+      "kind": "limitation",
+      "problem": "Запуск требует устаревшего пакета и скачанного набора.",
+      "evidence": "pip install terra_ai==0.0.0.34",
+      "resolution": "Локальная недельная фикстура и два прозрачных правила.",
+      "check": "Все данные созданы до разделения."
+    },
+    {
+      "originalCell": 4,
+      "kind": "teaching",
+      "problem": "Первое упражнение сразу содержит Conv1D-1024 и 40 эпох.",
+      "evidence": "Сверточный1D-1024-3; эпохи=40",
+      "resolution": "Понятная базовая версия позволяет сначала разобраться с прогнозом и MAE.",
+      "check": "Среднее и недельный повтор сравниваются в одинаковых единицах."
+    }
+  ],
+  "dependencies": [
+    "numpy",
+    "matplotlib"
+  ],
+  "reviewedOriginalCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "sourceAttributions": [
+    "https://colab.research.google.com/github/safal207/hello-world/blob/master/%D0%A2%D1%80%D0%B0%D1%84%D0%B8%D0%BA_%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8.ipynb"
+  ]
+}

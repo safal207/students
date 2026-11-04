@@ -1,0 +1,189 @@
+{
+  "id": "031",
+  "title": "Три лица текста: коды, набор слов, векторы",
+  "subtitle": "Одна фраза помогает сравнить три способа представить слова.",
+  "goal": "Понять, какую информацию хранит каждое представление текста.",
+  "scope": "Сравниваем представления без тяжёлого обучения; три нейросетевых эксперимента на IMDb сохранены в архиве.",
+  "prerequisites": [
+    "Уметь запускать ячейки по порядку",
+    "Знать переменные и списки Python"
+  ],
+  "dataDescription": "Ручной словарь и двумерные векторы, придуманные для объяснения; это не обученные IMDb embeddings.",
+  "setupCode": "import numpy as np\nimport matplotlib.pyplot as plt\n",
+  "steps": [
+    {
+      "title": "Запиши последовательность кодов",
+      "explanation": "Код слова — его адрес в словаре, а не числовая оценка смысла. Отдельные коды оставим заполнителю и неизвестному слову.",
+      "code": "vocabulary = {'<PAD>': 0, '<UNK>': 1, 'фильм': 2, 'очень': 3,\n              'хороший': 4, 'плохой': 5}\nwords = 'фильм очень хороший'.split()\nids = np.array([vocabulary.get(word, 1) for word in words])\nassert ids[words.index('хороший')] == vocabulary['хороший']\nassert len(ids) == len(words)\nassert vocabulary.get('необычный', 1) == 1\nprint('Слова:', words)\nprint('Адреса в словаре:', ids)\n",
+      "expected": "Числа позволяют найти слово, но не говорят, насколько оно хорошее.",
+      "reaction": {
+        "art": "think",
+        "learner": "Плохой имеет номер 5 — он больше хорошего?",
+        "mentor": "Только номер больше. Расстояния между такими номерами не имеют смыслового значения.",
+        "bot": "Не используй разность кодов как меру сходства слов."
+      }
+    },
+    {
+      "title": "Собери карту присутствия слов",
+      "explanation": "Бинарный мешок слов отмечает, какие слова встретились. Порядок и повторения в такой карте теряются.",
+      "code": "def presence(sequence):\n    result = np.zeros(len(vocabulary), dtype=np.uint8)\n    result[sequence] = 1\n    return result\n\nbag = presence(ids)\nreordered = presence(ids[::-1])\nrepeated = presence(np.r_[ids, ids[-1]])\nassert np.array_equal(bag, reordered)\nassert np.array_equal(bag, repeated)\nprint(dict(zip(vocabulary, bag.tolist())))\n",
+      "expected": "Перестановка и повтор последнего слова не меняют бинарную карту.",
+      "reaction": {
+        "art": "compare",
+        "learner": "А количество повторов можно сохранить?",
+        "mentor": "Да, счётчиком слов вместо нулей и единиц. Сейчас важно увидеть, что именно мы выбросили.",
+        "bot": "Сравни bag и repeated: это именно бинарное присутствие."
+      }
+    },
+    {
+      "title": "Выбери вектор по адресу слова",
+      "explanation": "Embedding — таблица векторов. Здесь зададим её руками и проверим поиск строки по коду; в настоящей модели таблица обучается.",
+      "code": "embedding = np.array([[0., 0.], [0., 0.], [0., 0.5],\n                      [0.1, 0.7], [1., 0.2], [-1., 0.2]])\nvectors = embedding[ids]\nassert vectors.shape == (len(ids), 2)\nassert np.array_equal(vectors[words.index('хороший')], embedding[vocabulary['хороший']])\nfig, ax = plt.subplots(figsize=(5, 3))\nfor word in ['фильм', 'очень', 'хороший', 'плохой']:\n    point = embedding[vocabulary[word]]\n    ax.scatter(*point, color='#7257cf')\n    ax.annotate(word, point, xytext=(4, 5), textcoords='offset points')\nax.set(xlabel='Ручная координата 1', ylabel='Ручная координата 2',\n       title='Учебная таблица векторов')\nax.margins(0.3)\nplt.show()\nprint('Векторы фразы:\\n', vectors)\n",
+      "expected": "Каждое слово получает строку из двух координат.",
+      "reaction": {
+        "art": "finish",
+        "learner": "Картинка доказывает, что модель выучила смысл?",
+        "mentor": "Нет. Координаты здесь придуманы. Мы проверили механизм поиска в таблице, а обучение осталось в архиве.",
+        "bot": "Замени слово в фразе и найди, какая строка vectors изменилась."
+      }
+    }
+  ],
+  "experiment": {
+    "task": "Повтори слово «очень» в исходной фразе.",
+    "hint": "Измени words на «фильм очень очень хороший» в первом шаге и запусти три шага по порядку.",
+    "success": "Последовательность станет длиннее, а набор отмеченных слов останется прежним."
+  },
+  "takeaways": [
+    "Код — адрес слова, а не его смысл.",
+    "Мешок слов теряет порядок.",
+    "Embedding возвращает вектор по коду."
+  ],
+  "limitations": [
+    "Ручные векторы нельзя считать результатом обучения.",
+    "Архивные проценты точности не являются результатами этого запуска."
+  ],
+  "findings": [
+    {
+      "originalCell": 31,
+      "kind": "teaching",
+      "problem": "Первый Dense получает частотные номера слов как обычные числовые признаки без пояснения их условности.",
+      "evidence": "Dense(... input_shape=(maxlen,)) после pad_sequences",
+      "resolution": "Явно различаем адрес слова, присутствие и векторную строку.",
+      "check": "Перестановка меняет sequence, но сохраняет presence."
+    },
+    {
+      "originalCell": 82,
+      "kind": "limitation",
+      "problem": "Плотная бинарная матрица создаётся в float64 для 25 тысяч текстов на 10 тысяч слов.",
+      "evidence": "np.zeros((len(sequences), dimension))",
+      "resolution": "Крошечный пример использует uint8 и показывает смысл без гигабайтной матрицы.",
+      "check": "bag.dtype == uint8 и размер равен словарю."
+    }
+  ],
+  "dependencies": [
+    "numpy",
+    "matplotlib"
+  ],
+  "reviewedOriginalCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93
+  ],
+  "sourceAttributions": [
+    "https://colab.research.google.com/github/safal207/hello-world/blob/master/NLP_%D0%9E%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D1%82%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8_%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0_%D0%BE%D1%82%D0%B7%D1%8B%D0%B2%D0%BE%D0%B2_%D0%BD%D0%B0_%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%D1%8B_%D0%B8%D0%B7_IMDb_(Internet_Movie_Database).ipynb",
+    "https://ai.stanford.edu/~amaas/data/sentiment/",
+    "https://www.imdb.com",
+    "https://ai.stanford.edu/~amaas/papers/wvSent_acl2011.pdf"
+  ]
+}

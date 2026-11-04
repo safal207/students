@@ -1,0 +1,102 @@
+{
+  "id": "028",
+  "title": "LSTM: сохраняем важный сигнал",
+  "subtitle": "Разбираем отдельную память и три вентиля на маленьком примере.",
+  "goal": "Увидеть, как forget gate меняет срок жизни сигнала.",
+  "scope": "Одна скалярная LSTM с фиксированными вентиля́ми; полное обучение LSTM на IMDb доступно в архиве.",
+  "prerequisites": [
+    "Уметь запускать ячейки по порядку",
+    "Знать переменные и списки Python"
+  ],
+  "dataDescription": "Искусственная последовательность: один импульс и пять нулевых сигналов.",
+  "setupCode": "import numpy as np\nimport matplotlib.pyplot as plt\nsignals = np.array([1., 0., 0., 0., 0., 0.])\n",
+  "steps": [
+    {
+      "title": "Отдели память от видимого состояния",
+      "explanation": "LSTM хранит память c и выдаёт состояние h. Forget, input и output регулируют разные части этой операции.",
+      "code": "def lstm_step(signal, memory, forget=0.9, incoming=0.8, output=0.7):\n    assert all(0 <= gate <= 1 for gate in [forget, incoming, output])\n    candidate = np.tanh(signal)\n    new_memory = forget * memory + incoming * candidate\n    hidden = output * np.tanh(new_memory)\n    return new_memory, hidden\n\nmemory, hidden = lstm_step(1., 0.)\nassert memory > 0 and 0 < hidden < memory\nprint('Память c:', round(memory, 3))\nprint('Выход h:', round(hidden, 3))\n",
+      "expected": "Память и выход — разные числа с разными ролями.",
+      "reaction": {
+        "art": "start",
+        "learner": "Зачем хранить два числа?",
+        "mentor": "Память переносит информацию, а output gate регулирует, какую её часть показать следующему слою.",
+        "bot": "Найди в формуле место, где выход использует память."
+      }
+    },
+    {
+      "title": "Сравни быстрое и медленное забывание",
+      "explanation": "После первого импульса новых событий нет. Изменим только forget gate и сравним память на тех же входах.",
+      "code": "def run_sequence(forget):\n    memory = 0.\n    memories = []\n    for signal in signals:\n        memory, hidden = lstm_step(signal, memory, forget=forget)\n        memories.append(memory)\n    return np.array(memories)\n\nfast_forget = 0.2\nslow_forget = 0.9\nfast = run_sequence(fast_forget)\nslow = run_sequence(slow_forget)\nassert np.isclose(fast[0], slow[0])\nassert slow[-1] > fast[-1]\nprint('Память в конце:', {'быстро': fast[-1], 'медленно': slow[-1]})\n",
+      "expected": "Начальный сигнал одинаков, но при большем forget gate к концу остаётся больше памяти.",
+      "reaction": {
+        "art": "think",
+        "learner": "Большое значение forget значит больше забывать?",
+        "mentor": "Здесь это доля памяти, которую оставляем. Значение 0.9 сохраняет больше, чем 0.2.",
+        "bot": "Проверяй формулу, а не только английское имя вентиля."
+      }
+    },
+    {
+      "title": "Проверь границы памяти",
+      "explanation": "При нулевом новом сигнале forget=1 сохраняет память, а forget=0 стирает её. Нарисуем обе изученные траектории.",
+      "code": "kept, _ = lstm_step(0., 0.5, forget=1)\nerased, _ = lstm_step(0., 0.5, forget=0)\nassert np.isclose(kept, 0.5)\nassert np.isclose(erased, 0)\nfig, ax = plt.subplots(figsize=(6, 3))\nax.plot(range(len(fast)), fast, '-o', label=f'Forget = {fast_forget}')\nax.plot(range(len(slow)), slow, '-o', label=f'Forget = {slow_forget}')\nax.set(xlabel='Шаг', ylabel='Память c', title='Один импульс, два срока хранения')\nax.legend()\nplt.show()\n",
+      "expected": "Быстрое забывание видно как более резкое снижение линии.",
+      "reaction": {
+        "art": "finish",
+        "learner": "Получается, длинную память можно просто включить?",
+        "mentor": "Мы вручную показали механизм. В обучаемой LSTM значения вентилей вычисляются из входа и прошлого состояния.",
+        "bot": "Сравни c на последнем шаге у двух линий."
+      }
+    }
+  ],
+  "experiment": {
+    "task": "Поставь forget=0.6 вместо 0.2.",
+    "hint": "Во втором шаге измени fast_forget с 0.2 на 0.6; подпись графика обновится автоматически.",
+    "success": "Новая линия затухает медленнее прежней, но быстрее линии с 0.9."
+  },
+  "takeaways": [
+    "Память c и выход h различаются.",
+    "Forget gate задаёт сохраняемую долю памяти.",
+    "Граничные случаи помогают проверить формулу."
+  ],
+  "limitations": [
+    "Вентили фиксированы для наглядности, а не обучены.",
+    "Этот пример не предсказывает тональность настоящих отзывов."
+  ],
+  "findings": [
+    {
+      "originalCell": 11,
+      "kind": "teaching",
+      "problem": "Внутренние состояния LSTM не видны за вызовом библиотечного слоя.",
+      "evidence": "model.add(LSTM(32, recurrent_dropout=0.2))",
+      "resolution": "Память и выход вычисляются явно, есть сравнение забывания.",
+      "check": "Тесты forget=0 и forget=1 при нулевом входе."
+    }
+  ],
+  "dependencies": [
+    "numpy",
+    "matplotlib"
+  ],
+  "reviewedOriginalCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "sourceAttributions": [
+    "https://colab.research.google.com/github/safal207/hello-world/blob/master/NLP_%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7_%D1%82%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8_%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D1%87%D0%B5%D1%80%D0%B5%D0%B7_Embedding_%2B_LSTM(accuracy_0_86).ipynb"
+  ]
+}
