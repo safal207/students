@@ -211,13 +211,15 @@ def build_notebook(recipe, entry, manifest, image_dir):
              "![Мира, Данил и Пикс — команда AI PATH](attachment:start-hero.jpg)\n\n"
              f"**{recipe['subtitle']}**\n\n**Твой результат:** {recipe['goal']}", art="start", hero=True)
     prerequisites = "\n".join(f"- {item}" for item in recipe["prerequisites"])
-    contents = "\n".join(f"{number}. [{step['title']}](#step-{number})"
+    # GitHub's notebook iframe rewrites fragment-only links to a repository folder.
+    # A plain numbered route works in GitHub, Jupyter and Colab without a false jump.
+    contents = "\n".join(f"{number}. {step['title']}"
                          for number, step in enumerate(recipe["steps"], 1))
     markdown("overview", f"**Что разбираем:** {recipe['scope']}\n\n"
              f"**Данные:** {recipe['dataDescription']}\n\n**Перед началом:**\n\n{prerequisites}\n\n"
              "**Рядом с тобой:** Мира — ученица, Данил — человек-ментор, Пикс — бот-помощник. "
              "Это вымышленные персонажи: их реплики объясняют шаги и не проверяют код автоматически.\n\n"
-             f"## Три шага\n\n{contents}\n\n[Твой эксперимент](#your-experiment)")
+             f"## Три шага\n\n{contents}\n\nЗатем — твой небольшой эксперимент. Проходи ячейки сверху вниз.")
     dependencies = ", ".join(recipe["dependencies"]) or "только стандартный Python"
     markdown("setup-guide", "## Подготовь рабочее место\n\n"
              "Запускай код сверху вниз: сначала эту подготовку, затем три шага. "

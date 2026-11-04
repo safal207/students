@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "startedAt": "2026-11-03T12:48:19+00:00",
+  "startedAt": "2026-11-03T12:59:11+00:00",
   "mode": "validation",
   "python": "3.12.10",
   "platform": "Windows",
@@ -88,7 +88,7 @@
       "id": "001",
       "title": "Птичий эфир: отличаем два сигнала",
       "path": "AudioNet/Сафонов\"Аудио_Распознавание_птиц_по_пению_ipynb\".ipynb",
-      "checkedAt": "2026-11-03T12:48:19+00:00",
+      "checkedAt": "2026-11-03T12:59:12+00:00",
       "assertions": 6,
       "images": 4,
       "codeCells": 4,
@@ -96,13 +96,13 @@
       "recipeSha256": "06f79923db3045317e3da1c5493ef6486a3ceb77979eda5d7280944598cd0bcd",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.141
+      "durationSeconds": 0.109
     },
     {
       "id": "002",
       "title": "Звук под лупой: частота и громкость",
       "path": "AudioNet/Сафонов_Обработка_сигналов\"\".ipynb",
-      "checkedAt": "2026-11-03T12:48:19+00:00",
+      "checkedAt": "2026-11-03T12:59:12+00:00",
       "assertions": 7,
       "images": 4,
       "codeCells": 4,
@@ -110,13 +110,13 @@
       "recipeSha256": "30176e0a63b99b35af4f20e7733eee84c31556a1ac5746afaf584f71d04c0722",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.063
+      "durationSeconds": 0.047
     },
     {
       "id": "003",
       "title": "Как свёртка видит картинку",
       "path": "CV/Conv2D_Arguments.ipynb",
-      "checkedAt": "2026-11-03T12:48:19+00:00",
+      "checkedAt": "2026-11-03T12:59:12+00:00",
       "assertions": 7,
       "images": 4,
       "codeCells": 4,
@@ -124,13 +124,13 @@
       "recipeSha256": "08336ca8a068fc5cf93d100aa1b88ebd898ca072b53bf4ccf16085c93bdc70b3",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.063
+      "durationSeconds": 0.047
     },
     {
       "id": "004",
       "title": "Цветной архив: учим и проверяем честно",
       "path": "CV/База_Cifar10_(accuracy=85_)_и_Cifar100((accuracy=56_)).ipynb",
-      "checkedAt": "2026-11-03T12:48:20+00:00",
+      "checkedAt": "2026-11-03T12:59:12+00:00",
       "assertions": 6,
       "images": 4,
       "codeCells": 4,
@@ -138,13 +138,13 @@
       "recipeSha256": "89f19835a02dfefdc57eba8befefd7bfd18b3a6fa8f1af664f0e0bcc10ac6be0",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.078
+      "durationSeconds": 0.062
     },
     {
       "id": "005",
       "title": "Автокадр: готовим фото без сюрпризов",
       "path": "CV/Задача_классификация_авто_по_фото_(3_марки_авто)_Результат_точность_77_\".ipynb",
-      "checkedAt": "2026-11-03T12:48:20+00:00",
+      "checkedAt": "2026-11-03T12:59:12+00:00",
       "assertions": 6,
       "images": 4,
       "codeCells": 4,
@@ -152,13 +152,13 @@
       "recipeSha256": "9ea0f84f8912b55ae1f8563577d962bd6e529e4157ea18a2d65e702194f4e546",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.063
+      "durationSeconds": 0.078
     },
     {
       "id": "006",
       "title": "Цифра в пикселях: первый распознаватель",
       "path": "CV/Распознавание_изображений_из_набора_данных_MNIST,_с_помощью_свёрточных_нейронных_сетей.ipynb",
-      "checkedAt": "2026-11-03T12:48:20+00:00",
+      "checkedAt": "2026-11-03T12:59:12+00:00",
       "assertions": 6,
       "images": 4,
       "codeCells": 4,
@@ -166,13 +166,13 @@
       "recipeSha256": "cb7cf76c80ec4b9a818adb89a6787c623089118327450bb2782eaaa8f77cdf12",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.063
+      "durationSeconds": 0.062
     },
     {
       "id": "007",
       "title": "Одна вещь — одна рамка",
       "path": "CV/Сафонов\"objects_detection_ssdlite_mobilenet_v2_ipynb\".ipynb",
-      "checkedAt": "2026-11-03T12:48:20+00:00",
+      "checkedAt": "2026-11-03T12:59:12+00:00",
       "assertions": 6,
       "images": 4,
       "codeCells": 4,
@@ -186,7 +186,7 @@
       "id": "008",
       "title": "Камень, ножницы, пиксели",
       "path": "CV/Сафонов_\"rock_paper_scissors_cnn_ipynb\".ipynb",
-      "checkedAt": "2026-11-03T12:48:20+00:00",
+      "checkedAt": "2026-11-03T12:59:12+00:00",
       "assertions": 8,
       "images": 4,
       "codeCells": 4,
@@ -194,13 +194,13 @@
       "recipeSha256": "f5de2818614c14fe957939205bde8084a0a1dfc14a741bda5415a481d0b19aba",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.063
+      "durationSeconds": 0.062
     },
     {
       "id": "009",
       "title": "Раскрась стройку по пикселям",
       "path": "CV/Сафонов_Домашнее_задание_№3\"_Лучшая_точность_для_сегментации_Стройки_val_точность_60_95_.ipynb",
-      "checkedAt": "2026-11-03T12:48:20+00:00",
+      "checkedAt": "2026-11-03T12:59:12+00:00",
       "assertions": 7,
       "images": 4,
       "codeCells": 4,
@@ -214,7 +214,7 @@
       "id": "010",
       "title": "Честный экзамен для распознавателя",
       "path": "Classification/Light_Обучающая_Тестовая_\"Сафонов_А_А_MNIST_цифры_.ipynb",
-      "checkedAt": "2026-11-03T12:48:20+00:00",
+      "checkedAt": "2026-11-03T12:59:12+00:00",
       "assertions": 5,
       "images": 4,
       "codeCells": 4,
@@ -222,13 +222,13 @@
       "recipeSha256": "5b0295f6bb98d6fc4b7250c0e33fe5c9bbd4e3e17769dfad9126d565adccf3d9",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.078
+      "durationSeconds": 0.062
     },
     {
       "id": "011",
       "title": "Эхо-сигнал: два класса без путаницы",
       "path": "Classification/Pro_Сафонов_Цель_=_90_точности_база_МИНЫ_на_тестовой_выбоке.ipynb",
-      "checkedAt": "2026-11-03T12:48:20+00:00",
+      "checkedAt": "2026-11-03T12:59:13+00:00",
       "assertions": 6,
       "images": 4,
       "codeCells": 4,
@@ -236,13 +236,13 @@
       "recipeSha256": "8532f21adefc2a08a046b65429cea75b703ea4eadbe990f6435e4f0d8653498a",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.078
+      "durationSeconds": 0.063
     },
     {
       "id": "012",
       "title": "Гардероб пикселей: форма имеет значение",
       "path": "Classification/Сафонов_Домашнее_задание_№2\".ipynb",
-      "checkedAt": "2026-11-03T12:48:20+00:00",
+      "checkedAt": "2026-11-03T12:59:13+00:00",
       "assertions": 7,
       "images": 4,
       "codeCells": 4,
@@ -256,7 +256,7 @@
       "id": "013",
       "title": "Ракета учится садиться: отбор и мутация",
       "path": "Genetica/САфонов_генетика\".ipynb",
-      "checkedAt": "2026-11-03T12:48:20+00:00",
+      "checkedAt": "2026-11-03T12:59:13+00:00",
       "assertions": 6,
       "images": 4,
       "codeCells": 4,
@@ -264,13 +264,13 @@
       "recipeSha256": "b43a30fc87c6d0c7947f8b750bcc0a06ccc782dfb1f5c346ad5adea785c54479",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.063
+      "durationSeconds": 0.078
     },
     {
       "id": "014",
       "title": "Первый шаг в терминал",
       "path": "Linux/colab_linux.ipynb",
-      "checkedAt": "2026-11-03T12:48:20+00:00",
+      "checkedAt": "2026-11-03T12:59:13+00:00",
       "assertions": 7,
       "images": 4,
       "codeCells": 4,
@@ -278,13 +278,13 @@
       "recipeSha256": "dd431f13eba74936c018a224a434fb78a6f4bfcc7bb82191056d2719bca8da85",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.062
+      "durationSeconds": 0.063
     },
     {
       "id": "015",
       "title": "Терминал-детектив: ищем строку",
       "path": "Linux/Работа_с_Linux_кодамндами_в_Colab.ipynb",
-      "checkedAt": "2026-11-03T12:48:21+00:00",
+      "checkedAt": "2026-11-03T12:59:13+00:00",
       "assertions": 7,
       "images": 4,
       "codeCells": 4,
@@ -298,7 +298,7 @@
       "id": "016",
       "title": "Архив без загадок",
       "path": "Linux/Работа_с_Linux_командами_в_Colab.ipynb",
-      "checkedAt": "2026-11-03T12:48:21+00:00",
+      "checkedAt": "2026-11-03T12:59:13+00:00",
       "assertions": 8,
       "images": 4,
       "codeCells": 4,
@@ -306,13 +306,13 @@
       "recipeSha256": "05239b2d9454518abe2e45212eec3623f33dc77f7e4805eee155c12e46ecb208",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.078
+      "durationSeconds": 0.063
     },
     {
       "id": "017",
       "title": "Сохрани результат и открой снова",
       "path": "LoadData/Импорт_и_экспорт_данных_через_Google_Colab.ipynb",
-      "checkedAt": "2026-11-03T12:48:21+00:00",
+      "checkedAt": "2026-11-03T12:59:13+00:00",
       "assertions": 6,
       "images": 4,
       "codeCells": 4,
@@ -320,13 +320,13 @@
       "recipeSha256": "10db6fa808e33a821bf422100bef530fb3127804862dfdb41e62aff7716a2df9",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.062
+      "durationSeconds": 0.063
     },
     {
       "id": "018",
       "title": "Нейросеть решает XOR",
       "path": "ML/reproducible_mlp_xor_numpy.ipynb",
-      "checkedAt": "2026-11-03T12:48:21+00:00",
+      "checkedAt": "2026-11-03T12:59:13+00:00",
       "assertions": 7,
       "images": 4,
       "codeCells": 4,
@@ -340,7 +340,7 @@
       "id": "019",
       "title": "Таблицы без ловушек: резюме и квартиры",
       "path": "ML/Сафонов_А_А_ML_Анализ_HH_ru_резюме_и_ЦИАН_анализ_стоимости_квартир.ipynb",
-      "checkedAt": "2026-11-03T12:48:21+00:00",
+      "checkedAt": "2026-11-03T12:59:13+00:00",
       "assertions": 9,
       "images": 4,
       "codeCells": 4,
@@ -348,13 +348,13 @@
       "recipeSha256": "697658e2d7fda75f86e7bdb9aa15fb31d272727ac99659194216ddc6c10e48bb",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.063
+      "durationSeconds": 0.062
     },
     {
       "id": "020",
       "title": "Семь дней случайности",
       "path": "ML/Сафонов_А_А_Теория_вероятности_2\"\".ipynb",
-      "checkedAt": "2026-11-03T12:48:21+00:00",
+      "checkedAt": "2026-11-03T12:59:13+00:00",
       "assertions": 8,
       "images": 4,
       "codeCells": 4,
@@ -362,13 +362,13 @@
       "recipeSha256": "522e55939efe80775d745bef37676e488033de69281e1f3124849ae64c20efdd",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.063
+      "durationSeconds": 0.062
     },
     {
       "id": "021",
       "title": "Вероятность без догадок",
       "path": "ML/Сафонов_А_А_Теория_вероятности_и_статистика_1\".ipynb",
-      "checkedAt": "2026-11-03T12:48:21+00:00",
+      "checkedAt": "2026-11-03T12:59:13+00:00",
       "assertions": 9,
       "images": 4,
       "codeCells": 4,
@@ -376,13 +376,13 @@
       "recipeSha256": "808de4a82b1e9897c6d70de95135298b98f7aac027d27ffb2fba67f4e4567195",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.063
+      "durationSeconds": 0.062
     },
     {
       "id": "022",
       "title": "График, которому можно верить",
       "path": "Matplotlib/matplotlib.ipynb",
-      "checkedAt": "2026-11-03T12:48:21+00:00",
+      "checkedAt": "2026-11-03T12:59:13+00:00",
       "assertions": 8,
       "images": 4,
       "codeCells": 4,
@@ -390,13 +390,13 @@
       "recipeSha256": "c2c39fc4874b466e59cd51fdfabacbf30e1fa05ed3f653ae9de2703d7bcda3c1",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.063
+      "durationSeconds": 0.062
     },
     {
       "id": "023",
       "title": "Три взгляда на данные: линия, частоты, связь",
       "path": "Matplotlib/Сафонов_Апрельский_курс_2020_Light_Python_Домашнее_задание_5.ipynb",
-      "checkedAt": "2026-11-03T12:48:21+00:00",
+      "checkedAt": "2026-11-03T12:59:14+00:00",
       "assertions": 6,
       "images": 4,
       "codeCells": 4,
@@ -410,7 +410,7 @@
       "id": "024",
       "title": "Матрицы без магии: получи правильную форму",
       "path": "MatrixAndFunctions/Сафонов_А_А_Матрицы_и_функции\".ipynb",
-      "checkedAt": "2026-11-03T12:48:21+00:00",
+      "checkedAt": "2026-11-03T12:59:14+00:00",
       "assertions": 6,
       "images": 4,
       "codeCells": 4,
@@ -418,13 +418,13 @@
       "recipeSha256": "fb1b438beba9f7514424fde6e04bc1e7d8d1c466605d7cb4e9d7bc4e7431678c",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.063
+      "durationSeconds": 0.062
     },
     {
       "id": "025",
       "title": "Слова становятся числами",
       "path": "NLP/NLP_SafonovAlex_DenseRNN_,Conv1d,LSTM,_GRU_для_обработки_текстов\".ipynb",
-      "checkedAt": "2026-11-03T12:48:21+00:00",
+      "checkedAt": "2026-11-03T12:59:14+00:00",
       "assertions": 6,
       "images": 4,
       "codeCells": 4,
@@ -432,13 +432,13 @@
       "recipeSha256": "e64ca0cea9c4cb325c797156bcb9af43bc0dcb1adf3912f92831d57e51f6fa8a",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.047
+      "durationSeconds": 0.062
     },
     {
       "id": "026",
       "title": "Ловим фразу: первая свёртка для текста",
       "path": "NLP/NLP_Анализ_тональности_Решение_через_Conv1d_(accuracy_0_8533).ipynb",
-      "checkedAt": "2026-11-03T12:48:21+00:00",
+      "checkedAt": "2026-11-03T12:59:14+00:00",
       "assertions": 8,
       "images": 4,
       "codeCells": 4,
@@ -446,13 +446,13 @@
       "recipeSha256": "4cecc9c140f98d724fe0c63f7107695dd641b77604ac0b6e7df546de2f025a55",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.047
+      "durationSeconds": 0.063
     },
     {
       "id": "027",
       "title": "GRU: память с регулятором",
       "path": "NLP/NLP_Анализ_тональности_Решение_через_Embedding_+_GRU(accuracy_0_83).ipynb",
-      "checkedAt": "2026-11-03T12:48:22+00:00",
+      "checkedAt": "2026-11-03T12:59:14+00:00",
       "assertions": 6,
       "images": 4,
       "codeCells": 4,
@@ -460,13 +460,13 @@
       "recipeSha256": "d1b5cf48466496c5adee60fa7fd5a91e8103a387e898dec63864a2c6a429d057",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.062
+      "durationSeconds": 0.063
     },
     {
       "id": "028",
       "title": "LSTM: сохраняем важный сигнал",
       "path": "NLP/NLP_Анализ_тональности_Решение_через_Embedding_+_LSTM(accuracy_0_86).ipynb",
-      "checkedAt": "2026-11-03T12:48:22+00:00",
+      "checkedAt": "2026-11-03T12:59:14+00:00",
       "assertions": 6,
       "images": 4,
       "codeCells": 4,
@@ -474,13 +474,13 @@
       "recipeSha256": "1daf94111f9489e1e3d50c36f5a4feb462a921fdabca1417cfcdc33252807673",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.078
+      "durationSeconds": 0.062
     },
     {
       "id": "029",
       "title": "RNN: почему порядок меняет ответ",
       "path": "NLP/NLP_Анализ_тональности_Решение_через_Embedding_+_RNN_(accuracy_0_58)_\"dl_nlp_imdb_simple_rnn_ipynb\".ipynb",
-      "checkedAt": "2026-11-03T12:48:22+00:00",
+      "checkedAt": "2026-11-03T12:59:14+00:00",
       "assertions": 7,
       "images": 4,
       "codeCells": 4,
@@ -488,13 +488,13 @@
       "recipeSha256": "5b2c342c62d92b7c4104a2ebf5c97654906d6d5cd3e5193736c5b7d8d3484a69",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.062
+      "durationSeconds": 0.063
     },
     {
       "id": "030",
       "title": "Текстовый детектив: два авторских голоса",
       "path": "NLP/NLP_Определение_автора_по_отрывкам_текста_Dense,RNN_,Conv1d,LSTM,_GRU_для_обработки_текстов\".ipynb",
-      "checkedAt": "2026-11-03T12:48:22+00:00",
+      "checkedAt": "2026-11-03T12:59:14+00:00",
       "assertions": 5,
       "images": 4,
       "codeCells": 4,
@@ -502,13 +502,13 @@
       "recipeSha256": "a714eefba97316ffee1d03ff7648020111a0308e2d66f402d51eb84842b5f915",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.062
+      "durationSeconds": 0.063
     },
     {
       "id": "031",
       "title": "Три лица текста: коды, набор слов, векторы",
       "path": "NLP/NLP_Определение_тональности_текста_отзывов_на_фильмы_из_IMDb_(Internet_Movie_Database).ipynb",
-      "checkedAt": "2026-11-03T12:48:22+00:00",
+      "checkedAt": "2026-11-03T12:59:14+00:00",
       "assertions": 7,
       "images": 4,
       "codeCells": 4,
@@ -522,7 +522,7 @@
       "id": "032",
       "title": "Из CSV в отзыв: маленький анализатор текста",
       "path": "NLP/dl_nlp_yelp_polarity.ipynb",
-      "checkedAt": "2026-11-03T12:48:22+00:00",
+      "checkedAt": "2026-11-03T12:59:14+00:00",
       "assertions": 8,
       "images": 4,
       "codeCells": 4,
@@ -530,13 +530,13 @@
       "recipeSha256": "c5efb25a2493849cd1c826a65a1cc9f81509c785f2740117bf6cd68687579363",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.062
+      "durationSeconds": 0.063
     },
     {
       "id": "033",
       "title": "CNN для отзывов: находим важную пару",
       "path": "NLP/Определение_тональности_текстов_YELP_через_Conv1D_сеть_точность_94_.ipynb",
-      "checkedAt": "2026-11-03T12:48:22+00:00",
+      "checkedAt": "2026-11-03T12:59:14+00:00",
       "assertions": 8,
       "images": 4,
       "codeCells": 4,
@@ -550,7 +550,7 @@
       "id": "034",
       "title": "Сохрани лучший момент обучения",
       "path": "NLP/Определение_тональности_текстов_YELP_через_LSTM_сеть_точность_95_.ipynb",
-      "checkedAt": "2026-11-03T12:48:22+00:00",
+      "checkedAt": "2026-11-03T12:59:14+00:00",
       "assertions": 6,
       "images": 4,
       "codeCells": 4,
@@ -564,7 +564,7 @@
       "id": "035",
       "title": "Числа с границами: знакомство с dtype",
       "path": "Numpy/Numpy.ipynb",
-      "checkedAt": "2026-11-03T12:48:22+00:00",
+      "checkedAt": "2026-11-03T12:59:15+00:00",
       "assertions": 9,
       "images": 4,
       "codeCells": 4,
@@ -578,7 +578,7 @@
       "id": "036",
       "title": "Погода по шагам: от месяца до графика",
       "path": "Numpy/Основы_Python_numpy,_plot.ipynb",
-      "checkedAt": "2026-11-03T12:48:22+00:00",
+      "checkedAt": "2026-11-03T12:59:15+00:00",
       "assertions": 5,
       "images": 4,
       "codeCells": 4,
@@ -586,13 +586,13 @@
       "recipeSha256": "c2a377e7481ebaea4849a7e12d05899bd27efe44f5ffb6b7d6b9a2e5e41676c0",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.094
+      "durationSeconds": 0.063
     },
     {
       "id": "037",
       "title": "NumPy: выбери нужные числа без цикла",
       "path": "Numpy/Сафонов_Апрельский_курс_2020_Light_Python_Домашнее_задание_2.ipynb",
-      "checkedAt": "2026-11-03T12:48:22+00:00",
+      "checkedAt": "2026-11-03T12:59:15+00:00",
       "assertions": 8,
       "images": 4,
       "codeCells": 4,
@@ -600,13 +600,13 @@
       "recipeSha256": "94015ab54cc1fd532bf51ac3234492c63440916431b893009e537ca34eb03dc5",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.063
+      "durationSeconds": 0.046
     },
     {
       "id": "038",
       "title": "Собери команду: классы и наследование",
       "path": "OOP/Дополнительный_семинар_ООП.ipynb",
-      "checkedAt": "2026-11-03T12:48:22+00:00",
+      "checkedAt": "2026-11-03T12:59:15+00:00",
       "assertions": 6,
       "images": 4,
       "codeCells": 4,
@@ -614,13 +614,13 @@
       "recipeSha256": "693bb75ef45b223e49533b9c09388f6088f95d102ea568e671814fa41310aa79",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.062
+      "durationSeconds": 0.047
     },
     {
       "id": "039",
       "title": "Pandas: найди строку и измени её безопасно",
       "path": "Pandas/Pandas.ipynb",
-      "checkedAt": "2026-11-03T12:48:23+00:00",
+      "checkedAt": "2026-11-03T12:59:15+00:00",
       "assertions": 9,
       "images": 4,
       "codeCells": 4,
@@ -628,13 +628,13 @@
       "recipeSha256": "05bb54b7c810c591a54ace30c68c4edba1a78b6b6e70bc12559fe9a52e816593",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.078
+      "durationSeconds": 0.047
     },
     {
       "id": "040",
       "title": "Таблица без сюрпризов: пропуски и выручка",
       "path": "Pandas/Сафонов_Pandas.ipynb",
-      "checkedAt": "2026-11-03T12:48:23+00:00",
+      "checkedAt": "2026-11-03T12:59:15+00:00",
       "assertions": 8,
       "images": 4,
       "codeCells": 4,
@@ -642,13 +642,13 @@
       "recipeSha256": "d7ed595c9b5333f335bc770f5e087eeef26d457c2079a312bc1ad178fbd502a9",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.079
+      "durationSeconds": 0.062
     },
     {
       "id": "041",
       "title": "Собери таблицы: курс, участник, дата",
       "path": "Pandas/Сафонов_Апрельский_курс_2020_Light_Занятие_4_Pandas_(часть_2).ipynb",
-      "checkedAt": "2026-11-03T12:48:23+00:00",
+      "checkedAt": "2026-11-03T12:59:15+00:00",
       "assertions": 8,
       "images": 4,
       "codeCells": 4,
@@ -656,13 +656,13 @@
       "recipeSha256": "4c7b409466a2270b6ac2d011a28980f4e475610658095e8882c12b8f39891339",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.063
+      "durationSeconds": 0.078
     },
     {
       "id": "042",
       "title": "Цифры в CSV: от пикселей до проверенного файла",
       "path": "Pandas/Сафонов_соревнование_\"kaggle_mnist_ipynb\".ipynb",
-      "checkedAt": "2026-11-03T12:48:23+00:00",
+      "checkedAt": "2026-11-03T12:59:15+00:00",
       "assertions": 10,
       "images": 4,
       "codeCells": 4,
@@ -670,13 +670,13 @@
       "recipeSha256": "6e3afbe7d0f13096242974808fd28fe9c02c103aedff192ad1f783cfd5382cd9",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.047
+      "durationSeconds": 0.062
     },
     {
       "id": "043",
       "title": "Эволюция настроек: прогноз по прошлому",
       "path": "SeletNetAI/Апрельский_курс_(2020)_Pro_Занятие_16_Часть_2_Подбор_архитектуры.ipynb",
-      "checkedAt": "2026-11-03T12:48:23+00:00",
+      "checkedAt": "2026-11-03T12:59:15+00:00",
       "assertions": 6,
       "images": 4,
       "codeCells": 4,
@@ -684,13 +684,13 @@
       "recipeSha256": "873dedf372e763ebcf3e2d7167aa7f24ec8be41e0da62747d04ec174008559de",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.063
+      "durationSeconds": 0.062
     },
     {
       "id": "044",
       "title": "Выбери настройки: честный мини-тюнер",
       "path": "SeletNetAI/Оптимизация_гиперпараметров_нейросети_с_помощью_Keras_Tuner_\"fashion_mnist_keras_tuner_ipynb\".ipynb",
-      "checkedAt": "2026-11-03T12:48:23+00:00",
+      "checkedAt": "2026-11-03T12:59:15+00:00",
       "assertions": 7,
       "images": 4,
       "codeCells": 4,
@@ -698,13 +698,13 @@
       "recipeSha256": "72c0e666d329490869442a42c1b2ebd9d535d514f201114f2e74999db57d07ee",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.062
+      "durationSeconds": 0.063
     },
     {
       "id": "045",
       "title": "Окно в будущее: прогноз на один шаг",
       "path": "Stock/\"DownJoins\"Сафонов_Временные_ряды_\"_36.ipynb",
-      "checkedAt": "2026-11-03T12:48:23+00:00",
+      "checkedAt": "2026-11-03T12:59:15+00:00",
       "assertions": 6,
       "images": 4,
       "codeCells": 4,
@@ -712,13 +712,13 @@
       "recipeSha256": "92f71c0d5255583fd74baf2d439de7d098da7c7a9377901105dd69c6529cd181",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.078
+      "durationSeconds": 0.063
     },
     {
       "id": "046",
       "title": "Честный выбор: какой прогноз оставить",
       "path": "Stock/SP500_\"Сафонов_Временные_ряды.ipynb",
-      "checkedAt": "2026-11-03T12:48:23+00:00",
+      "checkedAt": "2026-11-03T12:59:16+00:00",
       "assertions": 3,
       "images": 4,
       "codeCells": 4,
@@ -726,13 +726,13 @@
       "recipeSha256": "c729cfa893a70bea75ca8b6cba1917501bf839c3301343a56f1f8fa8d7f41a88",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.063
+      "durationSeconds": 0.094
     },
     {
       "id": "047",
       "title": "Не подсматриваем завтра: готовим временной ряд",
       "path": "Stock/Временные_ряды_Прогнозирование_акций_Лукойла_(Time_series_Prediction_shares_of_LUKOIL).ipynb",
-      "checkedAt": "2026-11-03T12:48:23+00:00",
+      "checkedAt": "2026-11-03T12:59:16+00:00",
       "assertions": 7,
       "images": 4,
       "codeCells": 4,
@@ -740,13 +740,13 @@
       "recipeSha256": "020454769ff82685dce4631bec6d7199b940e2d3c1ca7f44afb140f8173b0327",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.063
+      "durationSeconds": 0.078
     },
     {
       "id": "048",
       "title": "Узнать или выделить: два задания для картинки",
       "path": "Terra-ai/Сафонов_А_А_\"Интенсив_8_12_10_12_Домашнее_задание_№1\".ipynb",
-      "checkedAt": "2026-11-03T12:48:23+00:00",
+      "checkedAt": "2026-11-03T12:59:16+00:00",
       "assertions": 4,
       "images": 4,
       "codeCells": 4,
@@ -754,13 +754,13 @@
       "recipeSha256": "d13223fc4264ff72c2afd7e156b6d00fffa592ebcb878023fcfb804babd51079",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.062
+      "durationSeconds": 0.063
     },
     {
       "id": "049",
       "title": "Четыре задачи: выбираем правильную проверку",
       "path": "Trafic/Сафонов_\"Интенсив_8_12_11_12_Домашнее_задание_№3_\".ipynb",
-      "checkedAt": "2026-11-03T12:48:23+00:00",
+      "checkedAt": "2026-11-03T12:59:16+00:00",
       "assertions": 5,
       "images": 4,
       "codeCells": 4,
@@ -774,7 +774,7 @@
       "id": "050",
       "title": "Ритм недели: прогнозируем посещения",
       "path": "Trafic/Трафик_компании.ipynb",
-      "checkedAt": "2026-11-03T12:48:24+00:00",
+      "checkedAt": "2026-11-03T12:59:16+00:00",
       "assertions": 4,
       "images": 4,
       "codeCells": 4,
@@ -782,13 +782,13 @@
       "recipeSha256": "2d68957aed3ae5cde3d51bec746adbe17b0bc1abc839be96ce7e36a94f34c54e",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.047
+      "durationSeconds": 0.062
     },
     {
       "id": "051",
       "title": "История в твоих руках: вперёд и назад",
       "path": "interactive_story.ipynb",
-      "checkedAt": "2026-11-03T12:48:24+00:00",
+      "checkedAt": "2026-11-03T12:59:16+00:00",
       "assertions": 5,
       "images": 4,
       "codeCells": 4,
@@ -802,7 +802,7 @@
       "id": "052",
       "title": "Картинка без сюрпризов: один входной формат",
       "path": "medicina/\"Используем_модель_EfficientNet_B7_для_распознавания_tuberculosis\".ipynb",
-      "checkedAt": "2026-11-03T12:48:24+00:00",
+      "checkedAt": "2026-11-03T12:59:16+00:00",
       "assertions": 5,
       "images": 4,
       "codeCells": 4,
@@ -816,7 +816,7 @@
       "id": "053",
       "title": "Короткая дорога: остаточная связь ResNet",
       "path": "medicina/\"Используем_модель_ResNet_152_для_распознавания_tuberculosis\".ipynb",
-      "checkedAt": "2026-11-03T12:48:24+00:00",
+      "checkedAt": "2026-11-03T12:59:16+00:00",
       "assertions": 5,
       "images": 4,
       "codeCells": 4,
@@ -830,7 +830,7 @@
       "id": "054",
       "title": "Замороженные признаки: учим только последний шаг",
       "path": "medicina/\"Рез_т_val_acc_0_86_VGG19_для_распознавания_tuberculosis\"\"\".ipynb",
-      "checkedAt": "2026-11-03T12:48:24+00:00",
+      "checkedAt": "2026-11-03T12:59:16+00:00",
       "assertions": 4,
       "images": 4,
       "codeCells": 4,
@@ -844,7 +844,7 @@
       "id": "055",
       "title": "Меньше пикселей, тот же сигнал: max pooling",
       "path": "medicina/\"Рез_т_val_acc_80_VGG16_для_распознавания_tuberculosis\"\"\".ipynb",
-      "checkedAt": "2026-11-03T12:48:24+00:00",
+      "checkedAt": "2026-11-03T12:59:16+00:00",
       "assertions": 5,
       "images": 4,
       "codeCells": 4,
@@ -858,7 +858,7 @@
       "id": "056",
       "title": "Два масштаба рядом: идея Inception",
       "path": "medicina/\"Результат_val_acc_0_869_модель_InceptionResNetV2_для_распознавания_tuberculosis\"\".ipynb",
-      "checkedAt": "2026-11-03T12:48:24+00:00",
+      "checkedAt": "2026-11-03T12:59:16+00:00",
       "assertions": 5,
       "images": 4,
       "codeCells": 4,
@@ -872,7 +872,7 @@
       "id": "057",
       "title": "Узкое горлышко: идея MobileNetV2",
       "path": "medicina/MobileNetV2_для_распознавания_tuberculosis\".ipynb",
-      "checkedAt": "2026-11-03T12:48:24+00:00",
+      "checkedAt": "2026-11-03T12:59:16+00:00",
       "assertions": 7,
       "images": 4,
       "codeCells": 4,
@@ -880,13 +880,13 @@
       "recipeSha256": "4f6b78c582087b057296e39c4faf410abd8b124718154cb785702298b102c997",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.062
+      "durationSeconds": 0.063
     },
     {
       "id": "058",
       "title": "Лёгкая свёртка: каналы по отдельности",
       "path": "medicina/MobileNet_для_распознавания_tuberculosis\".ipynb",
-      "checkedAt": "2026-11-03T12:48:24+00:00",
+      "checkedAt": "2026-11-03T12:59:17+00:00",
       "assertions": 5,
       "images": 4,
       "codeCells": 4,
@@ -894,13 +894,13 @@
       "recipeSha256": "a42462f0a52f05e7d540b64ae570043e826943994b56ac8a199d1084c677b60c",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.062
+      "durationSeconds": 0.063
     },
     {
       "id": "059",
       "title": "Маленький поиск: выбираем фильтр честно",
       "path": "medicina/NASNetLarge_для_распознавания_tuberculosis\".ipynb",
-      "checkedAt": "2026-11-03T12:48:24+00:00",
+      "checkedAt": "2026-11-03T12:59:17+00:00",
       "assertions": 3,
       "images": 4,
       "codeCells": 4,
@@ -908,13 +908,13 @@
       "recipeSha256": "d4570de4b55270ee162c8057baad53ae60e6e19bce4334090d23bb58a9e25d72",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.047
+      "durationSeconds": 0.063
     },
     {
       "id": "060",
       "title": "За процентом: разбираем ошибки по клеточкам",
       "path": "medicina/VGG19для_распознавания_tuberculosis\".ipynb",
-      "checkedAt": "2026-11-03T12:48:24+00:00",
+      "checkedAt": "2026-11-03T12:59:17+00:00",
       "assertions": 4,
       "images": 4,
       "codeCells": 4,
@@ -922,13 +922,13 @@
       "recipeSha256": "39f3b6b399c290ed72790b3867fcbd96cce3f2a96e3fc49c1a7022d26339747a",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.062
+      "durationSeconds": 0.063
     },
     {
       "id": "061",
       "title": "Признаки накапливаются: идея DenseNet",
       "path": "medicina/Рез_т_val_acc_0_88696_DenseNet201_для_распознавания_tuberculosis\"\".ipynb",
-      "checkedAt": "2026-11-03T12:48:24+00:00",
+      "checkedAt": "2026-11-03T12:59:17+00:00",
       "assertions": 6,
       "images": 4,
       "codeCells": 4,
@@ -936,13 +936,13 @@
       "recipeSha256": "b741b4d43fa53f81f4fe7eea4d06ca9c1e86bff077f427dad01c35ae5587a7bd",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.062
+      "durationSeconds": 0.047
     },
     {
       "id": "062",
       "title": "Из текста в данные: парсер без неприятных сюрпризов",
       "path": "parsong/Сафонов_А_А_Парсинг_данных\".ipynb",
-      "checkedAt": "2026-11-03T12:48:25+00:00",
+      "checkedAt": "2026-11-03T12:59:17+00:00",
       "assertions": 8,
       "images": 4,
       "codeCells": 4,
@@ -956,7 +956,7 @@
       "id": "063",
       "title": "Python с нуля: считаем, сравниваем, останавливаемся",
       "path": "python/Сафонов_Python,_Домашнее_задание_1.ipynb",
-      "checkedAt": "2026-11-03T12:48:25+00:00",
+      "checkedAt": "2026-11-03T12:59:17+00:00",
       "assertions": 7,
       "images": 4,
       "codeCells": 4,
@@ -964,13 +964,13 @@
       "recipeSha256": "acb17486adfbd1074030f97f9b4fd55d4983e82605c72de7677e18fadfb0c6d8",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.062
+      "durationSeconds": 0.063
     },
     {
       "id": "064",
       "title": "Функции с характером: возвращаем ответ и ловим края",
       "path": "python/Сафонов_Python_Домашнее_задание_6.ipynb",
-      "checkedAt": "2026-11-03T12:48:25+00:00",
+      "checkedAt": "2026-11-03T12:59:17+00:00",
       "assertions": 11,
       "images": 4,
       "codeCells": 4,
@@ -978,13 +978,13 @@
       "recipeSha256": "f3d8f27731d9083320dad0fdd50f29367c235eeb609e30fcb09fc02a94904df8",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.062
+      "durationSeconds": 0.063
     },
     {
       "id": "065",
       "title": "Похожи в цифрах, разные на графике",
       "path": "seaborn/seaborn.ipynb",
-      "checkedAt": "2026-11-03T12:48:25+00:00",
+      "checkedAt": "2026-11-03T12:59:17+00:00",
       "assertions": 3,
       "images": 4,
       "codeCells": 4,
@@ -992,13 +992,13 @@
       "recipeSha256": "80f96b845e96fff6aab56184d32c936dadd3ecd3ef0b0ac2d0bd84b28ede5a41",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.062
+      "durationSeconds": 0.047
     },
     {
       "id": "066",
       "title": "Модель отвечает: маленький сервис внутри ноутбука",
       "path": "Создание_простого_веб_сервера_и_настройка_параметров_работы.ipynb",
-      "checkedAt": "2026-11-03T12:48:25+00:00",
+      "checkedAt": "2026-11-03T12:59:17+00:00",
       "assertions": 10,
       "images": 4,
       "codeCells": 4,
@@ -1006,11 +1006,11 @@
       "recipeSha256": "aff9a25854200a2aa3356655bdf79360d6180a80980406b48d39c1861566c5e7",
       "execution": "verified-saved",
       "status": "passed",
-      "durationSeconds": 0.062
+      "durationSeconds": 0.063
     }
   ],
   "status": "passed",
   "completedSelected": 66,
-  "updatedAt": "2026-11-03T12:48:25+00:00",
-  "finishedAt": "2026-11-03T12:48:25+00:00"
+  "updatedAt": "2026-11-03T12:59:17+00:00",
+  "finishedAt": "2026-11-03T12:59:17+00:00"
 }
